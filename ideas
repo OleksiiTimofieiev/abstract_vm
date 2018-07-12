@@ -4,5 +4,21 @@ Tech:
 - regular expressions and templates;
 - c++ casts;
 - try catch;
-​
-​
+- parsing: https://stackoverflow.com/questions/27343186/what-is-the-best-way-to-parse-a-string-in-c;
+- stack: 
+http://codelessons.ru/cplusplus/realizaciya-steka-stack-v-c.html;
+http://www.cyberforum.ru/cpp/thread1931303.html;
+- underflow / overflow:
+https://stackoverflow.com/questions/6360049/what-are-arithmetic-underflow-and-overflow-in-c;
+
+Books:
+* The C++ Programming Language, 4th Edition by Bjarne Stroustrup
+* Effective C++: 55 Specific Ways to Improve Your Programs and Designs by Scott Meyers
+* More Effective C++: 35 New Ways to Improve Your Programs and Designs by Scott Meyers
+* Exceptional C++: 47 Engineering Puzzles, Programming Problems, and Solutions by Herb Sutter
+* More Exceptional C++: 40 New Engineering Puzzles, Programming Problems, and Solutions by Herb Sutter
+* Modern C++ Design: Generic Programming and Design Patterns Applied by Andrei Alexandrescu
+* C++ Concurrency in Action: Practical Multithreading by Anthony Williams
+* Effective Modern C++: 42 Specific Ways to Improve Your Use of C++11 and C++14 by Scott Meyers
+* Algorithms (4th Edition) by Robert Sedgewick and Kevin Wayne
+* Windows via C/C++ 5th Edition by Jeffrey M. Richter
