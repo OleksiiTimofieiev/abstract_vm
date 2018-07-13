@@ -27,6 +27,9 @@ https://stackoverflow.com/questions/6360049/what-are-arithmetic-underflow-and-ov
 - error management in correction form;
 - vector can be used, use as the type -> interface;
 - regex;
+- Factory class, 5 private, uno public
+- Class which works with exception
+
 
 Bonus:
 - https://www.computerhope.com/unix/udc.htm;
