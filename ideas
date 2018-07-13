@@ -3,6 +3,7 @@ Core:
 
 
 Tech:
+- stoi / stof / stod;
 - git ignore;
 - ali makefile;
 - https://stackoverflow.com/questions/2842809/lexers-vs-parsers
