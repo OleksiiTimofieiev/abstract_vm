@@ -3,9 +3,9 @@ Core:
 
 
 Tech:
-
-read this stuff -> https://www.codeproject.com/Articles/363338/Factory-Pattern-in-Cplusplus;
-
+- git ignore;
+- ali makefile;
+- read this stuff -> https://www.codeproject.com/Articles/363338/Factory-Pattern-in-Cplusplus;
 - For non commutative operations, consider the stack v1 on v2 on
 stack_tail, the calculation in infix notation v2 op v1.
 - lexer / parser;
