@@ -5,6 +5,7 @@ Core:
 Tech:
 - git ignore;
 - ali makefile;
+- https://stackoverflow.com/questions/2842809/lexers-vs-parsers
 - read this stuff -> https://www.codeproject.com/Articles/363338/Factory-Pattern-in-Cplusplus;
 - For non commutative operations, consider the stack v1 on v2 on
 stack_tail, the calculation in infix notation v2 op v1.
@@ -22,12 +23,19 @@ http://www.cyberforum.ru/cpp/thread1931303.html;
 https://stackoverflow.com/questions/6360049/what-are-arithmetic-underflow-and-overflow-in-c;
 - inherit from the stack class and add some features;
 - factory method c++;
+- error management in correction form;
+- vector can be used, use as the type -> interface;
+- regex;
 
 Bonus:
 - https://www.computerhope.com/unix/udc.htm;
 - sort;
 - max
 - min
+- 1.
+  2.
+  3.
+- 5 2 -
 
 Books:
 * The C++ Programming Language, 4th Edition by Bjarne Stroustrup
