@@ -10,6 +10,7 @@ http://codelessons.ru/cplusplus/realizaciya-steka-stack-v-c.html;
 http://www.cyberforum.ru/cpp/thread1931303.html;
 - underflow / overflow:
 https://stackoverflow.com/questions/6360049/what-are-arithmetic-underflow-and-overflow-in-c;
+- inherit from the stack class and add some features;
 
 Books:
 * The C++ Programming Language, 4th Edition by Bjarne Stroustrup
