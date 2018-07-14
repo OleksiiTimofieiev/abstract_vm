@@ -1,7 +1,6 @@
 Core:
 -  AbstractVM is a machine that uses a stack to compute simple arithmetic expressions. These arithmetic expressions are provided to the machine as basic assembly programs.
 
-
 Tech:
 - stoi / stof / stod;
 - git ignore;
@@ -31,8 +30,6 @@ https://stackoverflow.com/questions/6360049/what-are-arithmetic-underflow-and-ov
 - regex;
 - Factory class, 5 private, uno public
 - Class which works with exception
-​
-
 
 Bonus:
 - https://www.computerhope.com/unix/udc.htm;
