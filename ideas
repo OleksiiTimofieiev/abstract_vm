@@ -6,6 +6,7 @@ Tech:
 - git ignore;
 - ali makefile;
 - https://stackoverflow.com/questions/2842809/lexers-vs-parsers
+- https://stackoverflow.com/questions/15802006/how-can-i-create-objects-while-adding-them-into-a-vector
 - read this stuff -> https://www.codeproject.com/Articles/363338/Factory-Pattern-in-Cplusplus;
 - For non commutative operations, consider the stack v1 on v2 on
 stack_tail, the calculation in infix notation v2 op v1.
