@@ -11,6 +11,8 @@ Tech:
 - For non commutative operations, consider the stack v1 on v2 on
 stack_tail, the calculation in infix notation v2 op v1.
 - lexer / parser;
+- Groups rege
+- Function from regex
 - array of functions;
 - stack of vectors;
 - regular expressions and templates;
@@ -29,6 +31,7 @@ https://stackoverflow.com/questions/6360049/what-are-arithmetic-underflow-and-ov
 - regex;
 - Factory class, 5 private, uno public
 - Class which works with exception
+​
 
 
 Bonus:
