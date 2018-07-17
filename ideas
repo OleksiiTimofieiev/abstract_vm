@@ -35,6 +35,7 @@ https://stackoverflow.com/questions/6360049/what-are-arithmetic-underflow-and-ov
 - Factory class, 5 private, uno public
 - Class which works with exception
 - virtual methods ->() + & (passing by reference) 
+- array of strings;
 
 Bonus:
 - https://www.computerhope.com/unix/udc.htm;
