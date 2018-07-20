@@ -6,6 +6,7 @@ Tech:
 - switch case();
 - inherit from the std::exceptions;
 - template class -> https://www.codeproject.com/Articles/257589/An-Idiots-Guide-to-Cplusplus-Templates-Part-1 / https://code-live.ru/post/cpp-templates-part-2/;
+- https://softwareengineering.stackexchange.com/questions/247245/a-vector-of-pointers-to-different-derived-classes-of-the-same-base-class
 - conversion through a string;
 - use templates;
 - stoi / stof / stod;
