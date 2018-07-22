@@ -1,0 +1,10 @@
+{
+	// "workbench.statusBar.feedback.visible": false,
+    "files.autoSave": "afterDelay",
+	"editor.folding": false,
+	"editor.insertSpaces": false,
+	"editor.detectIndentation": false,
+	"editor.tabSize": 4,
+	"editor.minimap.enabled": false,
+	"workbench.iconTheme": "vscode-icons"
+}
