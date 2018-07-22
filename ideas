@@ -2,6 +2,7 @@ Core:
 -  AbstractVM is a machine that uses a stack to compute simple arithmetic expressions. These arithmetic expressions are provided to the machine as basic assembly programs.
 
 Tech:
+- general header for all classes, defines, etc;
 - getline with file and console input (how this works);
 - https://codereview.stackexchange.com/questions/46946/user-input-and-reading-contents-of-file;
 - https://www.google.com/search?client=safari&rls=en&q=getline+cin+or+file+c%2B%2B&ie=UTF-8&oe=UTF-8;
