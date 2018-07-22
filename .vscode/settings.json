@@ -1,6 +1,5 @@
 {
 	"todohighlight.toggleURI": true,
-	// "workbench.statusBar.feedback.visible": false,
     "files.autoSave": "afterDelay",
 	"editor.folding": false,
 	"editor.insertSpaces": false,
