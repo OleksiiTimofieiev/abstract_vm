@@ -40,6 +40,11 @@ https://stackoverflow.com/questions/6360049/what-are-arithmetic-underflow-and-ov
 - error management in correction form;
 - vector can be used, use as the type -> interface;
 - regex;
+- https://www.youtube.com/watch?time_continue=583&v=7DG3kCDx53c
+- https://regex101.com
+- https://www.youtube.com/watch?v=v_8rdQjOuxw
+- https://www.regular-expressions.info/tutorialcnt.html
+- https://www.youtube.com/watch?v=bWu8IJ_DasE
 - Factory class, 5 private, uno public
 - Class which works with exception
 - virtual methods ->() + & (passing by reference) 
