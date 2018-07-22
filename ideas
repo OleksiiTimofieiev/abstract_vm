@@ -3,6 +3,8 @@ Core:
 
 Tech:
 - getline with file and console input (how this works);
+- https://www.google.com/search?client=safari&rls=en&q=getline+cin+or+file+c%2B%2B&ie=UTF-8&oe=UTF-8
+- https://stackoverflow.com/questions/22192042/c-cin-with-file-instead-of-user-input;
 - while (TRUE) <- use bool;
 - switch case();
 - inherit from the std::exceptions;
