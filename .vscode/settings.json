@@ -1,0 +1,26 @@
+{
+	"todohighlight.toggleURI": true,
+	// "workbench.statusBar.feedback.visible": false,
+    "files.autoSave": "afterDelay",
+	"editor.folding": false,
+	"editor.insertSpaces": false,
+	"editor.detectIndentation": false,
+	"editor.tabSize": 4,
+	"editor.minimap.enabled": false,
+	"workbench.iconTheme": "vscode-icons",
+	"todohighlight.include": 
+	[
+		"**/*.js",
+		"**/*.jsx",
+		"**/*.ts",
+		"**/*.tsx",
+		"**/*.html",
+		"**/*.php",
+		"**/*.css",
+		"**/*.scss",
+		"**/*.cpp",
+		"**/*.hpp",
+		"**/*.h",
+		"**/*.c"
+	]
+}

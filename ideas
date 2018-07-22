@@ -2,6 +2,12 @@ Core:
 -  AbstractVM is a machine that uses a stack to compute simple arithmetic expressions. These arithmetic expressions are provided to the machine as basic assembly programs.
 
 Tech:
+- general header for all classes, defines, etc;
+- array passed by reference for the parser after the matching case with regex;
+- getline with file and console input (how this works);
+- https://codereview.stackexchange.com/questions/46946/user-input-and-reading-contents-of-file;
+- https://www.google.com/search?client=safari&rls=en&q=getline+cin+or+file+c%2B%2B&ie=UTF-8&oe=UTF-8;
+- https://stackoverflow.com/questions/22192042/c-cin-with-file-instead-of-user-input;
 - while (TRUE) <- use bool;
 - switch case();
 - inherit from the std::exceptions;
@@ -36,6 +42,11 @@ https://stackoverflow.com/questions/6360049/what-are-arithmetic-underflow-and-ov
 - error management in correction form;
 - vector can be used, use as the type -> interface;
 - regex;
+- https://www.youtube.com/watch?time_continue=583&v=7DG3kCDx53c
+- https://regex101.com
+- https://www.youtube.com/watch?v=v_8rdQjOuxw
+- https://www.regular-expressions.info/tutorialcnt.html
+- https://www.youtube.com/watch?v=bWu8IJ_DasE
 - Factory class, 5 private, uno public
 - Class which works with exception
 - virtual methods ->() + & (passing by reference) 
