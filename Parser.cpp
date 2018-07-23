@@ -97,5 +97,5 @@ void	Parser::print_list( void )
 }
 
 
-// TODO:delete in the end of the project;
+// FIXME:delete in the end of the project;
 void	Parser::detect_leaks( void ) { system("leaks -q avm"); }
