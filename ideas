@@ -3,6 +3,7 @@ Core:
 
 Tech:
 - general header for all classes, defines, etc;
+- refactor guru
 - array passed by reference for the parser after the matching case with regex;
 - getline with file and console input (how this works);
 - https://codereview.stackexchange.com/questions/46946/user-input-and-reading-contents-of-file;

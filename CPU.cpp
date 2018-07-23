@@ -44,7 +44,7 @@ void	CPU::read( const int quantity_of_arguments )
 
 void	CPU::print_list( void )
 {
-	for (auto i = _filtered_input.begin(); i != _filtered_input.end(); i++)
+	for ( auto i = _filtered_input.begin(); i != _filtered_input.end(); i++ )
 		std::cout << *i << std::endl;
 }
 

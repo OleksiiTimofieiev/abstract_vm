@@ -4,6 +4,8 @@
 #include <iostream>
 #include <list>
 
+//TODO: have a parser / lexer class;
+
 class	CPU
 {
 	private:
