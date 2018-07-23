@@ -26,7 +26,7 @@ void	CPU::read_from_the_standart_input( void )
 		printf( "%ld. ", line_number++ );
 
 		if ( std::getline(std::cin, input) && !input.empty() )
-			std::cout << input << std::endl;
+			_filtered_input.push_back(input);
 		else
 			reading = false;
 	}
@@ -39,6 +39,15 @@ void	CPU::read( const int quantity_of_arguments )
 		//TODO:: eof for checking;
 	else
 		read_from_the_standart_input();
+}
+
+
+// infrastructure:
+
+void	CPU::print_list( void )
+{
+	for (auto i = _filtered_input.begin(); i != _filtered_input.end(); i++)
+		std::cout << *i << std::endl;
 }
 
 void	CPU::detect_leaks( void ) { system("leaks -q avm"); }
