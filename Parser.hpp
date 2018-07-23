@@ -8,7 +8,7 @@
 class	Parser
 {
 	private:
-		std::list<std::string>	_filtered_input;
+		std::list<std::string>		_filtered_input;
 	public:
 		// object construction section;
 		Parser						( void );
