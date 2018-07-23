@@ -8,7 +8,7 @@ OBJECTS 		= $(SRCS:.cpp=.o)
 
 COMPILER 		= clang++
 
-# SPECIAL CHARS
+# COLOR MASCSS
 LOG_CLEAR		= \033[2K
 LOG_UP 			= \033[A
 LOG_NOCOLOR		= \033[0m
