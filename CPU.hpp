@@ -1,7 +1,7 @@
 #ifndef	CPU_HPP
 #define CPU_HPP
 
-#include "Parser.hpp"
+#include "Parser.hpp" // Parser emulation;
 
 class	CPU
 {
@@ -11,7 +11,7 @@ class	CPU
 		CPU							( void );
 		~CPU						( void );
 
-		void execute_inner_logic( const int quantity_of_arguments, char *argument );
+		void execute_inner_logic	( const int quantity_of_arguments, char *argument );
 };
 
 
