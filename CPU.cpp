@@ -21,7 +21,7 @@ void	CPU::read_from_the_standart_input( void )
 	{
 		printf( "%ld. ", line_number++ );
 
-		if ( std::getline(std::cin, input))
+		if ( std::getline(std::cin, input) && !input.empty() )
 			std::cout << input << std::endl;
 		else
 			reading = false;
@@ -32,6 +32,7 @@ void CPU::read( int quantity_of_arguments )
 {
 	if (detect_input_stream( quantity_of_arguments ))
 		std::cout << "bla" << std::endl;
+		//TODO:: eof checing;
 	else
 		read_from_the_standart_input();
 }
