@@ -11,9 +11,11 @@ class	CPU
 		~CPU	( void );
 
 		// read section;
-		bool	detect_input_stream( int quantity_of_arguments );
+		bool	detect_input_stream( int quantity_of_arguments ) const;
 		void	read_from_the_standart_input( void );
-		void read( int quantity_of_arguments );
+		void	read( int quantity_of_arguments );
+
+		void	detect_leaks( void );
 };
 
 #endif

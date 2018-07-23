@@ -3,7 +3,7 @@
 CPU::CPU () {};
 CPU::~CPU()	{};
 
-bool	CPU::detect_input_stream( int quantity_of_arguments )
+bool	CPU::detect_input_stream( int quantity_of_arguments ) const
 {
 	if ( quantity_of_arguments == 2)
 		return ( true );
@@ -28,7 +28,7 @@ void	CPU::read_from_the_standart_input( void )
 	}
 }
 
-void CPU::read( int quantity_of_arguments )
+void	CPU::read( int quantity_of_arguments )
 {
 	if ( detect_input_stream( quantity_of_arguments ) )
 		std::cout << "bla" << std::endl;
@@ -36,3 +36,5 @@ void CPU::read( int quantity_of_arguments )
 	else
 		read_from_the_standart_input();
 }
+
+void	CPU::detect_leaks( void ) { system("leaks -q avm"); }
