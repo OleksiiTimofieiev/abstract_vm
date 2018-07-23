@@ -8,7 +8,7 @@
 class	CPU
 {
 	private:
-	//TODO: have a parser / lexer class and function execute_logic;
+	//TODO: have a parser = parse command / lexer class and function execute_logic;
 		std::list<std::string>	_filtered_input;
 	public:
 		// object construction section;
