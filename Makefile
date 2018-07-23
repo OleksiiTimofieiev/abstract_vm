@@ -1,12 +1,12 @@
-NAME = avm
+NAME 			= avm
 
-SRCS =  CPU.cpp main.cpp
+SRCS 			= CPU.cpp main.cpp
 
-CFLAGS = -std=c++98 -Wall -Werror -Wextra
+CFLAGS 			= -std=c++98 -Wall -Werror -Wextra
 
-OBJECTS = $(SRCS:.cpp=.o)
+OBJECTS 		= $(SRCS:.cpp=.o)
 
-COMPILER = clang++
+COMPILER 		= clang++
 
 # SPECIAL CHARS
 LOG_CLEAR		= \033[2K
