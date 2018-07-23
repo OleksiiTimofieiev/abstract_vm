@@ -10,11 +10,11 @@ int		main ( int argc, char ** argv )
 
 	cpu.read( argc );
 
-	std::cout << std::endl;
+
 
 	cpu.print_list();
 
-	std::cout << std::endl;
+
 
 	(void)argv;
 
