@@ -39,7 +39,6 @@ void	CPU::read_from_the_standart_input( void )
 
 void	CPU::read_from_the_ifstream( char * argument )
 {
-	// ssize_t line_number = 1;
 	std::string	path = 	argument;
 	std::ifstream		fin;
 	std::string			input = "";
@@ -61,6 +60,7 @@ void	CPU::read_from_the_ifstream( char * argument )
 				_filtered_input.push_back(input);
 		}
 	}
+	
 	fin.close();
 }
 
