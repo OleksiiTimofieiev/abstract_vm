@@ -4,12 +4,11 @@
 #include <iostream>
 #include <list>
 
-//TODO: have a parser / lexer class and function execute_logic;
-//TODO:: if empty line -> delete it, differer=nt parser function;
 
 class	CPU
 {
 	private:
+	//TODO: have a parser / lexer class and function execute_logic;
 		std::list<std::string>	_filtered_input;
 	public:
 		// object construction section;
@@ -19,7 +18,11 @@ class	CPU
 		// read section;
 		bool					detect_input_stream( const int quantity_of_arguments ) const;
 		void					read_from_the_standart_input( void );
+		
+		//TODO:: if empty line -> delete it, differer=nt parser function;
+		
 		void					read( const int quantity_of_arguments );
+		
 
 		// infrastructure;
 		void					print_list( void );
