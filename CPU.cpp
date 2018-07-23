@@ -66,8 +66,6 @@ void	CPU::read_from_the_ifstream( char * argument )
 
 void CPU::read( const int quantity_of_arguments, char * argument )
 {
-		//TODO:: eof for checking;
-
 	if ( detect_input_stream( quantity_of_arguments ) )
 		read_from_the_ifstream( argument );
 	else
