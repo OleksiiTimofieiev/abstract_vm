@@ -4,7 +4,8 @@
 #include <iostream>
 #include <list>
 
-//TODO: have a parser / lexer class;
+//TODO: have a parser / lexer class and function execute_logic;
+//TODO:: if empty line -> delete it, differer=nt parser function;
 
 class	CPU
 {
