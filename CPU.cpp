@@ -13,8 +13,8 @@ bool	CPU::detect_input_stream( int quantity_of_arguments ) const
 void	CPU::read_from_the_standart_input( void )
 {
 	ssize_t			line_number = 1;
-	int				reading = true;
 	std::string		input;
+	int				reading = true;
 
 	// TODO: add the data to the linked list;
 	while( reading )
