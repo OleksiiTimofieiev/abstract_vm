@@ -5,7 +5,7 @@ CPU::~CPU()	{};
 // TODO: copy constructor;
 // TODO: init constructor;
 
-/* ********************************************************************************************************************************************************************************** */
+/* main ****************************************************************************************************************************************************************************** */
 
 bool	CPU::detect_input_stream( const int quantity_of_arguments ) const
 {
@@ -20,7 +20,6 @@ void	CPU::read_from_the_standart_input( void )
 	std::string		input;
 	int				reading = true;
 
-	// TODO: add the data to the linked list;
 	while( reading )
 	{
 		printf( "%ld. ", line_number++ );
@@ -41,8 +40,7 @@ void	CPU::read( const int quantity_of_arguments )
 		read_from_the_standart_input();
 }
 
-
-// infrastructure:
+/* infrastructure ********************************************************************************************************************************************************************************** */
 
 void	CPU::print_list( void )
 {
