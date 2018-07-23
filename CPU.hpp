@@ -11,7 +11,7 @@ class	CPU
 		CPU							( void );
 		~CPU						( void );
 
-		// main magic ;)
+		// magic ;)
 		void execute_inner_logic	( const int quantity_of_arguments, char *argument );
 };
 
