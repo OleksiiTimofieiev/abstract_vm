@@ -8,10 +8,7 @@ int		main ( int argc, char ** argv )
 
 	CPU cpu;
 
-	cpu.read( argc );
-
-
-
+	cpu.read( argc, argv[1] );
 	cpu.print_list();
 
 

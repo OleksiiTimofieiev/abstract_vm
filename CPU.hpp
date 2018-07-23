@@ -2,8 +2,8 @@
 #define CPU_HPP
 
 #include <iostream>
+#include <fstream>
 #include <list>
-
 
 class	CPU
 {
@@ -18,12 +18,11 @@ class	CPU
 		// read section;
 		bool					detect_input_stream( const int quantity_of_arguments ) const;
 		void					read_from_the_standart_input( void );
-		void					read_from_the_ifstream( void );
+		void 					read_from_the_ifstream(char * argument);
 
 		//TODO:: if empty line -> delete it, differer=nt parser function;
-		
-		void					read( const int quantity_of_arguments );
-		
+
+		void 					read(const int quantity_of_arguments, char * argument);
 
 		// infrastructure;
 		void					print_list( void );

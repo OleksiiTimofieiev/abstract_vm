@@ -37,31 +37,39 @@ void	CPU::read_from_the_standart_input( void )
 	}
 }
 
-void	CPU::read_from_the_ifstream(void)
+void	CPU::read_from_the_ifstream( char * argument )
 {
-	ssize_t line_number = 1;
-	std::string input;
-	int reading = true;
+	// ssize_t line_number = 1;
+	std::string	path = 	argument;
+	std::ifstream		fin;
+	std::string			input = "";
 
-	while (reading)
+	fin.open(path);
+
+	if ( !fin.is_open() )
 	{
-		printf("%ld. ", line_number++);
-
-		if (std::getline(std::cin, input))
+		// TODO: hadle with exeption;
+		std::cout << "error";
+	}
+	else
+	{
+		while( !(fin.eof()) )
 		{
+			getline( fin, input);
+
 			if (!input.empty())
 				_filtered_input.push_back(input);
 		}
-		else
-			reading = false;
 	}
+	fin.close();
 }
 
-void	CPU::read( const int quantity_of_arguments )
+void CPU::read( const int quantity_of_arguments, char * argument )
 {
-	if ( detect_input_stream( quantity_of_arguments ) )
-		std::cout << "bla" << std::endl;
 		//TODO:: eof for checking;
+
+	if ( detect_input_stream( quantity_of_arguments ) )
+		read_from_the_ifstream( argument );
 	else
 		read_from_the_standart_input();
 }
