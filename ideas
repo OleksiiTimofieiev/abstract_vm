@@ -1,6 +1,8 @@
 Core:
 -  AbstractVM is a machine that uses a stack to compute simple arithmetic expressions. These arithmetic expressions are provided to the machine as basic assembly programs.
 
+//TODO: have a parser = parse command / lexer class and function execute_logic;
+
 Tech:
 - general header for all classes, defines, etc;
 - refactor guru

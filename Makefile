@@ -1,6 +1,6 @@
 NAME 			= avm
 
-SRCS 			= CPU.cpp main.cpp
+SRCS 			= Parser.cpp main.cpp
 
 CFLAGS 			= -std=c++11 -Wall -Werror -Wextra
 

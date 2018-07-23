@@ -1,32 +1,32 @@
-#include "CPU.hpp"
+#include "Parser.hpp"
 
 /* construction ************************************************************************************************************************** */
 
-CPU::CPU () {}
-CPU::~CPU()	{}
+Parser::Parser () {}
+Parser::~Parser()	{}
 
-CPU &CPU::operator=(CPU const &rhs)
+Parser &Parser::operator=(Parser const &rhs)
 {
 	if (this != &rhs)
 		_filtered_input = rhs._filtered_input;
 	return *this;
 }
 
-CPU::CPU(CPU const &src)
+Parser::Parser(Parser const &src)
 {
 	*this = src;
 }
 
 /* main ********************************************************************************************************************************* */
 
-bool	CPU::detect_input_stream( const int quantity_of_arguments ) const
+bool	Parser::detect_input_stream( const int quantity_of_arguments ) const
 {
 	if ( quantity_of_arguments == 2)
 		return ( true );
 	return ( false );
 }
 
-void	CPU::read_from_the_standart_input( void )
+void	Parser::read_from_the_standart_input( void )
 {
 	ssize_t			line_number = 1;
 	std::string		input;
@@ -46,7 +46,7 @@ void	CPU::read_from_the_standart_input( void )
 	}
 }
 
-void	CPU::read_from_the_ifstream( char * argument )
+void	Parser::read_from_the_ifstream( char * argument )
 {
 	std::string	path = 	argument;
 	std::ifstream		fin;
@@ -73,7 +73,7 @@ void	CPU::read_from_the_ifstream( char * argument )
 	fin.close();
 }
 
-void CPU::read( const int quantity_of_arguments, char * argument )
+void Parser::read( const int quantity_of_arguments, char * argument )
 {
 	if ( detect_input_stream( quantity_of_arguments ) )
 		read_from_the_ifstream( argument );
@@ -83,7 +83,7 @@ void CPU::read( const int quantity_of_arguments, char * argument )
 
 /* infrastructure ******************************************************************************************************************* */
 
-void	CPU::print_list( void )
+void	Parser::print_list( void )
 {
 	std::cout << std::endl;
 	std::cout << std::endl;
@@ -97,4 +97,4 @@ void	CPU::print_list( void )
 	std::cout << std::endl;
 }
 
-void	CPU::detect_leaks( void ) { system("leaks -q avm"); }
+void	Parser::detect_leaks( void ) { system("leaks -q avm"); }

@@ -1,4 +1,4 @@
-#include "CPU.hpp"
+#include "Parser.hpp"
 
 int		main ( int argc, char ** argv )
 {
@@ -6,11 +6,11 @@ int		main ( int argc, char ** argv )
 
 	// TODO: how to show all exception cases in the end of the execution;
 
-	CPU cpu;
+	Parser Parser;
 
-	cpu.read( argc, argv[1] );
-	cpu.print_list();
-	cpu.detect_leaks();
+	Parser.read( argc, argv[1] );
+	Parser.print_list();
+	Parser.detect_leaks();
 
 	return (0);
 }
