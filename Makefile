@@ -2,7 +2,7 @@ NAME 			= avm
 
 SRCS 			= CPU.cpp main.cpp
 
-CFLAGS 			= -Wall -Werror -Wextra
+CFLAGS 			= -std=c++11 -Wall -Werror -Wextra
 
 OBJECTS 		= $(SRCS:.cpp=.o)
 

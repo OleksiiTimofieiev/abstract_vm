@@ -2,8 +2,8 @@
 
 /* construction ************************************************************************************************************************** */
 
-CPU::CPU () {};
-CPU::~CPU()	{};
+CPU::CPU () {}
+CPU::~CPU()	{}
 
 // TODO: copy constructor;
 // TODO: init constructor;
@@ -30,6 +30,26 @@ void	CPU::read_from_the_standart_input( void )
 		if ( std::getline(std::cin, input) )
 		{
 			if ( !input.empty() )
+				_filtered_input.push_back(input);
+		}
+		else
+			reading = false;
+	}
+}
+
+void	CPU::read_from_the_ifstream(void)
+{
+	ssize_t line_number = 1;
+	std::string input;
+	int reading = true;
+
+	while (reading)
+	{
+		printf("%ld. ", line_number++);
+
+		if (std::getline(std::cin, input))
+		{
+			if (!input.empty())
 				_filtered_input.push_back(input);
 		}
 		else
