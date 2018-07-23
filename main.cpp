@@ -10,9 +10,6 @@ int		main ( int argc, char ** argv )
 
 	cpu.read( argc, argv[1] );
 	cpu.print_list();
-
-	(void)argv;
-
 	cpu.detect_leaks();
 
 	return (0);
