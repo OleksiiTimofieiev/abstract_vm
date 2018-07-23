@@ -5,6 +5,7 @@ Core:
 
 Tech:
 - general header for all classes, defines, etc;
+- friendly function;
 - refactor guru;
 - array passed by reference for the parser after the matching case with regex;
 - getline with file and console input (how this works);
