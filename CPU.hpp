@@ -19,9 +19,6 @@ class	CPU
 		bool					detect_input_stream( const int quantity_of_arguments ) const;
 		void					read_from_the_standart_input( void );
 		void 					read_from_the_ifstream(char * argument);
-
-		//TODO:: if empty line -> delete it, differer=nt parser function;
-
 		void 					read(const int quantity_of_arguments, char * argument);
 
 		// infrastructure;
