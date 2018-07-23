@@ -15,6 +15,7 @@ class	CPU
 		void	read_from_the_standart_input( void );
 		void	read( int quantity_of_arguments );
 
+		// finalisation;
 		void	detect_leaks( void );
 };
 

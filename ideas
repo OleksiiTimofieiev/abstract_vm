@@ -54,6 +54,7 @@ https://stackoverflow.com/questions/6360049/what-are-arithmetic-underflow-and-ov
 
 Bonus:
 - usage;
+- leaks flag;
 - https://www.computerhope.com/unix/udc.htm;
 - sort;
 - max

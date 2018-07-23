@@ -1,8 +1,6 @@
 {
 	"editor.tokenColorCustomizations": {
-		"[Atom One Dark]": {
-			"comments": "#d4922f"
-		}
+		"comments":"#d4922f"
 	},
 	"todohighlight.toggleURI": false,
     "files.autoSave": "afterDelay",

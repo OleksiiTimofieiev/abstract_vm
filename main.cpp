@@ -12,11 +12,7 @@ int		main ( int argc, char ** argv )
 
 	(void)(argv);
 
-	// if ( cpu.detect_input_stream( argc ) )
-	// {
-	// 	std::cout << argv[1] << std::endl;
-	// }
-
 	cpu.detect_leaks();
+	
 	return (0);
 }
