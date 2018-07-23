@@ -15,20 +15,4 @@ class	CPU
 		void execute_inner_logic	( const int quantity_of_arguments, char * argument );
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #endif
