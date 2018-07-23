@@ -5,8 +5,17 @@
 CPU::CPU () {}
 CPU::~CPU()	{}
 
-// TODO: copy constructor;
-// TODO: init constructor;
+CPU &CPU::operator=(CPU const &rhs)
+{
+	if (this != &rhs)
+		_filtered_input = rhs._filtered_input;
+	return *this;
+}
+
+CPU::CPU(CPU const &src)
+{
+	*this = src;
+}
 
 /* main ********************************************************************************************************************************* */
 
@@ -60,7 +69,7 @@ void	CPU::read_from_the_ifstream( char * argument )
 				_filtered_input.push_back(input);
 		}
 	}
-	
+
 	fin.close();
 }
 

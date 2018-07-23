@@ -14,6 +14,8 @@ class	CPU
 		// object construction section;
 		CPU						( void );
 		~CPU					( void );
+		CPU &operator =			( CPU const &rhs );
+		CPU						( CPU const &src );
 
 		// read section;
 		bool					detect_input_stream( const int quantity_of_arguments ) const;
