@@ -14,6 +14,7 @@ void	CPU::read_from_the_standart_input( void )
 {
 	std::string		input;
 
+	// TODO: add the data to the linked list;
 	while(std::getline(std::cin, input))
 	{
 		std::cout << input << std::endl;
