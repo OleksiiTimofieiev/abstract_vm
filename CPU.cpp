@@ -32,7 +32,7 @@ void	CPU::read( int quantity_of_arguments )
 {
 	if ( detect_input_stream( quantity_of_arguments ) )
 		std::cout << "bla" << std::endl;
-		//TODO:: eof checing;
+		//TODO:: eof for checking;
 	else
 		read_from_the_standart_input();
 }
