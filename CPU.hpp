@@ -1,7 +1,8 @@
-#ifndef 	CPU_HPP
-#define 	CPU_HPP
+#ifndef CPU_HPP
+#define CPU_HPP
 
-#include	<iostream>
+#include <iostream>
+#include <list>
 
 class	CPU
 {
