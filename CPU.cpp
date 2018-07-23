@@ -20,7 +20,7 @@ void	CPU::read_from_the_standart_input( void )
 	while( reading )
 	{
 		printf( "%ld. ", line_number++ );
-		
+
 		if ( std::getline(std::cin, input))
 			std::cout << input << std::endl;
 		else
