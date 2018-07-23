@@ -2,6 +2,10 @@
 
 CPU::CPU () {};
 CPU::~CPU()	{};
+// TODO: copy constructor;
+// TODO: init constructor;
+
+/* ****************************************************** */
 
 bool	CPU::detect_input_stream( int quantity_of_arguments ) const
 {
