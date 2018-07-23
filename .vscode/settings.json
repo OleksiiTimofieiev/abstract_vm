@@ -2,6 +2,11 @@
 	"editor.tokenColorCustomizations": {
 		"comments":"#d4922f"
 	},
+	{
+		"editor.showFoldingControls": "always",
+		"editor.folding": true,
+		"editor.foldingStrategy": "indentation",
+	}
 	"todohighlight.toggleURI": false,
     "files.autoSave": "afterDelay",
 	"editor.folding": false,
