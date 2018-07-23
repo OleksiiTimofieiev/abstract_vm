@@ -12,12 +12,19 @@ bool	CPU::detect_input_stream( int quantity_of_arguments )
 
 void	CPU::read_from_the_standart_input( void )
 {
+	ssize_t			line_number = 1;
+	int				reading = true;
 	std::string		input;
 
 	// TODO: add the data to the linked list;
-	while(std::getline(std::cin, input))
+	while( reading )
 	{
-		std::cout << input << std::endl;
+		printf( "%ld. ", line_number++ );
+		
+		if ( std::getline(std::cin, input))
+			std::cout << input << std::endl;
+		else
+			reading = false;
 	}
 }
 
