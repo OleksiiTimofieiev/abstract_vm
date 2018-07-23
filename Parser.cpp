@@ -65,11 +65,10 @@ void	Parser::read_from_the_ifstream( char * argument )
 		{
 			getline( fin, input);
 
-			if (!input.empty())
+			if ( !input.empty() )
 				_filtered_input.push_back(input);
 		}
 	}
-
 	fin.close();
 }
 
