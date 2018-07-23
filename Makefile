@@ -1,36 +1,45 @@
-NAME	= 	avm
-SRC_DIR	= 	./src/
-INC_DIR	= 	./inc/
-OBJ_DIR	= 	./obj/
+NAME = avm
 
-FLAGS	= 	-std=c++11 -Wall -Wextra -Werror
-SRC		=	Factory.class.cpp \
-			main.cpp \
-			AbstractVM.class.cpp
-OBJ		=	$(addprefix $(OBJ_DIR), $(SRC:.cpp=.o))
-INC		=	-I $(INC_DIR)
+SRCS =  CPU.cpp main.cpp
 
-all:		$(NAME)
+CFLAGS = -std=c++98 -Wall -Werror -Wextra
 
-$(NAME):	$(OBJ)
-			@clang++ $(FLAGS) $(OBJ) -o $(NAME) $(INC)
-			@echo " \033[1;92mDone!\033[0m"
+OBJECTS = $(SRCS:.cpp=.o)
 
-$(OBJ):		| $(OBJ_DIR)
+COMPILER = clang++
 
-$(OBJ_DIR):	
-			@echo "\033[0;92mCompiling sources\033[0m"
-			@mkdir $(OBJ_DIR)
+# SPECIAL CHARS
+LOG_CLEAR		= \033[2K
+LOG_UP 			= \033[A
+LOG_NOCOLOR		= \033[0m
+LOG_BLACK		= \033[1;30m
+LOG_RED			= \033[1;31m
+LOG_GREEN		= \033[1;32m
+LOG_YELLOW		= \033[1;33m
+LOG_BLUE		= \033[1;34m
+LOG_VIOLET		= \033[1;35m
+LOG_CYAN		= \033[1;36m
+LOG_WHITE		= \033[1;37m
+	
+all: $(NAME)
 
-$(OBJ_DIR)%.o:	$(SRC_DIR)%.cpp
-				@clang++ -c $< -o $@ $(FLAGS) $(INC)
-				@echo "\033[42m  \033[0m\c"
+%.o: %.cpp
+	@$(COMPILER) -c $(CFLAGS) $< -o $@
+
+$(NAME): $(OBJECTS)
+	@echo "$(LOG_CYAN)Compilation started => [ $(NAME) ]$(LOG_NOCOLOR)$(LOG_GREEN) ✓$(LOG_NOCOLOR)"
+	@$(COMPILER) $(CFLAGS) $(SRCS) -o $(NAME)
+	@echo "$(LOG_YELLOW)Compilation finished => [ $(NAME) ]$(LOG_NOCOLOR)$(LOG_GREEN) ✓$(LOG_NOCOLOR)"
 
 clean:
-			@rm -rf $(OBJ_DIR)
+	@/bin/rm -f $(OBJECTS)
+	@echo "$(LOG_RED)Deleted => [ $(NAME) ]$(LOG_NOCOLOR)$(LOG_GREEN) ✓$(LOG_NOCOLOR)"
 
-fclean:		clean
-			@rm -f $(NAME)
-			@echo "\033[1;91mFCleaned\033[0m"
+fclean: clean
+	@/bin/rm -f $(NAME) $(LIB)
+	@echo "$(LOG_RED)Fully deleted => [ $(NAME) ]$(LOG_NOCOLOR)$(LOG_GREEN) ✓$(LOG_NOCOLOR)"
 
-re:			fclean all
+re: fclean all
+	@echo "$(LOG_VIOLET)Redone => [ $(NAME) ]$(LOG_NOCOLOR)$(LOG_GREEN) ✓$(LOG_NOCOLOR)"
+
+.PHONY: all clean fclean re

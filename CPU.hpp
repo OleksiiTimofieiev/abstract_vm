@@ -5,12 +5,15 @@
 
 class	CPU
 {
-	private:
-		std::string	_input;
 	public:
+		// object construction section;
 		CPU		( void );
 		~CPU	( void );
-		bool	detect_input_stream( void );
+
+		// read section;
+		bool	detect_input_stream( int quantity_of_arguments );
+		void	read_from_the_standart_input( void );
+		void read( int quantity_of_arguments );
 };
 
 #endif
