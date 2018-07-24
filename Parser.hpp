@@ -5,8 +5,12 @@
 #include <fstream>
 #include <list>
 
+class Lexer;
+
 class	Parser
 {
+	friend	Lexer;
+
 	private:
 		std::list<std::string>		_filtered_input;
 	public:

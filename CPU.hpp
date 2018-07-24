@@ -2,12 +2,15 @@
 #define CPU_HPP
 
 #include "Parser.hpp" // Parser emulation;
+#include "Lexer.hpp" // Lexer emulation;
 
 class	CPU
 {
 	private:
-		Parser _parser;
-	public:
+		Parser 						_parser;
+		Lexer 						_lexer;
+
+	  public:
 		CPU							( void );
 		~CPU						( void );
 
