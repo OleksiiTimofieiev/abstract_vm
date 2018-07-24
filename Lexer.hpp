@@ -10,6 +10,7 @@ class Lexer
 		~Lexer				( void );
 		
 		void				show_contents( Parser & parser );
+		//TODO: lexer function;
 };
 
 
