@@ -6,10 +6,10 @@
 class Lexer
 {
 	public:
-		Lexer( void );
-		~Lexer( void );
+		Lexer				( void );
+		~Lexer				( void );
 		
-		void	show_contents(Parser & parser);
+		void				show_contents( Parser & parser );
 };
 
 

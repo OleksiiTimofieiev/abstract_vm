@@ -7,7 +7,7 @@ CPU::~CPU() {}
 
 void	CPU::execute_inner_logic( const int quantity_of_arguments, char *argument )
 {
-	_parser.read(quantity_of_arguments, argument);
+	_parser.read( quantity_of_arguments, argument );
 
 	//FIXME: delete the stuff below in the end of the project;
 
@@ -15,7 +15,7 @@ void	CPU::execute_inner_logic( const int quantity_of_arguments, char *argument )
 	// _parser.detect_leaks();
 
 	//FIXME: delete the stuff below in the end of the project;
-	_lexer.show_contents(_parser);
+	_lexer.show_contents( _parser );
 
 
 
@@ -28,6 +28,6 @@ void	CPU::execute_inner_logic( const int quantity_of_arguments, char *argument )
 
 
 
-	
+
 	_parser.detect_leaks();
 }
