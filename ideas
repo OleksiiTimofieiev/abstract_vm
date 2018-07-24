@@ -2,6 +2,7 @@ Core:
 -  AbstractVM is a machine that uses a stack to compute simple arithmetic expressions. These arithmetic expressions are provided to the machine as basic assembly programs.
 
 Tech:
+- https://dzone.com/articles/some-useful-facts-to-know-when-using-c-exceptions
 - line validity function (line, type: lexical / syntax / etc.); <- if not match -> invalid line; consider ;; as a command;
 - inherit from the std::exceptions;
 - command validity function;
