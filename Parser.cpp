@@ -68,7 +68,7 @@ void	Parser::read_from_the_ifstream( char * argument )
 		{
 			getline( fin, input);
 
-			if ( !input.empty() && input.at(0) != ';' )
+			if ( !input.empty() && input.at( 0 ) != ';' )
 				_filtered_input.push_back(input);
 		}
 	}
