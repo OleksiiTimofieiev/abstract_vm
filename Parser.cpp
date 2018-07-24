@@ -39,7 +39,10 @@ void	Parser::read_from_the_standart_input( void )
 		if ( std::getline( std::cin, input ) )
 		{
 			if (!input.empty() && input.at(0) != ';')
+			{
+				//TODO:find and erase (len + first occurance);
 				_filtered_input.push_back(input);
+			}
 		}
 		else
 			reading = false;
