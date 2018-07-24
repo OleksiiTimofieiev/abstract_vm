@@ -64,7 +64,7 @@ void	Parser::read_from_the_ifstream( char * argument )
 	}
 	else
 	{
-		while( !(fin.eof()) )
+		while( !( fin.eof() ) )
 		{
 			getline( fin, input);
 
