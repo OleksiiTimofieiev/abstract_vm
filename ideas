@@ -4,6 +4,7 @@ Core:
 //TODO: have a parser = parse command / lexer class and function execute_logic;
 
 Tech:
+- in the end there can be any amount of the spaces;
 - general header for all classes, defines, etc;
 - friendly function;
 - refactor guru;
