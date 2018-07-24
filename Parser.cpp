@@ -87,7 +87,8 @@ void	Parser::read_from_the_ifstream( char * argument )
 				
 				_filtered_input.push_back(input);
 			}
-			
+			else if (!input.empty() && input.length() != 1 && input.at(0) == ';' && input.at(1) == ';')
+				_filtered_input.push_back(input);
 		}
 	}
 	fin.close();
