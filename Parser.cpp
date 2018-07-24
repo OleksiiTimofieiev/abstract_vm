@@ -36,9 +36,9 @@ void	Parser::read_from_the_standart_input( void )
 	{
 		printf( "%ld. ", line_number++ );
 
-		if ( std::getline(std::cin, input) )
+		if ( std::getline( std::cin, input ) )
 		{
-			if ( !input.empty() )
+			if (!input.empty() && input.at(0) != ';')
 				_filtered_input.push_back(input);
 		}
 		else
@@ -65,7 +65,7 @@ void	Parser::read_from_the_ifstream( char * argument )
 		{
 			getline( fin, input);
 
-			if ( !input.empty() )
+			if ( !input.empty() && input.at(0) != ';' )
 				_filtered_input.push_back(input);
 		}
 	}
