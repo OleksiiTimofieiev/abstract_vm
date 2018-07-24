@@ -4,7 +4,7 @@ Core:
 //TODO: have a parser = parse command / lexer class and function execute_logic;
 
 Tech:
-- line validity function;
+- line validity function (line, type: lexical / syntax / etc.);
 - command validity function;
 - in the end there can be any amount of the spaces;
 - general header for all classes, defines, etc;
