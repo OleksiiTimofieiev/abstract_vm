@@ -31,16 +31,25 @@ void	Parser::read_from_the_standart_input( void )
 	ssize_t			line_number = 1;
 	std::string		input;
 	int				reading = true;
+	size_t			comment_find;
 
 	while( reading )
 	{
 		printf( "%ld. ", line_number++ );
 
-		if ( std::getline( std::cin, input ) )
+		comment_find = 0;
+
+		if (std::getline(std::cin, input))
 		{
 			if (!input.empty() && input.at(0) != ';')
 			{
 				//TODO:find and erase (len + first occurance);
+				
+				comment_find = input.find(";");
+
+				if (comment_find != std::string::npos)
+					input.erase(comment_find, input.length());
+				
 				_filtered_input.push_back(input);
 			}
 		}
@@ -54,6 +63,7 @@ void	Parser::read_from_the_ifstream( char * argument )
 	std::string	path = 	argument;
 	std::ifstream		fin;
 	std::string			input = "";
+	size_t 				comment_find;
 
 	fin.open(path);
 
@@ -69,7 +79,15 @@ void	Parser::read_from_the_ifstream( char * argument )
 			getline( fin, input);
 
 			if ( !input.empty() && input.at( 0 ) != ';' )
+			{
+				comment_find = input.find(";");
+
+				if (comment_find != std::string::npos)
+					input.erase(comment_find, input.length());
+				
 				_filtered_input.push_back(input);
+			}
+			
 		}
 	}
 	fin.close();
