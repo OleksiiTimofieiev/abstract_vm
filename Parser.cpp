@@ -43,8 +43,6 @@ void	Parser::read_from_the_standart_input( void )
 		{
 			if (!input.empty() && input.at(0) != ';')
 			{
-				//TODO:find and erase (len + first occurance);
-				
 				comment_find = input.find(";");
 
 				if (comment_find != std::string::npos)
