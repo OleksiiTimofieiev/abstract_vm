@@ -50,6 +50,8 @@ void	Parser::read_from_the_standart_input( void )
 				
 				_filtered_input.push_back(input);
 			}
+			else if (!input.empty() && input.length() != 1 && input.at(0) == ';' && input.at(1) == ';')
+				_filtered_input.push_back(input);
 		}
 		else
 			reading = false;

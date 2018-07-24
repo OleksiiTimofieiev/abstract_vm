@@ -1,36 +1,29 @@
 Core:
 -  AbstractVM is a machine that uses a stack to compute simple arithmetic expressions. These arithmetic expressions are provided to the machine as basic assembly programs.
 
-//TODO: have a parser = parse command / lexer class and function execute_logic;
-
 Tech:
-- line validity function (line, type: lexical / syntax / etc.);
+- line validity function (line, type: lexical / syntax / etc.); <- if not match -> invalid line; consider ;; as a command;
+- inherit from the std::exceptions;
 - command validity function;
-- in the end there can be any amount of the spaces;
+- in the end of the command there can be any amount of the spaces;
 - general header for all classes, defines, etc;
-- friendly function;
 - refactor guru;
 - array passed by reference for the parser after the matching case with regex;
-- getline with file and console input (how this works);
 - https://codereview.stackexchange.com/questions/46946/user-input-and-reading-contents-of-file;
 - https://www.google.com/search?client=safari&rls=en&q=getline+cin+or+file+c%2B%2B&ie=UTF-8&oe=UTF-8;
 - https://stackoverflow.com/questions/22192042/c-cin-with-file-instead-of-user-input;
 - while (TRUE) <- use bool;
 - switch case();
-- inherit from the std::exceptions;
 - template class -> https://www.codeproject.com/Articles/257589/An-Idiots-Guide-to-Cplusplus-Templates-Part-1 / https://code-live.ru/post/cpp-templates-part-2/;
 - https://softwareengineering.stackexchange.com/questions/247245/a-vector-of-pointers-to-different-derived-classes-of-the-same-base-class
 - conversion through a string;
 - use templates;
 - stoi / stof / stod;
-- git ignore;
-- ali makefile;
 - https://stackoverflow.com/questions/2842809/lexers-vs-parsers
 - https://stackoverflow.com/questions/15802006/how-can-i-create-objects-while-adding-them-into-a-vector
 - read this stuff -> https://www.codeproject.com/Articles/363338/Factory-Pattern-in-Cplusplus;
 - For non commutative operations, consider the stack v1 on v2 on
 stack_tail, the calculation in infix notation v2 op v1.
-- lexer / parser;
 - Groups rege
 - Function from regex
 - array of functions;
@@ -57,7 +50,7 @@ https://stackoverflow.com/questions/6360049/what-are-arithmetic-underflow-and-ov
 - Factory class, 5 private, uno public
 - Class which works with exception
 - virtual methods ->() + & (passing by reference) 
-- array of strings;q
+- array of strings;
 
 Bonus:
 - usage;
