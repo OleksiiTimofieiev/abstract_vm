@@ -2,18 +2,13 @@ Core:
 -  AbstractVM is a machine that uses a stack to compute simple arithmetic expressions. These arithmetic expressions are provided to the machine as basic assembly programs.
 
 Tech:
-- https://stackoverflow.com/questions/348833/how-to-know-the-exact-line-of-code-where-where-an-exception-has-been-caused
 - https://dzone.com/articles/some-useful-facts-to-know-when-using-c-exceptions
 - line validity function (line, type: lexical / syntax / etc.); <- if not match -> invalid line; consider ;; as a command;
-- inherit from the std::exceptions;
-- command validity function;
 - in the end of the command there can be any amount of the spaces;
 - general header for all classes, defines, etc;
 - refactor guru;
 - array passed by reference for the parser after the matching case with regex;
-- https://codereview.stackexchange.com/questions/46946/user-input-and-reading-contents-of-file;
 - https://www.google.com/search?client=safari&rls=en&q=getline+cin+or+file+c%2B%2B&ie=UTF-8&oe=UTF-8;
-- https://stackoverflow.com/questions/22192042/c-cin-with-file-instead-of-user-input;
 - while (TRUE) <- use bool;
 - switch case();
 - template class -> https://www.codeproject.com/Articles/257589/An-Idiots-Guide-to-Cplusplus-Templates-Part-1 / https://code-live.ru/post/cpp-templates-part-2/;
@@ -21,7 +16,6 @@ Tech:
 - conversion through a string;
 - use templates;
 - stoi / stof / stod;
-- https://stackoverflow.com/questions/2842809/lexers-vs-parsers
 - https://stackoverflow.com/questions/15802006/how-can-i-create-objects-while-adding-them-into-a-vector
 - read this stuff -> https://www.codeproject.com/Articles/363338/Factory-Pattern-in-Cplusplus;
 - For non commutative operations, consider the stack v1 on v2 on
@@ -33,7 +27,6 @@ stack_tail, the calculation in infix notation v2 op v1.
 - regular expressions and templates;
 - c++ casts;
 - try catch;
-- parsing: https://stackoverflow.com/questions/27343186/what-is-the-best-way-to-parse-a-string-in-c;
 - stack: 
 http://codelessons.ru/cplusplus/realizaciya-steka-stack-v-c.html;
 http://www.cyberforum.ru/cpp/thread1931303.html;
@@ -46,9 +39,6 @@ https://stackoverflow.com/questions/6360049/what-are-arithmetic-underflow-and-ov
 - regex;
 - https://www.youtube.com/watch?time_continue=583&v=7DG3kCDx53c
 - https://regex101.com
-- https://www.youtube.com/watch?v=v_8rdQjOuxw
-- https://www.regular-expressions.info/tutorialcnt.html
-- https://www.youtube.com/watch?v=bWu8IJ_DasE
 - Factory class, 5 private, uno public
 - Class which works with exception
 - virtual methods ->() + & (passing by reference) 
@@ -65,6 +55,7 @@ Bonus:
   2.
   3.
 - 5 2 -
+- different notations;
 - animation;
 
 Books:
