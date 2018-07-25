@@ -20,11 +20,12 @@ class my_exception : public std::runtime_error
 		return msg.c_str();
 	}
 };
-#define throw_line(arg) throw my_exception(arg, __FILE__, __LINE__);
+
+#define throw_line(arg) throw my_exception(arg, __FILE__, __LINE__ - 1);
 
 void f()
 {
-	throw_line("some error!");
+	throw_line("\033[1;31mlexer error -> not valid command !\033[0m");
 }
 
 int main()
