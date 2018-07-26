@@ -70,7 +70,7 @@ class my_exception : public std::runtime_error
 
 #define throw_line(arg, line) throw my_exception(arg, line);
 
-void f( int line)
+void f( int line )
 {
 	throw_line("\033[1;31mlexer error type 1 -> not valid command !\033[0m", line);
 }
@@ -98,18 +98,6 @@ int main()
 		}
 		i++;
 	}
-
-
-
-
-
-
-	std::string	msg1 = "1";
-	std::string msg2 = "2";
-
-	std::string res = msg1 + msg2;
-
-	std::cout << res;
 
 	return (0);
 }
