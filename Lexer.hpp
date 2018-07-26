@@ -3,6 +3,8 @@
 
 #include "Parser.hpp"
 
+//TODO: add complien form;
+
 class Lexer
 {
 	public:
@@ -12,13 +14,6 @@ class Lexer
 		bool				regex_checks( std::string str );
 		void 				lexical_analysis (Parser &parser );
 };
-
-
-
-
-
-
-
 
 
 #endif

@@ -26,6 +26,8 @@ bool	Lexer::regex_checks( std::string str )
 
 void	Lexer::lexical_analysis(Parser &parser)
 {
+	std::cout << std::endl;
+
 	if ( !parser._filtered_input.empty() )
 	{
 		for ( auto i = parser._filtered_input.begin(); i != parser._filtered_input.end(); ++i )
