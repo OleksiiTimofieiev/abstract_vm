@@ -32,10 +32,22 @@ void	Lexer::lexical_analysis(Parser &parser)
 	{
 		for ( auto i = parser._filtered_input.begin(); i != parser._filtered_input.end(); ++i )
 		{
-			if (!regex_checks( *i ) )
-				std::cout << "Unvalid line." << std::endl;
-			else
-				std::cout << *i << std::endl;
+			try
+			{
+				if (!regex_checks( *i ))
+				{
+					throw_line("asd", 42);
+				}
+				else
+					std::cout << *i << std::endl;
+			}
+			catch (const std::runtime_error &ex)
+			{
+				std::cout << ex.what() << std::endl;
+			}
+
+
+
 		}
 	}
 }

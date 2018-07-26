@@ -2,6 +2,7 @@
 #define LEXER_HPP
 
 #include "Parser.hpp"
+#include "Exception.hpp"
 
 //TODO: add complien form;
 
