@@ -15,7 +15,7 @@ void	CPU::execute_inner_logic( const int quantity_of_arguments, char *argument )
 	// _parser.detect_leaks();
 
 	//FIXME: delete the stuff below in the end of the project;
-	_lexer.show_contents( _parser );
+	_lexer.lexical_analysis( _parser );
 
 
 

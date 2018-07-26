@@ -8,8 +8,8 @@ class Lexer
 	public:
 		Lexer				( void );
 		~Lexer				( void );
-		
-		void				show_contents( Parser & parser );
+
+		void 	lexical_analysis(Parser &parser);
 		//TODO: lexer function;
 };
 
