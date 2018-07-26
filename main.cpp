@@ -2,11 +2,7 @@
 
 int		main ( int argc, char ** argv )
 {
-	// TODO: skip the not valid line with continue;
-
-	// TODO: how to show all exception cases in the end of the execution;
-
-	// TODO: create exeption class; how to pass it by reference; redo the methods of the class;
+	// TODO: skip not valid line with continue;
 
 	CPU _cpu;
 
