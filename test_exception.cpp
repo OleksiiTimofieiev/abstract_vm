@@ -20,6 +20,5 @@ int main()
 	catch (GolfError & e)
 	{
 		std::cout << e.what();
-		
 	}
 }
