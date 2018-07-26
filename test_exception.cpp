@@ -1,5 +1,5 @@
-#include <exception>
-#include <iostream>
+// #include <exception>
+// #include <iostream>
 
 // class Exception : public std::exception
 // {
@@ -42,44 +42,53 @@
 // }
 
 #include <iostream>
-#include <sstream>
-#include <stdexcept>
+#include <exception>
 #include <string>
 
 class my_exception : public std::runtime_error
 {
-	std::string msg;
+	std::string _msg;
+	std::string _result;
+	int _line;
 
   public:
-	my_exception(const std::string &arg, const char *file, int line) : std::runtime_error(arg)
+	my_exception(const std::string &arg, int line) : std::runtime_error(arg)
 	{
-		std::ostringstream o;
-		o << file << ":" << line << ": " << arg;
-		msg = o.str();
+		_msg = arg;
+		_line = line;
+
+		_msg = _msg + std::to_string(_line);
 	}
 	~my_exception() throw() {}
 	const char *what() const throw()
 	{
-		return msg.c_str();
+		return _msg.c_str();
 	}
 };
 
-#define throw_line(arg) throw my_exception(arg, __FILE__, __LINE__ - 1);
+#define throw_line(arg, line) throw my_exception(arg, line);
 
-void f()
+void f( int line)
 {
-	throw_line("\033[1;31mlexer error type 1 -> not valid command !\033[0m");
+	throw_line("\033[1;31mlexer error type 1 -> not valid command !\033[0m", line);
 }
 
 int main()
 {
+
+
 	int i = 0;
+
+
+
+
+
 
 	while (i < 5)
 	{
 		try
 		{
-			f();
+			f(42);
 		}
 		catch (const std::runtime_error &ex)
 		{
@@ -87,4 +96,18 @@ int main()
 		}
 		i++;
 	}
+
+
+
+
+
+
+	std::string	msg1 = "1";
+	std::string msg2 = "2";
+
+	std::string res = msg1 + msg2;
+
+	std::cout << res;
+
+	return (0);
 }
