@@ -27,15 +27,14 @@ bool	Lexer::regex_checks( std::string str )
 void	Lexer::lexical_analysis(Parser &parser)
 {
 	std::cout << std::endl;
+	int line = 0;
 
 	if ( !parser._filtered_input.empty() )
 	{
 		for ( auto i = parser._filtered_input.begin(); i != parser._filtered_input.end(); ++i )
 		{
-			static int line = 0;
-
-			line++;
-
+			++line;
+			
 			try
 			{
 				if (!regex_checks( *i ))
