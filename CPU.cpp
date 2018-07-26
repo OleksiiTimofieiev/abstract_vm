@@ -22,5 +22,5 @@ void	CPU::execute_inner_logic( const int quantity_of_arguments, char *argument )
 
 
 
-	// _parser.detect_leaks(); // detect leaks;
+	_parser.detect_leaks(); // detect leaks;
 }
