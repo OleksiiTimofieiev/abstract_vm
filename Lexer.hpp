@@ -9,8 +9,8 @@ class Lexer
 		Lexer				( void );
 		~Lexer				( void );
 
-		void 	lexical_analysis(Parser &parser);
-		//TODO: lexer function;
+		bool				regex_checks( std::string str );
+		void 				lexical_analysis (Parser &parser );
 };
 
 
