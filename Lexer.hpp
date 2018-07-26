@@ -13,7 +13,7 @@ class Lexer
 		~Lexer				( void );
 
 		bool				regex_checks( std::string str );
-		void 				lexical_analysis (Parser &parser );
+		void 				lexical_analysis ( Parser &parser );
 };
 
 
