@@ -7,7 +7,7 @@
 
 //TODO: add copliens form;
 
-#define throw_line((arg), (line)) throw Exception((arg), (line));
+#define throw_line(arg, line) throw Exception(arg, line);
 
 class Exception : public std::runtime_error
 {
