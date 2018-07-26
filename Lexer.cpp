@@ -18,7 +18,6 @@ bool	Lexer::regex_checks( std::string str )
 		flag = true;
 	else if ((std::regex_match(str, regular_expression_for_commands_with_arguments)))
 		flag = true;
-	
 	return (flag);
 }
 
