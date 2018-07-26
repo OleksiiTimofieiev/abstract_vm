@@ -35,15 +35,11 @@ void	Lexer::lexical_analysis(Parser &parser)
 			static int line = 0;
 
 			line++;
-			
+
 			try
 			{
 				if (!regex_checks( *i ))
-				{
-					throw_line("invalid line", line);
-				}
-				else
-					std::cout << *i << std::endl;
+					throw_line("\033[1;31mInvalid line -> \033[0m", line);
 			}
 			catch (const std::runtime_error &ex)
 			{

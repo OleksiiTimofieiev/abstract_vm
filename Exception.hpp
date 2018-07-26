@@ -18,7 +18,7 @@ class Exception : public std::runtime_error
   public:
 	Exception();
 
-		Exception(const std::string &arg, int line);
+	Exception(const std::string &arg, int line);
 
 	~Exception() throw();
 
