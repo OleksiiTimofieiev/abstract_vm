@@ -49,7 +49,7 @@ class my_exception : public std::runtime_error
 {
 	std::string _msg;
 	std::string _result;
-	int _line;
+	int 		_line;
 
   public:
 	my_exception(const std::string &arg, int line) : std::runtime_error(arg)
