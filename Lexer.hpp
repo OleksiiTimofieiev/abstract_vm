@@ -16,5 +16,4 @@ class Lexer
 		void 				lexical_analysis ( Parser &parser );
 };
 
-
 #endif

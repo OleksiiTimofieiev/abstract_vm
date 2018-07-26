@@ -21,6 +21,7 @@ bool	Lexer::regex_checks( std::string str )
 		flag = true;
 	else if ((std::regex_match(str, regular_expression_for_commands_with_arguments_float_double)))
 		flag = true;
+		
 	return (flag);
 }
 
