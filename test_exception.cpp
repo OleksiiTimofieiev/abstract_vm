@@ -59,7 +59,9 @@ class my_exception : public std::runtime_error
 
 		_msg = _msg + std::to_string(_line);
 	}
+
 	~my_exception() throw() {}
+	
 	const char *what() const throw()
 	{
 		return _msg.c_str();
