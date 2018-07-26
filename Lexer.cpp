@@ -24,7 +24,7 @@ bool	Lexer::regex_checks( std::string str )
 	return (flag);
 }
 
-void	Lexer::lexical_analysis(Parser &parser)
+void	Lexer::lexical_analysis( Parser &parser )
 {
 	std::cout << std::endl;
 	int line = 0;
@@ -33,8 +33,8 @@ void	Lexer::lexical_analysis(Parser &parser)
 	{
 		for ( auto i = parser._filtered_input.begin(); i != parser._filtered_input.end(); ++i )
 		{
-			++line;
-			
+			++line; // variable -> line of the errored which occured;
+		
 			try
 			{
 				if ( !regex_checks( *i ) )
