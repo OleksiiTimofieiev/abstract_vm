@@ -69,8 +69,8 @@ void	Parser::read_from_the_ifstream( char * argument )
 
 	if ( !fin.is_open() )
 	{
-		// TODO: hadle with exeption;
-		std::cout << "error";
+		std::cout << "No such file. Program was terminated." << std::endl;;
+		exit(0);
 	}
 	else
 	{
