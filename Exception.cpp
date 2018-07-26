@@ -1,5 +1,8 @@
 #include "Exception.hpp"
 
+Exception::Exception() : std::runtime_error("no error") {}
+
+
 Exception::Exception(const std::string &arg, int line) : std::runtime_error(arg)
 {
 	_msg = arg;

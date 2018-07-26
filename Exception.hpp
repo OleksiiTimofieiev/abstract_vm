@@ -5,6 +5,8 @@
 #include <exception>
 #include <string>
 
+//TODO: add copliens form;
+
 #define throw_line(arg, line) throw Exception(arg, line);
 
 class Exception : public std::runtime_error
@@ -14,14 +16,13 @@ class Exception : public std::runtime_error
 	int _line;
 
   public:
-	Exception(const std::string &arg, int line);
+	Exception();
+
+		Exception(const std::string &arg, int line);
 
 	~Exception() throw();
 
 	const char *what() const throw();
 };
-
-
-
 
 #endif
