@@ -12,7 +12,7 @@ bool	Lexer::regex_checks( std::string str )
 	bool flag = false;
 
 	const std::regex regular_expression_for_commands_without_arguments("^(pop|dump|add|sub|mul|div|mod|print|exit|;;)$");
-	const std::regex regular_expression_for_commands_with_arguments("^(push|assert) (int8|int16|int32|float|double)([-]?[0-9]+)\\s*$");
+	const std::regex regular_expression_for_commands_with_arguments("^(push|assert) (int8|int16|int32|float|double)(\\()([-]?[0-9]+)(\\))\\s*$");
 
 	if (std::regex_match(str, regular_expression_for_commands_without_arguments))
 		flag = true;
