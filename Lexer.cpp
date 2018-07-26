@@ -12,7 +12,7 @@ bool	Lexer::regex_checks( std::string str )
 	bool flag = false;
 
 	const std::regex regular_expression_for_commands_without_arguments("^(pop|dump|add|sub|mul|div|mod|print|exit|;;)$");
-	const std::regex regular_expression_for_commands_with_arguments("^(push|assert)$");
+	const std::regex regular_expression_for_commands_with_arguments("^(push|assert) (int8|int16|int32|float|double)$");
 	
 	if (std::regex_match(str, regular_expression_for_commands_without_arguments))
 		flag = true;
@@ -30,10 +30,8 @@ void	Lexer::lexical_analysis(Parser &parser)
 	{
 		for ( auto i = parser._filtered_input.begin(); i != parser._filtered_input.end(); ++i )
 		{
-			// std::string	test = *i;
 			if (!regex_checks( *i ) )
-			std::cout << "Unvalid line." << std::endl;
-			
+				std::cout << "Unvalid line." << std::endl;
 		}
 	}
 	std::cout << std::endl;
