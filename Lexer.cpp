@@ -1,5 +1,6 @@
 #include "Lexer.hpp"
 #include <regex>
+#include <string>
 #include <iostream>
 
 Lexer::Lexer() {}
@@ -18,13 +19,26 @@ bool	Lexer::regex_checks( std::string str )
 	const std::regex regular_expression_for_commands_without_arguments("^\\s*(pop|dump|add|sub|mul|div|mod|print|exit|;;)\\s*$");
 	const std::regex regular_expression_for_commands_with_arguments_int("^\\s*(push|assert) (int8|int16|int32)\\(([-]?[0-9]+)\\)\\s*$");
 	const std::regex regular_expression_for_commands_with_arguments_float_double("^\\s*(push|assert) (float|double)\\(([-]?[0-9]+\\.[0-9]+)\\)\\s*$");
+	std::cmatch	result;
 
-	if (std::regex_match(str, regular_expression_for_commands_without_arguments))
+	if (std::regex_match( str.c_str(), result, regular_expression_for_commands_without_arguments) )
+	{
+		for (unsigned int i = 0; i < result.size(); i++)
+			std::cout << result[i] << std::endl;
 		flag = true;
-	else if ((std::regex_match(str, regular_expression_for_commands_with_arguments_int)))
+	}
+	else if ((std::regex_match(str.c_str(), result, regular_expression_for_commands_with_arguments_int)))
+	{
+		for (unsigned int i = 0; i < result.size(); i++)
+			std::cout << result[i] << std::endl;
 		flag = true;
-	else if ((std::regex_match(str, regular_expression_for_commands_with_arguments_float_double)))
+	}
+	else if ((std::regex_match( str.c_str(), result, regular_expression_for_commands_with_arguments_float_double)))
+	{
+		for (unsigned int i = 0; i < result.size(); i++)
+			std::cout << result[i] << std::endl;
 		flag = true;
+	}
 		
 	return (flag);
 }
