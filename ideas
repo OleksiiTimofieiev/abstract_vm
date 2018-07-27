@@ -45,16 +45,18 @@ https://stackoverflow.com/questions/6360049/what-are-arithmetic-underflow-and-ov
 - array of strings;
 
 - vector with objects:
-constructor:
+~ constructor:
 https://www.geeksforgeeks.org/passing-vector-constructor-c/
-methods:
+~ methods:
 https://limbioliong.wordpress.com/2012/12/25/storing-c-objects-in-a-stl-vector-part-2/
 https://www.safaribooksonline.com/library/view/c-cookbook/0596007612/ch06s05.html
 https://stackoverflow.com/questions/35689763/how-do-you-make-a-vector-of-class-objects
 https://stackoverflow.com/questions/15802006/how-can-i-create-objects-while-adding-them-into-a-vector
 https://www.dreamincode.net/forums/topic/63358-store-class-objects-in-vector/
-use of shared pointers:
+~ use of shared pointers:
 http://www.cs.technion.ac.il/users/yechiel/c++-faq/container-of-smart-ptr.html
+~ with not trivial constructor:
+https://stackoverflow.com/questions/6142830/how-do-i-initialize-a-stl-vector-of-objects-who-themselves-have-non-trivial-cons
 
 Bonus:
 - usage;
