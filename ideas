@@ -3,7 +3,14 @@ Core:
 
 Tech:
 - https://www.youtube.com/watch?v=bcQr7QKUo4M
+- https://www.youtube.com/watch?v=MfhjkfocRR0&list=PLTxllHdfUq4f7-uHOpxXnBUbsuLiI9pmb
 - https://dzone.com/articles/some-useful-facts-to-know-when-using-c-exceptions
+
+~ map:
+- http://www.java2s.com/Tutorial/Cpp/0460__map-multimap/Storeobjectsinamap.htm
+- map iterators: http://www.cplusplus.com/reference/map/map/begin/
+
+
 - line validity function (line, type: lexical / syntax / etc.); <- if not match -> invalid line; consider ;; as a command;
 - in the end of the command there can be any amount of the spaces;
 - general header for all classes, defines, etc;
