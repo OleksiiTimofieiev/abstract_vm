@@ -11,6 +11,7 @@ Tech:
 - map iterators: http://www.cplusplus.com/reference/map/map/begin/
 
 ~ factory class:
+https://ru.wikipedia.org/wiki/Абстрактная_фабрика_(шаблон_проектирования)
 https://en.wikibooks.org/wiki/C%2B%2B_Programming/Code/Design_Patterns
 https://stackoverflow.com/questions/45788250/how-to-template-static-factory-method
 http://ikeptwalking.com/factory-method-pattern/
