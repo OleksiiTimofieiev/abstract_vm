@@ -57,6 +57,8 @@ https://www.dreamincode.net/forums/topic/63358-store-class-objects-in-vector/
 http://www.cs.technion.ac.il/users/yechiel/c++-faq/container-of-smart-ptr.html
 ~ with not trivial constructor:
 https://stackoverflow.com/questions/6142830/how-do-i-initialize-a-stl-vector-of-objects-who-themselves-have-non-trivial-cons
+~ unique ptr aspects:
+https://stackoverflow.com/questions/44386774/pushing-an-object-with-unique-ptr-into-vector-in-c
 
 Bonus:
 - usage;
