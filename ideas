@@ -11,6 +11,7 @@ Tech:
 - map iterators: http://www.cplusplus.com/reference/map/map/begin/
 
 ~ factory class:
+https://www.codeproject.com/Articles/331304/Understanding-and-Implementing-Abstract-Factory
 https://designingefficientsoftware.wordpress.com/2014/10/01/generic-class-factory-introduction-part-14/
 https://blog.noctua-software.com/object-factory-c++.html
 https://www.youtube.com/watch?v=XyNWEWUSa5E
@@ -29,6 +30,7 @@ https://stackoverflow.com/questions/29851559/c-factory-pattern-with-templates
 http://programmerjoe.com/2007/03/18/the-abstract-factory-pattern-in-c/
 http://www.drdobbs.com/conversations-abstract-factory-template/184403786
 https://stackoverflow.com/questions/29141629/c-generic-factory-that-can-call-any-constructor
+https://sourcemaking.com/design_patterns/abstract_factory/cpp/before-after
 
 
 - line validity function (line, type: lexical / syntax / etc.); <- if not match -> invalid line; consider ;; as a command;
