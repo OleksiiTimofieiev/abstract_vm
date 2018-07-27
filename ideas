@@ -11,6 +11,9 @@ Tech:
 - map iterators: http://www.cplusplus.com/reference/map/map/begin/
 
 ~ factory class:
+https://en.wikibooks.org/wiki/C%2B%2B_Programming/Code/Design_Patterns
+https://stackoverflow.com/questions/45788250/how-to-template-static-factory-method
+http://ikeptwalking.com/factory-method-pattern/
 https://www.codeproject.com/Articles/331304/Understanding-and-Implementing-Abstract-Factory
 https://designingefficientsoftware.wordpress.com/2014/10/01/generic-class-factory-introduction-part-14/
 https://blog.noctua-software.com/object-factory-c++.html
@@ -31,6 +34,13 @@ http://programmerjoe.com/2007/03/18/the-abstract-factory-pattern-in-c/
 http://www.drdobbs.com/conversations-abstract-factory-template/184403786
 https://stackoverflow.com/questions/29141629/c-generic-factory-that-can-call-any-constructor
 https://sourcemaking.com/design_patterns/abstract_factory/cpp/before-after
+http://www.bogotobogo.com/DesignPatterns/abstractfactorymethod.php
+https://www.codeproject.com/Articles/751869/Abstract-Factory-Step-by-Step-Implementation-in-Cp
+http://www.di.unipi.it/~nids/docs/templates_vs_inheritance.html
+https://www.researchgate.net/publication/269668943_Implementing_the_factory_pattern_with_the_help_of_Reflection
+https://www.fluentcpp.com/2017/05/16/what-the-crtp-brings-to-code/
+http://www.nirfriedman.com/2018/04/29/unforgettable-factory/
+http://blog.fourthwoods.com/2011/06/04/factory-design-pattern-in-c/
 
 
 - line validity function (line, type: lexical / syntax / etc.); <- if not match -> invalid line; consider ;; as a command;
