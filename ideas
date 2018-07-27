@@ -10,6 +10,21 @@ Tech:
 - http://www.java2s.com/Tutorial/Cpp/0460__map-multimap/Storeobjectsinamap.htm
 - map iterators: http://www.cplusplus.com/reference/map/map/begin/
 
+~ factory class:
+https://www.youtube.com/watch?v=XyNWEWUSa5E
+http://cppnuts.com/factory-design-pattern-in-cpp/
+https://sourcemaking.com/design_patterns/factory_method/cpp/1
+https://sourcemaking.com/design_patterns/factory_method/cpp/2
+https://stackoverflow.com/questions/333400/how-to-design-a-simple-c-object-factory
+https://gist.github.com/facontidavide/c2d0fe6a29dc1e344e17799309ac2f1c
+https://www.geeksforgeeks.org/class-template-multiple-parameters/
+https://gist.github.com/mbains/3406184
+https://gist.github.com/sacko87/3359911
+https://codereview.stackexchange.com/questions/3248/generic-c-factory
+https://mass-communicating.com/code/2013/05/01/generic_factories_cpp.html
+https://stackoverflow.com/questions/4357500/c-abstract-factory-using-templates
+https://stackoverflow.com/questions/29851559/c-factory-pattern-with-templates
+
 
 - line validity function (line, type: lexical / syntax / etc.); <- if not match -> invalid line; consider ;; as a command;
 - in the end of the command there can be any amount of the spaces;
