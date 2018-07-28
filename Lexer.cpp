@@ -24,19 +24,22 @@ bool	Lexer::regex_checks( std::string str )
 
 	if (std::regex_match( str.c_str(), result, regular_expression_for_commands_without_arguments) )
 	{
-		for (unsigned int i = 0; i < result.size(); i++)
+		//FIXME:comment in the end of the project
+		for (unsigned int i = 0; i < result.size(); i++) // for diagnostics
 			std::cout << result[i] << std::endl;
 		flag = true;
 	}
 	else if ((std::regex_match(str.c_str(), result, regular_expression_for_commands_with_arguments_int)))
 	{
-		for (unsigned int i = 0; i < result.size(); i++)
+		//FIXME:comment in the end of the project
+		for (unsigned int i = 0; i < result.size(); i++) // for diagnostics
 			std::cout << result[i] << std::endl;
 		flag = true;
 	}
 	else if ((std::regex_match( str.c_str(), result, regular_expression_for_commands_with_arguments_float_double)))
 	{
-		for (unsigned int i = 0; i < result.size(); i++)
+		//FIXME:comment in the end of the project
+		for (unsigned int i = 0; i < result.size(); i++) // for diagnostics
 			std::cout << result[i] << std::endl;
 		flag = true;
 	}
