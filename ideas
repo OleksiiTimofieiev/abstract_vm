@@ -43,6 +43,12 @@ https://www.fluentcpp.com/2017/05/16/what-the-crtp-brings-to-code/
 http://www.nirfriedman.com/2018/04/29/unforgettable-factory/
 http://blog.fourthwoods.com/2011/06/04/factory-design-pattern-in-c/
 
+~ vector of functions:
+https://stackoverflow.com/questions/45868694/how-do-you-create-a-vector-of-function-pointers-that-can-take-different-argument
+
+~ map of functions:
+https://forum.openframeworks.cc/t/std-vector-of-void-function-pointers/17043
+
 
 - line validity function (line, type: lexical / syntax / etc.); <- if not match -> invalid line; consider ;; as a command;
 - in the end of the command there can be any amount of the spaces;
