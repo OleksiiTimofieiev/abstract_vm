@@ -3,6 +3,7 @@
 #include <functional>
 
 // for the syntax simplification;
+// use this stuff while construction ?;
 typedef std::function<void(int, int)> function_object;
 
 // enum creation;
