@@ -6,9 +6,11 @@
 typedef std::function<void(int, int)> function_object;
 
 // enum creation;
-enum function {
+enum function
+{
 	type_int = 0,
 	type_float,
+	type_double,
 } year;
 
 // functions for testing;
@@ -19,7 +21,12 @@ void	create_int( int var, int value )
 
 void	create_float( int var, int value )
 {
-	std::cout << var * (value * 10) << std::endl;
+	std::cout << var * value << std::endl;
+}
+
+void	create_double(int var, int value)
+{
+	std::cout << var * (value + 1) << std::endl;
 }
 
 int		main ( void )
@@ -30,7 +37,9 @@ int		main ( void )
 
 	vFunc.push_back(create_int);
 	vFunc.push_back(create_float);
+	vFunc.push_back(create_double);
 
 	vFunc[type_int](3,3);
 	vFunc[type_float](3, 3);
+	vFunc[type_double](3, 3);
 }
