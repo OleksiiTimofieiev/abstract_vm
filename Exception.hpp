@@ -11,17 +11,14 @@
 
 class Exception : public std::runtime_error
 {
-	std::string _msg;
-	std::string _result;
+	std::string 	_msg;
+	std::string 	_result;
 	int _line;
 
   public:
 	Exception();
-
-	Exception(const std::string &arg, int line);
-
 	~Exception() throw();
-
+	Exception		( const std::string &arg, int line );
 	const char *what() const throw();
 };
 
