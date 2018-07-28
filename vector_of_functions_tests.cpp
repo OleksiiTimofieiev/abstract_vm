@@ -2,10 +2,11 @@
 #include <vector>
 #include <functional>
 
+// for the syntax simplification;
+typedef std::function<void(int, int)> list;
 
 // enum creation;
-enum function
-{
+enum function {
 	type_int = 0,
 	type_float,
 } year;
@@ -23,11 +24,13 @@ void	create_float( int var, int value )
 
 int		main ( void )
 {
-	std::vector<std::function<void(int, int)>> list_of_functions;
+	std::vector<int> vc;
 
-	list_of_functions.emplace_back(create_int);
-	list_of_functions.emplace_back(create_float);
+	std::vector<list> vFunc;
 
-	list_of_functions[type_int](3,3);
-	list_of_functions[type_float](3, 3);
+	vFunc.push_back(create_int);
+	vFunc.push_back(create_float);
+
+	vFunc[type_int](3,3);
+	vFunc[type_float](3, 3);
 }
