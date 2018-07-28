@@ -24,7 +24,6 @@ void	create_float( int var, int value )
 
 int		main ( void )
 {
-
 	std::vector<std::function<void(int, int)>> list_of_functions;
 
 	list_of_functions.emplace_back(create_int);
