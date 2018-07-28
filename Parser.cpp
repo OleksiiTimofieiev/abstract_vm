@@ -32,6 +32,8 @@ void	Parser::read_from_the_standart_input( void )
 	std::string		input;
 	int				reading = true;
 	size_t			comment_find;
+	// size_t			pos_of_last_space = 0;
+	std::string 	whitespaces(" \t\f\v\n\r");
 
 	while( reading )
 	{
@@ -47,7 +49,11 @@ void	Parser::read_from_the_standart_input( void )
 
 				if (comment_find != std::string::npos)
 					input.erase(comment_find, input.length());
-				
+
+				std::size_t found = input.find_last_not_of(whitespaces);
+				if (found != std::string::npos)
+					input.erase(found + 1);
+
 				_filtered_input.push_back(input);
 			}
 			else if (!input.empty() && input.length() != 1 && input.at(0) == ';' && input.at(1) == ';')
@@ -64,6 +70,7 @@ void	Parser::read_from_the_ifstream( char * argument )
 	std::ifstream		fin;
 	std::string			input = "";
 	size_t 				comment_find;
+	size_t	pos_of_last_space = 0;
 
 	fin.open(path);
 
@@ -84,6 +91,10 @@ void	Parser::read_from_the_ifstream( char * argument )
 
 				if (comment_find != std::string::npos)
 					input.erase(comment_find, input.length());
+				pos_of_last_space = input.rfind(" ");
+
+				if (pos_of_last_space)
+					input.erase(pos_of_last_space);
 				
 				_filtered_input.push_back(input);
 			}
