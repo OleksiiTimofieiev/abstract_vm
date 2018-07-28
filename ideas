@@ -55,6 +55,9 @@ https://en.wikibooks.org/wiki/C%2B%2B_Programming/Classes/Abstract_Classes
 - https://stackoverflow.com/questions/15802006/how-can-i-create-objects-while-adding-them-into-a-vector
 -constructor: https://www.geeksforgeeks.org/passing-vector-constructor-c/
 
+~ vector and shared pointer:
+https://stackoverflow.com/questions/19334889/vector-of-shared-pointers-memory-problems-after-clearing-the-vector
+
 ~ misc:
 - line validity function (line, type: lexical / syntax / etc.); <- if not match -> invalid line; consider ;; as a command;
 - in the end of the command there can be any amount of the spaces;
