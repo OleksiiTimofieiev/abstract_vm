@@ -21,7 +21,6 @@ void	create_float( int var, int value )
 	std::cout << var * value << std::endl;
 }
 
-
 int		main ( void )
 {
 	std::vector<std::function<void(int, int)>> list_of_functions;
