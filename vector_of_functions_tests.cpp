@@ -31,8 +31,6 @@ void	create_double(int var, int value)
 
 int		main ( void )
 {
-	std::vector<int> vc;
-
 	std::vector<function_object> vFunc;
 
 	vFunc.push_back(create_int);
@@ -40,6 +38,6 @@ int		main ( void )
 	vFunc.push_back(create_double);
 
 	vFunc[type_int](3,3);
-	vFunc[type_float](3, 3);
 	vFunc[type_double](3, 3);
+	vFunc[type_float](3, 3);
 }
