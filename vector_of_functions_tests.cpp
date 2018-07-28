@@ -12,7 +12,7 @@ enum function
 	int8 = 0,
 	type_float,
 	type_double,
-} year;
+} ;
 
 // functions for testing;
 void	create_int( int var, int value )
