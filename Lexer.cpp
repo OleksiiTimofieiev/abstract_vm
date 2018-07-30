@@ -63,13 +63,15 @@ bool Lexer::regex_checks(std::string str, std::vector<std::vector<std::string> >
 
 		std::vector<std::string> lstTableRow;
 
+		auto row = lstTableRow;
+
 		for (int j = 0; j < nNumColumns; j++)
-			lstTableRow.push_back(result[j + 1]);
+			row.push_back(result[j + 1]);
 		_command_list.push_back(lstTableRow);
 
 		flag = true;
 	}
-		
+	
 	return (flag);
 }
 
@@ -77,6 +79,7 @@ void Lexer::lexical_analysis(Parser &parser, std::vector<std::vector<std::string
 {
 	output("");
 	int line = 0;
+	bool error = false;
 
 	if (!parser._filtered_input.empty())
 	{
@@ -87,7 +90,10 @@ void Lexer::lexical_analysis(Parser &parser, std::vector<std::vector<std::string
 			try
 			{
 				if ( !regex_checks( *i, _command_list ) )
+				{
+					error = true;
 					throw_line("\033[1;31mLexical error -> \033[0m", line);
+				}
 			}
 			catch ( const std::runtime_error &ex )
 			{
@@ -95,5 +101,7 @@ void Lexer::lexical_analysis(Parser &parser, std::vector<std::vector<std::string
 			}
 		}
 	}
+	if (!error)
+		output("No lexical errors have been detected.")
 	output("");
 }
