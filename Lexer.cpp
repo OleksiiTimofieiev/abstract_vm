@@ -71,7 +71,7 @@ bool Lexer::regex_checks(std::string str, std::vector<std::vector<std::string> >
 
 		flag = true;
 	}
-	
+
 	return (flag);
 }
 
@@ -102,6 +102,6 @@ void Lexer::lexical_analysis(Parser &parser, std::vector<std::vector<std::string
 		}
 	}
 	if (!error)
-		output("No lexical errors have been detected.")
-	output("");
+		output("\033[1;32mNo lexical errors have been detected => [ avm ] ✓\x1B[0m")
+			output("");
 }

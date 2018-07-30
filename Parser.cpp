@@ -1,4 +1,5 @@
 #include "Parser.hpp"
+#include "CPU.hpp"
 
 /* class creation routines ************************************************************************************************************************** */
 
@@ -66,6 +67,7 @@ void	Parser::read_from_the_standart_input( void )
 		else
 			reading = false;
 	}
+	output("\x1B[35mParsing have been finished.\x1B[0m");
 }
 
 void	Parser::read_from_the_ifstream( char * argument )
@@ -104,7 +106,6 @@ void	Parser::read_from_the_ifstream( char * argument )
 					if (found != std::string::npos)
 						input.erase(found + 1);
 				}
-
 				_filtered_input.push_back(input);
 			}
 			else if (!input.empty() && input.length() != 1 && input.at(0) == ';' && input.at(1) == ';')
@@ -112,6 +113,7 @@ void	Parser::read_from_the_ifstream( char * argument )
 		}
 	}
 	fin.close();
+	output("\x1B[35mParsing have been finished => [ avm ] \033[1;32m✓\x1B[0m");
 }
 
 void Parser::read( const int quantity_of_arguments, char * argument )
