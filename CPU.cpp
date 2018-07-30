@@ -3,6 +3,8 @@
 CPU::CPU () {}
 CPU::~CPU() {}
 
+#define output(x) std::cout << (x) << std::endl;
+
 //TODO: add copliens form;
 
 void CPU::execute_inner_logic(const int quantity_of_arguments, char *argument)
@@ -10,15 +12,20 @@ void CPU::execute_inner_logic(const int quantity_of_arguments, char *argument)
 	_parser.read( quantity_of_arguments, argument );
 	_lexer.lexical_analysis( _parser, _command_list );
 
-	std::cout << _command_list[0][0] << std::endl;
-	std::cout << _command_list[0][1] << std::endl;
-	std::cout << _command_list[0][2] << std::endl;
-	std::cout << _command_list[0][3] << std::endl;
+	output(_command_list[0][0]);
+	output(_command_list[0][1]);
+	output(_command_list[0][2]);
+	output("");
 
-	std::cout << _command_list[1][0] << std::endl;
-	std::cout << _command_list[1][1] << std::endl;
-	std::cout << _command_list[1][2] << std::endl;
-	std::cout << _command_list[1][3] << std::endl;
+	output(_command_list[1][0]);
+	output(_command_list[1][1]);
+	output(_command_list[1][2]);
+	output("");
+
+	output(_command_list[2][0]);
+	output(_command_list[2][1]);
+	output(_command_list[2][2]);
+	output("");
 
 	_parser.detect_leaks(); // detect leaks;
 }

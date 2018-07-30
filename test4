@@ -1,0 +1,3 @@
+exit
+push int8(42)
+assert float(12.2)

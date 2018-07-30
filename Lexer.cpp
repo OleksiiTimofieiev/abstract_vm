@@ -12,7 +12,7 @@ bool Lexer::regex_checks(std::string str, std::vector<std::vector<std::string> >
 {
 	bool flag = false;
 
-	int nNumColumns = 4;
+	int nNumColumns = 3;
 
 	// regex cmatch;
 	// std::regex regular_decimal("^\\s*(\\bpush|assert\\b)\\s+(int[8,16,32]{1}\\b)\\(([-]?\\d+)\\)\\s*(;\\w+)?");
@@ -35,9 +35,7 @@ bool Lexer::regex_checks(std::string str, std::vector<std::vector<std::string> >
 			lstTableRow.push_back(result[1]);
 
 			for (int j = 1; j < nNumColumns; j++)
-			{
 				lstTableRow.push_back("No data");
-			}
 			_command_list.push_back(lstTableRow);
 
 			flag = true;
@@ -45,15 +43,29 @@ bool Lexer::regex_checks(std::string str, std::vector<std::vector<std::string> >
 	else if ((std::regex_match(str.c_str(), result, regular_expression_for_commands_with_arguments_int)))
 	{
 		//FIXME:comment in the end of the project
-		for (unsigned int i = 0; i < result.size(); i++) // for diagnostics
-			std::cout << result[i] << std::endl;
+		// for (unsigned int i = 0; i < result.size(); i++) // for diagnostics
+		// 	std::cout << result[i] << std::endl;
+
+		std::vector<std::string> lstTableRow;
+
+		for (int j = 0; j < nNumColumns; j++)
+			lstTableRow.push_back(result[j + 1]);
+		_command_list.push_back(lstTableRow);
+
 		flag = true;
 	}
 	else if ((std::regex_match( str.c_str(), result, regular_expression_for_commands_with_arguments_float_double)))
 	{
 		//FIXME:comment in the end of the project
-		for (unsigned int i = 0; i < result.size(); i++) // for diagnostics
-			std::cout << result[i] << std::endl;
+		// for (unsigned int i = 0; i < result.size(); i++) // for diagnostics
+		// 	std::cout << result[i] << std::endl;
+
+		std::vector<std::string> lstTableRow;
+
+		for (int j = 0; j < nNumColumns; j++)
+			lstTableRow.push_back(result[j + 1]);
+		_command_list.push_back(lstTableRow);
+
 		flag = true;
 	}
 		
