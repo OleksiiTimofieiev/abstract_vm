@@ -3,8 +3,6 @@
 CPU::CPU () {}
 CPU::~CPU() {}
 
-#define output(x) std::cout << (x) << std::endl;
-
 //TODO: add copliens form;
 
 void CPU::execute_inner_logic(const int quantity_of_arguments, char *argument)

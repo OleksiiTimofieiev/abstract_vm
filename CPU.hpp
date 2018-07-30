@@ -1,6 +1,8 @@
 #ifndef	CPU_HPP
 #define CPU_HPP
 
+#define output(x) std::cout << (x) << std::endl;
+
 #include "Parser.hpp" // Parser emulation;
 #include "Lexer.hpp" // Lexer emulation;
 #include <vector>
