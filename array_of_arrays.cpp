@@ -54,6 +54,19 @@ int		main( void )
 		std::cout << arr[0][i] << std::endl;
 	}
 
+	std::vector<std::vector<std::string> > lstTableContent;
+	int nNumColumns = 10;
+	int nNumRows = 10;
+	for (int i = 1; i <= nNumRows; i++)
+	{
+		std::vector<std::string> lstTableRow;
+		for (int j = 1; j <= nNumColumns; j++)
+		{
+			lstTableRow.push_back("ITEM");
+		}
+		lstTableContent.push_back(lstTableRow);
+	}
+
 	system("leaks -q a.out");
 
 	return (0);

@@ -6,7 +6,5 @@ int		main ( int argc, char ** argv )
 
 	_cpu.execute_inner_logic( argc, argv[1] );
 
-
-
 	return (0);
 }

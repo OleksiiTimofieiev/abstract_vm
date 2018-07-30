@@ -3,6 +3,7 @@
 
 #include "Parser.hpp" // Parser emulation;
 #include "Lexer.hpp" // Lexer emulation;
+#include <vector>
 
 class	CPU
 {
@@ -10,7 +11,9 @@ class	CPU
 		Parser 						_parser;
 		Lexer 						_lexer;
 
-	  public:
+		std::vector<std::vector<std::string> > _command_list;
+
+	public:
 		CPU							( void );
 		~CPU						( void );
 

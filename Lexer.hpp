@@ -12,8 +12,8 @@ class Lexer
 		Lexer				( void );
 		~Lexer				( void );
 
-		bool				regex_checks( std::string str );
-		void 				lexical_analysis ( Parser &parser );
+		bool				regex_checks( std::string str, std::vector<std::vector<std::string> > &_command_list );
+		void				lexical_analysis( Parser &parser, std::vector<std::vector<std::string> > &_command_list );
 };
 
 #endif
