@@ -67,7 +67,8 @@ void	Parser::read_from_the_standart_input( void )
 		else
 			reading = false;
 	}
-	output("\x1B[35mParsing have been finished.\x1B[0m");
+	output("");
+	output("\x1B[35mParsing has been finished => [ avm ] \033[1;32m✓\x1B[0m");
 }
 
 void	Parser::read_from_the_ifstream( char * argument )
@@ -113,7 +114,8 @@ void	Parser::read_from_the_ifstream( char * argument )
 		}
 	}
 	fin.close();
-	output("\x1B[35mParsing have been finished => [ avm ] \033[1;32m✓\x1B[0m");
+	output("");
+	output("\x1B[35mParsing has been finished => [ avm ] \033[1;32m✓\x1B[0m");
 }
 
 void Parser::read( const int quantity_of_arguments, char * argument )
