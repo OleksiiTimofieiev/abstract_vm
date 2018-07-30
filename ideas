@@ -90,6 +90,8 @@ https://stackoverflow.com/questions/6142830/how-do-i-initialize-a-stl-vector-of-
 ~ unique ptr aspects:
 https://stackoverflow.com/questions/44386774/pushing-an-object-with-unique-ptr-into-vector-in-c
 
+~ exceptions and s/o - stream ?
+
 Bonus:
 - usage;
 - leaks flag;
