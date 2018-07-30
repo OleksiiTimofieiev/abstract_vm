@@ -11,19 +11,19 @@
 class	CPU
 {
 	private:
-		Parser 						_parser;
-		Lexer 						_lexer;
+		Parser 									_parser;
+		Lexer 									_lexer;
 
-		std::vector<std::vector<std::string> > _command_list;
+		std::vector<std::vector<std::string> > 	_command_list;
 
 		//TODO:create stack and start to work with it;
 
 	public:
-		CPU							( void );
-		~CPU						( void );
+		CPU										( void );
+		~CPU									( void );
 
 		// magic ;)
-		void execute_inner_logic	( const int quantity_of_arguments, char * argument );
+		void execute_inner_logic				( const int quantity_of_arguments, char * argument );
 };
 
 #endif
