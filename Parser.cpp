@@ -49,12 +49,14 @@ void	Parser::read_from_the_standart_input( void )
 				comment_find = input.find(";");
 
 				if (comment_find != std::string::npos)
+				{
 					input.erase(comment_find, input.length());
 
-				found = input.find_last_not_of(whitespaces);
+					found = input.find_last_not_of(whitespaces);
 
-				if (found != std::string::npos)
-					input.erase(found + 1);
+					if (found != std::string::npos)
+						input.erase(found + 1);
+				}
 
 				_filtered_input.push_back(input);
 			}
@@ -94,12 +96,14 @@ void	Parser::read_from_the_ifstream( char * argument )
 				comment_find = input.find(";");
 
 				if (comment_find != std::string::npos)
+				{
 					input.erase(comment_find, input.length());
-					
-				found = input.find_last_not_of(whitespaces);
 
-				if (found != std::string::npos)
-					input.erase(found + 1);
+					found = input.find_last_not_of(whitespaces);
+
+					if (found != std::string::npos)
+						input.erase(found + 1);
+				}
 
 				_filtered_input.push_back(input);
 			}

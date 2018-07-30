@@ -7,5 +7,5 @@ push double(42.42) ;commentaire de ouf
 push int32(42)
 dump
 pop
-assert double(42.42) 
+assert double(42.42)
 exit
