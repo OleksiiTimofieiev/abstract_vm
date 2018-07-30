@@ -1,4 +1,5 @@
 #include "Lexer.hpp"
+#include "CPU.hpp"
 #include <regex>
 #include <string>
 #include <iostream>
@@ -74,7 +75,7 @@ bool Lexer::regex_checks(std::string str, std::vector<std::vector<std::string> >
 
 void Lexer::lexical_analysis(Parser &parser, std::vector<std::vector<std::string> > &_command_list )
 {
-	std::cout << std::endl;
+	output("");
 	int line = 0;
 
 	if (!parser._filtered_input.empty())
@@ -94,4 +95,5 @@ void Lexer::lexical_analysis(Parser &parser, std::vector<std::vector<std::string
 			}
 		}
 	}
+	output("");
 }
