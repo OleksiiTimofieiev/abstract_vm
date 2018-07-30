@@ -53,7 +53,7 @@ https://en.wikibooks.org/wiki/C%2B%2B_Programming/Classes/Abstract_Classes
 ~ vector and fabric class:
 - https://softwareengineering.stackexchange.com/questions/247245/a-vector-of-pointers-to-different-derived-classes-of-the-same-base-class
 - https://stackoverflow.com/questions/15802006/how-can-i-create-objects-while-adding-them-into-a-vector
--constructor: https://www.geeksforgeeks.org/passing-vector-constructor-c/
+- constructor: https://www.geeksforgeeks.org/passing-vector-constructor-c/
 
 ~ vector and shared pointer:
 https://stackoverflow.com/questions/19334889/vector-of-shared-pointers-memory-problems-after-clearing-the-vector
