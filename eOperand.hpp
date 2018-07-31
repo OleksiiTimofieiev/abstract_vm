@@ -88,6 +88,10 @@ class eOperand : public IOperand
 			return (default_value);
 		}
 
+		// 0, 7 ,16;
+		
+		// str::strstream -> set precision st to string;
+
 		IOperand const *operator+(IOperand const &rhs) const
 		{
 			long long int 		var1 = std::stoll(this->toString());
@@ -103,7 +107,9 @@ class eOperand : public IOperand
 
 			// eOperand sum = eOperand<T>(buf);
 
-			return (new eOperand<int>(buf1));
+
+			//TODO:add the data type flag to the factory class;
+			return (new eOperand<T>(buf1));
 		}
 		// IOperand const *operator-(IOperand const &rhs) const;
 		// IOperand const *operator*(IOperand const &rhs) const;
