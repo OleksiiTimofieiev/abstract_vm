@@ -11,7 +11,46 @@ template <typename T>
 
 class eOperand : public IOperand
 {
+	
 	public:
+		eOperand(const std::string & str) : _value(str)
+		{
+			std::string type;
+
+			type = typeid(T).name();
+
+			//TODO::check input value;
+
+			if (type == "c")
+				_value_after_conversion = stoi(str);
+			else if (type == "s")
+				_value_after_conversion = stoi(str);
+			else if (type == "i")
+				_value_after_conversion = stoi(str);
+			else if (type == "f")
+				_value_after_conversion = stof(str);
+			else if (type == "d")
+				_value_after_conversion = stod(str);
+
+			//FIXME:delete in the end of the project;
+			// std::cout<<_value_after_conversion<<std::endl;
+		}
+		eOperand( void ) {};
+		~eOperand( void ) {};
+		eOperand &operator=(eOperand const &rhs)
+		{
+			if (this != &rhs)
+			{
+				this->_value = rhs._value;
+				this->_value_after_conversion = rhs._value_after_conversion;
+			}
+			return *this;
+		}
+		eOperand(eOperand const &src)
+		{
+			*this = src;
+		}
+
 		int 			getPrecision( void ) const
 		{
 			std::string type = typeid(T).name();
@@ -47,7 +86,22 @@ class eOperand : public IOperand
 			return (default_value);
 		}
 
-		// IOperand const *operator+(IOperand const &rhs) const;
+		IOperand const *operator+(IOperand const &rhs) const
+		{
+			long long int 		var1 = std::stoll(this->toString());
+			long long int 		var2 = std::stoll(rhs.toString());
+
+			std::cout << var1 << std::endl;
+			std::cout << var2 << std::endl;
+
+			long long int 		add = var1 + var2;
+
+			const std::string buf1 = std::to_string(add);
+
+			// eOperand sum = eOperand<T>(buf);
+
+			return (new eOperand<T>(buf1));
+		}
 		// IOperand const *operator-(IOperand const &rhs) const;
 		// IOperand const *operator*(IOperand const &rhs) const;
 		// IOperand const *operator/(IOperand const &rhs) const;
@@ -55,28 +109,8 @@ class eOperand : public IOperand
 
 		std::string const &toString(void) const
 		{
-			return (_value);
+			return ( _value );
 		}
-		eOperand(const std::string & str) : _value(str)
-		{
-			std::string type;
-
-			type = typeid(T).name();
-
-			if (type == "c")
-				_value_after_conversion = stoi(str);
-			else if (type == "i")
-				_value_after_conversion = stoi(str);
-			else if (type == "f")
-				_value_after_conversion = stof(str);
-			else if (type == "d")
-				_value_after_conversion = stod(str);
-
-			//FIXME:delete in the end of the project;
-			// std::cout<<_value_after_conversion<<std::endl;
-		}
-		eOperand( void ) {};
-		~eOperand( void ) {};
 		
 	private:
 		std::string		_value;
