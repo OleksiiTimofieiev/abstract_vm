@@ -5,20 +5,20 @@
 #include <iostream>
 #include <typeinfo>
 
-enum eOperandType {Int8, Int16, Int32, Float, Double};
+enum eOperandType {Int8 = 1, Int16, Int32, Float, Double, default_value};
 
 class IOperand
 { 
 public:
-//   virtual int				getPrecision(void) const = 0;				
-//   virtual eOperandType 		getType(void) const = 0;					
+  virtual int				getPrecision(void) const = 0;
+  virtual eOperandType 		getType(void) const = 0;
 //   virtual IOperand const *	operator+(IOperand const &rhs) const = 0;
 //   virtual IOperand const *	operator-(IOperand const &rhs) const = 0;
 //   virtual IOperand const *	operator*(IOperand const &rhs) const = 0;
 //   virtual IOperand const *	operator/(IOperand const &rhs) const = 0;
 //   virtual IOperand const *	operator%(IOperand const &rhs) const = 0;
 
-//   virtual std::string const &toString(void) const = 0;					
+  virtual std::string const &toString(void) const = 0;					
 
   virtual ~IOperand(void){};
 };

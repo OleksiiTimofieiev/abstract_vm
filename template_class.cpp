@@ -1,15 +1,12 @@
 #include "eOperand.hpp"
 
 
-
-
-
-
-
 int main(void)
 {
 
-	eOperand <int> c("123");
+	eOperand <int> c("12345");
 
-	c.data_type_size();
+	std::cout << "Precision -> " << c.getPrecision() << std::endl;
+	std::cout << "Type -> " << c.getType() << std::endl;
+	std::cout << "String representation -> " << c.toString() << std::endl;
 }

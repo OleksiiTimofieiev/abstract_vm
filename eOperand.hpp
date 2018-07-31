@@ -4,46 +4,69 @@
 #include "IOperand.hpp"
 
 // private / protected variables;
+//TODO:copl form
 
-template<typename T>
+template <typename T>
 
-class	eOperand : public IOperand
+class eOperand : public IOperand
 {
 public:
-	// int 			getPrecision(void) const;
-	// eOperandType 	getType(void) const; 
+	int 			getPrecision( void ) const
+	{
+		std::string type = typeid(T).name();
+
+		if (type == "c")
+			return (Int8);
+		else if (type == "s")
+			return (Int16);
+		else if (type == "i")
+			return (Int32);
+		else if (type == "f")
+			return (Float);
+		else if (type == "d")
+			return (Double);
+
+		return (default_value);
+	}
+	eOperandType 	getType( void ) const
+	{
+		std::string type = typeid(T).name();
+
+		if (type == "c")
+			return (Int8);
+		else if (type == "s")
+			return (Int16);
+		else if (type == "i")
+			return (Int32);
+		else if (type == "f")
+			return (Float);
+		else if (type == "d")
+			return (Double);
+
+		return (default_value);
+	}
 	// IOperand const *operator+(IOperand const &rhs) const;
 	// IOperand const *operator-(IOperand const &rhs) const;
 	// IOperand const *operator*(IOperand const &rhs) const;
 	// IOperand const *operator/(IOperand const &rhs) const;
 	// IOperand const *operator%(IOperand const &rhs) const;
 
-	// std::string const &toString(void) const; // int to string
-	eOperand(){};
-
-	eOperand(const std::string & str)
+	std::string const &toString(void) const
 	{
-		// char = 'c';
-		// short = 's';
-		// int = 'i';
-		// float = 'f';
-		// double = 'd';
+		return (_value);
+	}
+	eOperand( void ) {};
+	~eOperand( void ) {};
+	eOperand(const std::string & str) : _value(str)
+	{
 		std::string type;
 
 		type = typeid(T).name();
 
-		std::cout << type;
-
 		if (type == "i")
 			_value_after_conversion = stoi(str);
 	}
-
-	void data_type_size()
-	{
-		std::cout << sizeof(_value_after_conversion) << _value_after_conversion << std::endl;
-	}
-
-	~eOperand(void){};
+	
 private:
 	std::string		_value;
 	T				_value_after_conversion;
