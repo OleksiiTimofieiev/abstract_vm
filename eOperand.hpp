@@ -3,6 +3,8 @@
 
 #include "IOperand.hpp"
 
+// private / protected variables;
+
 class	eOperand : public IOperand
 {
 public:
