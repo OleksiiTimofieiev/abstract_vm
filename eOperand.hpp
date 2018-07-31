@@ -6,8 +6,8 @@
 class	eOperand : public IOperand
 {
 public:
-	int getPrecision(void) const = 0;	 // add it to the constructor with private variable;
-	eOperandType getType(void) const = 0; // different	func;
+	int 			getPrecision(void) const = 0;	 // add it to the constructor with private variable;
+	eOperandType 	getType(void) const = 0; // different	func;
 	IOperand const *operator+(IOperand const &rhs) const = 0;
 	IOperand const *operator-(IOperand const &rhs) const = 0;
 	IOperand const *operator*(IOperand const &rhs) const = 0;
