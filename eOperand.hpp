@@ -44,10 +44,12 @@ class eOperand : public IOperand
 				this->_value = rhs._value;
 				this->_value_after_conversion = rhs._value_after_conversion;
 			}
+				// std::cout << this->_value_after_conversion << std::endl;
 			return *this;
 		}
 		eOperand(eOperand const &src)
 		{
+			// std::cout << _value_after_conversion << std::endl;
 			*this = src;
 		}
 
@@ -94,6 +96,7 @@ class eOperand : public IOperand
 			std::cout << var1 << std::endl;
 			std::cout << var2 << std::endl;
 
+
 			long long int 		add = var1 + var2;
 
 			const std::string buf1 = std::to_string(add);
@@ -112,7 +115,7 @@ class eOperand : public IOperand
 			return ( _value );
 		}
 		
-	private:
+	// private:
 		std::string		_value;
 		T				_value_after_conversion;
 };
