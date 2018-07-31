@@ -103,7 +103,7 @@ class eOperand : public IOperand
 
 			// eOperand sum = eOperand<T>(buf);
 
-			return (new eOperand<T>(buf1));
+			return (new eOperand<int>(buf1));
 		}
 		// IOperand const *operator-(IOperand const &rhs) const;
 		// IOperand const *operator*(IOperand const &rhs) const;
