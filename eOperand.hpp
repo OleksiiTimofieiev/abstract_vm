@@ -11,7 +11,6 @@ template <typename T>
 
 class eOperand : public IOperand
 {
-	
 	public:
 		eOperand(const std::string & str) : _value(str)
 		{
