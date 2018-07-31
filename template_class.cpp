@@ -4,9 +4,14 @@
 int main(void)
 {
 
-	eOperand <double> c("1234578910123123123");
+	eOperand <char> c("65");
+	eOperand <size_t> b("67");
 
 	std::cout << "Precision -> " << c.getPrecision() << std::endl;
 	std::cout << "Type -> " << c.getType() << std::endl;
 	std::cout << "String representation -> " << c.toString() << std::endl;
+
+	std::cout << "Precision -> " << b.getPrecision() << std::endl;
+	std::cout << "Type -> " << b.getType() << std::endl;
+	std::cout << "String representation -> " << b.toString() << std::endl;
 }

@@ -63,12 +63,17 @@ class eOperand : public IOperand
 
 			type = typeid(T).name();
 
-			if (type == "i")
+			if (type == "c")
+				_value_after_conversion = stoi(str);
+			else if (type == "i")
 				_value_after_conversion = stoi(str);
 			else if (type == "f")
 				_value_after_conversion = stof(str);
-			if (type == "d")
+			else if (type == "d")
 				_value_after_conversion = stod(str);
+
+			//FIXME:delete in the end of the project;
+			// std::cout<<_value_after_conversion<<std::endl;
 		}
 		eOperand( void ) {};
 		~eOperand( void ) {};

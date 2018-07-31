@@ -5,7 +5,7 @@
 #include <iostream>
 #include <typeinfo>
 
-enum eOperandType {Int8 = 1, Int16, Int32, Float, Double, default_value};
+enum eOperandType {Int8 = 1, Int16, Int32, Float, Double, default_value = 42};
 
 class IOperand
 { 
