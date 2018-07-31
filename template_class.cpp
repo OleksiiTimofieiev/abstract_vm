@@ -4,7 +4,7 @@
 int main(void)
 {
 
-	eOperand <int> c("12345");
+	eOperand <double> c("1234578910123123123");
 
 	std::cout << "Precision -> " << c.getPrecision() << std::endl;
 	std::cout << "Type -> " << c.getType() << std::endl;

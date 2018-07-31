@@ -65,6 +65,10 @@ class eOperand : public IOperand
 
 			if (type == "i")
 				_value_after_conversion = stoi(str);
+			else if (type == "f")
+				_value_after_conversion = stof(str);
+			if (type == "d")
+				_value_after_conversion = stod(str);
 		}
 		eOperand( void ) {};
 		~eOperand( void ) {};
