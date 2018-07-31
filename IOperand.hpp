@@ -5,15 +5,14 @@
 class IOperand
 { 
 private:
-  enum eOperandType
-  {
-	  Int8 = 0,
-	  Int16,
-	  Int32,
-	  Float,
-	  Double,
-  };
-
+  	enum eOperandType
+	{
+		Int8 = 0,
+		Int16,
+		Int32,
+		Float,
+		Double,
+	};
 public:
   virtual int getPrecision(void) const = 0;
   virtual eOperandType getType(void) const = 0;
