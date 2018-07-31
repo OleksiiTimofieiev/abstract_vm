@@ -88,8 +88,8 @@ class eOperand : public IOperand
 			return (default_value);
 		}
 
-		// 0, 7 ,16;
-		
+		// int0, float7 ,double16;
+
 		// str::strstream -> set precision st to string;
 
 		IOperand const *operator+(IOperand const &rhs) const
