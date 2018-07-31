@@ -1,6 +1,8 @@
 #include "eOperand.hpp"
 #include "IOperand.hpp"
 #include <vector>
+#include <memory>
+#include <iostream>
 
 
 int main(void)
@@ -25,9 +27,9 @@ int main(void)
 
 	// add some vector stuff;
 
-	std::vector<IOperand const*> vars;
+	std::vector<std::shared_ptr<IOperand const*> > vars;
 
-	vars.push_back(a + b);
+	vars.push_back(std::make_shared(new eOperand ()));
 
 	std::cout << vars[0]->toString() << std::endl;
 
