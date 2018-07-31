@@ -28,18 +28,25 @@ public:
 		// int = 4;
 		// float = 4;
 		// double = 8;
-		if (sizeof(_value) == 8)
-			_value = stoi(str);
+		std::string type;
+
+		type = typeid(T).name();
+
+		std::cout << type;
+
+		if (type == "i")
+			_value_after_conversion = stoi(str);
 	}
 
 	void data_type_size()
 	{
-		std::cout << sizeof(_value) << _value << std::endl;
+		std::cout << sizeof(_value_after_conversion) << _value_after_conversion << std::endl;
 	}
 
 	~eOperand(void){};
 private:
-	T		_value;
+	std::string		_value;
+	T				_value_after_conversion;
 };
 
 #endif

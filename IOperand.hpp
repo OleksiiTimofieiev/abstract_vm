@@ -3,6 +3,7 @@
 
 #include <string>
 #include <iostream>
+#include <typeinfo>
 
 enum eOperandType {Int8, Int16, Int32, Float, Double};
 
