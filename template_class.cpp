@@ -31,5 +31,7 @@ int main(void)
 
 	std::cout << vars[0]->toString() << std::endl;
 
+	system("leaks -q a.out");
+
 	return (0);
 }
