@@ -2,12 +2,13 @@ Core:
 -  AbstractVM is a machine that uses a stack to compute simple arithmetic expressions. These arithmetic expressions are provided to the machine as basic assembly programs.
 
 Tech:
+
 ~ HashTable:
-- https://www.youtube.com/watch?v=bcQr7QKUo4M
-- https://www.youtube.com/watch?v=MfhjkfocRR0&list=PLTxllHdfUq4f7-uHOpxXnBUbsuLiI9pmb
+https://www.youtube.com/watch?v=bcQr7QKUo4M
+https://www.youtube.com/watch?v=MfhjkfocRR0&list=PLTxllHdfUq4f7-uHOpxXnBUbsuLiI9pmb
 
 ~ Exceptions info:
-- https://dzone.com/articles/some-useful-facts-to-know-when-using-c-exceptions
+https://dzone.com/articles/some-useful-facts-to-know-when-using-c-exceptions
 
 ~ factory class:
 https://ru.wikipedia.org/wiki/Абстрактная_фабрика_(шаблон_проектирования)
