@@ -23,11 +23,11 @@ public:
 
 	eOperand(const std::string & str)
 	{
-		// char = 1;
-		// short = 2;
-		// int = 4;
-		// float = 4;
-		// double = 8;
+		// char = 'c';
+		// short = 's';
+		// int = 'i';
+		// float = 'f';
+		// double = 'd';
 		std::string type;
 
 		type = typeid(T).name();
