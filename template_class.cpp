@@ -1,4 +1,6 @@
 #include "eOperand.hpp"
+#include "IOperand.hpp"
+#include <vector>
 
 
 int main(void)
@@ -15,15 +17,19 @@ int main(void)
 	// std::cout << "Type -> " << b.getType() << std::endl;
 	// std::cout << "String representation -> " << b.toString() << std::endl;
 
-	const IOperand  *c = a + b;
+	// const IOperand  *c = a + b;
 
-	std::cout << "Precision -> " << c->getPrecision() << std::endl;
-	std::cout << "Type -> " << c->getType() << std::endl;
-	std::cout << "String representation -> " << c->toString() << std::endl;
+	// std::cout << "Precision -> " << c->getPrecision() << std::endl;
+	// std::cout << "Type -> " << c->getType() << std::endl;
+	// std::cout << "String representation -> " << c->toString() << std::endl;
 
 	// add some vector stuff;
 
-	std::vector<IOperand *>;
+	std::vector<IOperand const*> vars;
+
+	vars.push_back(a + b);
+
+	std::cout << vars[0]->toString() << std::endl;
 
 	return (0);
 }

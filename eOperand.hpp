@@ -93,8 +93,8 @@ class eOperand : public IOperand
 			long long int 		var1 = std::stoll(this->toString());
 			long long int 		var2 = std::stoll(rhs.toString());
 
-			std::cout << var1 << std::endl;
-			std::cout << var2 << std::endl;
+			// std::cout << var1 << std::endl;
+			// std::cout << var2 << std::endl;
 
 
 			long long int 		add = var1 + var2;
