@@ -40,11 +40,12 @@ void	CPU::_commands_execution_routine()
 
 
 	eOperand<int8_t> a("1");
-	eOperand<int8_t> b("2");
+	eOperand<int16_t> b("2");
+	eOperand<int32_t> c("3");
+	eOperand<float> d("4");
+	eOperand<double> e("5");
 
-	eOperand<int8_t> c("7");
-
-	a = c;
+	// a = c;
 
 
 	output(a.toString());
@@ -53,7 +54,7 @@ void	CPU::_commands_execution_routine()
 	_stack.push_back(_factory.createOperand(Int8, "0"));
 	_stack.push_back(_factory.createOperand(Int8, "1"));
 	_stack.push_back(_factory.createOperand(Int8, "2"));
-	_stack.push_back(a + b);
+	_stack.push_back(c + b);
 
 	output(_stack[0]->toString());
 	output(_stack[1]->toString());

@@ -3,6 +3,7 @@
 
 #include "IOperand.hpp"
 #include "Factory.hpp"
+#include <iostream>
 
 //TODO:exceptions
 

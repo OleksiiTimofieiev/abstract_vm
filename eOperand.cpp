@@ -11,7 +11,7 @@ template <class T> eOperand<T>::eOperand(const std::string &str) : _value(str)
 
 	//TODO::check input value;
 
-	if (type == "c")
+	if (type == "a")
 		_value_after_conversion = stoi(str);
 	else if (type == "s")
 		_value_after_conversion = stoi(str);
@@ -44,7 +44,9 @@ template <class T> int eOperand<T>::getPrecision(void) const
 {
 	std::string type = typeid(T).name();
 
-	if (type == "c")
+
+
+	if (type == "a")
 		return (Int8);
 	else if (type == "s")
 		return (Int16);
@@ -61,7 +63,7 @@ template <class T> eOperandType eOperand<T>::getType(void) const
 	{
 		std::string type = typeid(T).name();
 
-		if (type == "c")
+		if (type == "a")
 			return (Int8);
 		else if (type == "s")
 			return (Int16);
