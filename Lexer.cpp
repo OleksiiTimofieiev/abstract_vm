@@ -8,7 +8,6 @@ Lexer::Lexer() {}
 Lexer::~Lexer() {}
 
 //TODO: add copliens form;
-//TODO: no instructions;
 
 bool Lexer::regex_checks(std::string str, std::vector<std::vector<std::string> > &_command_list)
 {
@@ -82,22 +81,27 @@ void Lexer::lexical_analysis(Parser &parser, std::vector<std::vector<std::string
 	int line = 0;
 	bool error = false;
 
-	if (!parser._filtered_input.empty())
+	if (parser._filtered_input.empty())
 	{
-		for ( auto i = parser._filtered_input.begin(); i != parser._filtered_input.end(); ++i )
+		output("\033[1;31mNo instructions.\033[0m");
+		exit(0);
+	}
+	else 
+	{
+		for (auto i = parser._filtered_input.begin(); i != parser._filtered_input.end(); ++i)
 		{
 			++line; // variable -> line of the errored which occured;
-		
+
 			try
 			{
-				if ( !regex_checks( *i, _command_list ) )
+				if (!regex_checks(*i, _command_list))
 				{
 					error = true;
 					//TODO:define numbers;
 					throw_line("\033[1;31mLexical error on line # -> \033[0m", line);
 				}
 			}
-			catch ( const std::runtime_error &ex )
+			catch (const std::runtime_error &ex)
 			{
 				std::cout << ex.what() << std::endl;
 			}
@@ -105,5 +109,4 @@ void Lexer::lexical_analysis(Parser &parser, std::vector<std::vector<std::string
 	}
 	if (!error)
 		output("\033[1;32mNo lexical errors have been detected => [ avm ] ✓\x1B[0m")
-			output("");
 }

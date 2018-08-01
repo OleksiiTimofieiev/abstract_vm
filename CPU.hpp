@@ -8,7 +8,6 @@
 #include <iostream>
 #include <typeinfo>
 
-
 #include "Lexer.hpp"
 #include "eOperand.hpp"
 #include "Factory.hpp"
