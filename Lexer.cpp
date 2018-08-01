@@ -92,7 +92,8 @@ void Lexer::lexical_analysis(Parser &parser, std::vector<std::vector<std::string
 				if ( !regex_checks( *i, _command_list ) )
 				{
 					error = true;
-					throw_line("\033[1;31mLexical error -> \033[0m", line);
+					//TODO:define numbers;
+					throw_line("\033[1;31mLexical error on line # -> \033[0m", line);
 				}
 			}
 			catch ( const std::runtime_error &ex )
