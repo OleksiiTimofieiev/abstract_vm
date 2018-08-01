@@ -12,7 +12,6 @@ class	Factory
 		{
 			return ((*this.*_vFunc.at(type))(value));
 		}
-
 	Factory( void )
 	{
 		_vFunc.push_back(&Factory::createInt8);
