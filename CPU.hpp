@@ -7,6 +7,7 @@
 #include <functional>
 #include <iostream>
 #include <typeinfo>
+#include <stdio.h>
 
 #include "Lexer.hpp"
 #include "eOperand.hpp"
@@ -14,6 +15,8 @@
 
 //TODO:make full documentation for the each class;
 //TODO:copl form for each class;
+
+//TODO:vector of objects: eNum command, eNum type, eNum value;
 
 class	CPU
 {
@@ -35,6 +38,7 @@ class	CPU
 
 		// magic ;)
 		void execute_inner_logic				( const int quantity_of_arguments, char * argument );
+		void print								( void );
 
 };
 

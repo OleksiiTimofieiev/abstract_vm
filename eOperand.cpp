@@ -103,6 +103,7 @@ template <class T>std::string const &eOperand<T>::toString(void) const
 	return (_value);
 }
 
+
 template class eOperand<int8_t>;
 template class eOperand<int16_t>;
 template class eOperand<int32_t>;
