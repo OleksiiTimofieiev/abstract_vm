@@ -23,7 +23,7 @@ class	CPU
 		std::vector<IOperand const *> 			_stack;
 
 		// function execution func;
-		void commands_execution_routine								( void )
+		void _commands_execution_routine								( void )
 		{
 			_stack.push_back(_factory.createOperand(Int8, "42"));
 			_stack.push_back(_factory.createOperand(Int8, "21"));

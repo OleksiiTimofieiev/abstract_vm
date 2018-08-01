@@ -8,6 +8,7 @@ Lexer::Lexer() {}
 Lexer::~Lexer() {}
 
 //TODO: add copliens form;
+//TODO: no instructions;
 
 bool Lexer::regex_checks(std::string str, std::vector<std::vector<std::string> > &_command_list)
 {

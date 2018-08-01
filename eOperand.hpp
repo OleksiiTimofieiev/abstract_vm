@@ -2,6 +2,7 @@
 #define EOPERAND_HPP
 
 #include "IOperand.hpp"
+#include "CPU.hpp"
 
 // private / protected variables;
 //TODO:copl form
@@ -107,7 +108,7 @@ class eOperand : public IOperand
 
 
 			//TODO:add the data type flag to the factory class;
-			return (new eOperand<T>(buf1));
+			return (_factory(.createOperand(Int8, "42")));
 		}
 		// IOperand const *operator-(IOperand const &rhs) const;
 		// IOperand const *operator*(IOperand const &rhs) const;
@@ -122,6 +123,7 @@ class eOperand : public IOperand
 	// private:
 		std::string		_value;
 		T				_value_after_conversion;
+		Factory			_factory;
 };
 
 #endif

@@ -10,6 +10,7 @@ void	CPU::execute_inner_logic(const int quantity_of_arguments, char *argument)
 {
 	_parser.read			( quantity_of_arguments, argument );
 	_lexer.lexical_analysis	( _parser, _command_list );
+	_commands_execution_routine ();
 
 	// output(_command_list[0][0]);
 	// output(_command_list[0][1]);
@@ -27,7 +28,7 @@ void	CPU::execute_inner_logic(const int quantity_of_arguments, char *argument)
 	// output("");
 
 	//FIXME:: delete in the end;
-	commands_execution_routine();
+
 
 	_parser.detect_leaks(); // detect leaks;
 }
