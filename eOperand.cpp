@@ -44,7 +44,22 @@ template <class T> int eOperand<T>::getPrecision(void) const
 {
 	std::string type = typeid(T).name();
 
+	if (type == "a")
+		return (Int8);
+	else if (type == "s")
+		return (Int16);
+	else if (type == "i")
+		return (Int32);
+	else if (type == "f")
+		return (Float);
+	else if (type == "d")
+		return (Double);
 
+	return (default_value);
+}
+template <class T> eOperandType eOperand<T>::getType(void) const
+{
+	std::string type = typeid(T).name();
 
 	if (type == "a")
 		return (Int8);
@@ -58,52 +73,35 @@ template <class T> int eOperand<T>::getPrecision(void) const
 		return (Double);
 
 	return (default_value);
-	}
-template <class T> eOperandType eOperand<T>::getType(void) const
-	{
-		std::string type = typeid(T).name();
+}
 
-		if (type == "a")
-			return (Int8);
-		else if (type == "s")
-			return (Int16);
-		else if (type == "i")
-			return (Int32);
-		else if (type == "f")
-			return (Float);
-		else if (type == "d")
-			return (Double);
+template <class T> IOperand const *eOperand<T>::operator+(IOperand const &rhs) const
+{
+	long long int var1 = std::stoll(this->toString());
+	long long int var2 = std::stoll(rhs.toString());
 
-		return (default_value);
-	}
+	// std::cout << var1 << std::endl;
+	// std::cout << var2 << std::endl;
 
-	template <class T> IOperand const *eOperand<T>::operator+(IOperand const &rhs) const
-	{
-		long long int var1 = std::stoll(this->toString());
-		long long int var2 = std::stoll(rhs.toString());
+	long long int add = var1 + var2;
 
-		// std::cout << var1 << std::endl;
-		// std::cout << var2 << std::endl;
+	const std::string new_line = std::to_string(add);
 
-		long long int add = var1 + var2;
+	eOperandType eNum;
 
-		const std::string new_line = std::to_string(add);
+	eNum = Int8;
 
-		eOperandType eNum;
+	return (Factory().createOperand(eNum, new_line));
+}
+// IOperand const *operator-(IOperand const &rhs) const;
+// IOperand const *operator*(IOperand const &rhs) const;
+// IOperand const *operator/(IOperand const &rhs) const;
+// IOperand const *operator%(IOperand const &rhs) const;
 
-		eNum = Int8;
-
-		return (Factory().createOperand(eNum, new_line));
-	}
-	// IOperand const *operator-(IOperand const &rhs) const;
-	// IOperand const *operator*(IOperand const &rhs) const;
-	// IOperand const *operator/(IOperand const &rhs) const;
-	// IOperand const *operator%(IOperand const &rhs) const;
-
-	template <class T>std::string const &eOperand<T>::toString(void) const
-	{
-		return (_value);
-	}
+template <class T>std::string const &eOperand<T>::toString(void) const
+{
+	return (_value);
+}
 
 template class eOperand<int8_t>;
 template class eOperand<int16_t>;
