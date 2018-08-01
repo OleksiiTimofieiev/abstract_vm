@@ -27,7 +27,7 @@ void	CPU::execute_inner_logic(const int quantity_of_arguments, char *argument)
 	// output("");
 
 	//FIXME:: delete in the end;
-	test();
+	commands_execution_routine();
 
 	_parser.detect_leaks(); // detect leaks;
 }
