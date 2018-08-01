@@ -31,7 +31,7 @@ void	CPU::execute_inner_logic(const int quantity_of_arguments, char *argument)
 	//FIXME:: delete in the end;
 
 	_commands_execution_routine();
-	
+
 	_parser.detect_leaks(); // detect leaks;
 }
 
@@ -44,9 +44,11 @@ void	CPU::_commands_execution_routine()
 
 	_stack.push_back(_factory.createOperand(Int8, "0"));
 	_stack.push_back(_factory.createOperand(Int8, "1"));
+	_stack.push_back(_factory.createOperand(Int8, "2"));
 	_stack.push_back(a + b);
 
 	output(_stack[0]->toString());
 	output(_stack[1]->toString());
 	output(_stack[2]->toString());
+	output(_stack[3]->toString());
 }

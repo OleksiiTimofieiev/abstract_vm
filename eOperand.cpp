@@ -32,10 +32,10 @@ template <class T> IOperand const& eOperand<T>::operator = (eOperand const &rhs)
 	}
 	return *this;
 }
-	template <class T> eOperand <T>::eOperand(eOperand const &src)
-	{
-		*this = src;
-	}
+template <class T> eOperand<T>::eOperand(eOperand const &src)
+{
+	*this = src;
+}
 
 template <class T> int eOperand<T>::getPrecision(void) const
 {
