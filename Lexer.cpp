@@ -63,10 +63,8 @@ bool Lexer::regex_checks(std::string str, std::vector<std::vector<std::string> >
 
 		std::vector<std::string> lstTableRow;
 
-		auto row = lstTableRow;
-
 		for (int j = 0; j < nNumColumns; j++)
-			row.push_back(result[j + 1]);
+			lstTableRow.push_back(result[j + 1]);
 		_command_list.push_back(lstTableRow);
 
 		flag = true;

@@ -62,5 +62,10 @@ void	CPU::_commands_execution_routine()
 
 	IOperand  const * z1 = _stack.back();
 	std::string sample = z1->toString();
+	_stack.pop_back();
+	_stack.pop_back();
+
+	output(_stack.back()->toString());
+
 	// IOperand const * z2 = &b;
 }

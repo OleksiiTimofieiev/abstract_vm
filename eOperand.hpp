@@ -4,7 +4,6 @@
 #include "IOperand.hpp"
 #include "Factory.hpp"
 
-//TODO:copl form
 //TODO:exceptions
 
 template <typename T>

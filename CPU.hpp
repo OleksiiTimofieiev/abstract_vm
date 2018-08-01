@@ -13,6 +13,7 @@
 #include "Factory.hpp"
 
 //TODO:make full documentation for the each class;
+//TODO:copl form for each class;
 
 class	CPU
 {
@@ -25,7 +26,6 @@ class	CPU
 		std::vector<std::vector<std::string> > 	_command_list;
 		std::vector<IOperand const *> 			_stack;
 
-		// function execution func;
 		void _commands_execution_routine								( void );
 
 
