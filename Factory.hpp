@@ -5,26 +5,16 @@
 #include <functional>
 #include <vector>
 
-// typedef std::function<IOperand const* (std::string const & value)> function_object;
-
 class	Factory
 {
 	public:
 		IOperand const *createOperand(eOperandType type, std::string const &value) const
 		{
-			// IOperand const *(Factory::*f)(std::string const &value) const;
-			// auto f = _vFunc.at(type);
 			return ((*this.*_vFunc.at(type))(value));
 		}
 
 	Factory( void )
 	{
-		// _vFunc.push_back(&Factory::createInt8);
-		// _vFunc.push_back(&Factory::createInt16);
-		// _vFunc.push_back(&Factory::createInt32);
-		// _vFunc.push_back(&Factory::createFloat);
-		// _vFunc.push_back(&Factory::createDouble);
-
 		_vFunc.push_back(&Factory::createInt8);
 		_vFunc.push_back(&Factory::createInt16);
 		_vFunc.push_back(&Factory::createInt32);
@@ -64,8 +54,6 @@ class	Factory
 		{
 			return (new eOperand<double>(value));
 		};
-
-		// std::vector<function_object> _vFunc;
 
 		std::vector<IOperand const *(Factory::*)(std::string const &value) const> _vFunc;
 };
