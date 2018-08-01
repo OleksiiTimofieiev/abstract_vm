@@ -37,7 +37,7 @@ class	Factory
 		IOperand const *createInt8(std::string const &value) const
 		{
 		  return (new eOperand<char>(value));
-		};
+		}
 	  	IOperand const *createInt16(std::string const &value) const
 		{
 			return (new eOperand<short>(value));
