@@ -3,6 +3,7 @@
 #include <vector>
 #include <memory>
 #include <iostream>
+#include "Factory.hpp"
 
 
 int main(void)
@@ -29,7 +30,9 @@ int main(void)
 
 	std::vector<IOperand const*> vars;
 
-	vars.push_back(a + b);
+	Factory omega;
+
+	vars.push_back(omega.createOperand(Float, "123654.67"));
 
 	std::cout << vars[0]->toString() << std::endl;
 
