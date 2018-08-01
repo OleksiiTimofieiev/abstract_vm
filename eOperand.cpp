@@ -1,5 +1,8 @@
 #include "eOperand.hpp"
 
+//TODO:// 	// int0, float7 ,double16; str::strstream -> set precision st to string;
+//TODO:: not a value;
+
 template <class T> eOperand<T>::eOperand(const std::string &str) : _value(str)
 {
 	std::string type;
@@ -72,10 +75,6 @@ template <class T> eOperandType eOperand<T>::getType(void) const
 		return (default_value);
 	}
 
-// 	// int0, float7 ,double16;
-
-// 	// str::strstream -> set precision st to string;
-
 	template <class T> IOperand const *eOperand<T>::operator+(IOperand const &rhs) const
 	{
 		long long int var1 = std::stoll(this->toString());
@@ -90,27 +89,14 @@ template <class T> eOperandType eOperand<T>::getType(void) const
 
 		eOperandType eNum;
 
-		eNum = Int16; // select via function;
-
-		//TODO:add the data type flag to the factory class;
-
-		// Factory factory;
-		// Plan B
-		// if (eNum == Int16)
-		// {
-
-		// 	IOperand *x = new eOperand<char>(new_line);
-		// 	return (x);
-
-		// }
-
+		eNum = Int8;
 
 		return (Factory().createOperand(eNum, new_line));
 	}
-// 	// IOperand const *operator-(IOperand const &rhs) const;
-// 	// IOperand const *operator*(IOperand const &rhs) const;
-// 	// IOperand const *operator/(IOperand const &rhs) const;
-// 	// IOperand const *operator%(IOperand const &rhs) const;
+	// IOperand const *operator-(IOperand const &rhs) const;
+	// IOperand const *operator*(IOperand const &rhs) const;
+	// IOperand const *operator/(IOperand const &rhs) const;
+	// IOperand const *operator%(IOperand const &rhs) const;
 
 	template <class T>std::string const &eOperand<T>::toString(void) const
 	{

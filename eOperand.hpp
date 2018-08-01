@@ -4,11 +4,8 @@
 #include "IOperand.hpp"
 #include "Factory.hpp"
 
-
 //TODO:copl form
 //TODO:exceptions
-
-// class Factory::Factory;
 
 template <typename T>
 class eOperand : public IOperand
@@ -24,10 +21,13 @@ class eOperand : public IOperand
 		int 			getPrecision( void ) const;
 		eOperandType 	getType( void ) const;
 		IOperand const *operator+(IOperand const &rhs) const;
+		// IOperand const *operator-(IOperand const &rhs) const;
+		// IOperand const *operator*(IOperand const &rhs) const;
+		// IOperand const *operator/(IOperand const &rhs) const;
+		// IOperand const *operator%(IOperand const &rhs) const;
 		std::string const &toString(void) const;
 		
 	private:
-
 		std::string		_value;
 		T				_value_after_conversion;
 };
