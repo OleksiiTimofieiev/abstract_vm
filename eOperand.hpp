@@ -2,14 +2,11 @@
 #define EOPERAND_HPP
 
 #include "IOperand.hpp"
-#include "CPU.hpp"
 
-// private / protected variables;
 //TODO:copl form
 //TODO:exceptions
 
 template <typename T>
-
 class eOperand : public IOperand
 {
 	public:
@@ -44,12 +41,10 @@ class eOperand : public IOperand
 				this->_value = rhs._value;
 				this->_value_after_conversion = rhs._value_after_conversion;
 			}
-				// std::cout << this->_value_after_conversion << std::endl;
 			return *this;
 		}
 		eOperand(eOperand const &src)
 		{
-			// std::cout << _value_after_conversion << std::endl;
 			*this = src;
 		}
 
@@ -102,13 +97,17 @@ class eOperand : public IOperand
 
 			long long int 		add = var1 + var2;
 
-			const std::string buf1 = std::to_string(add);
+			const std::string new_line = std::to_string(add);
 
-			// eOperand sum = eOperand<T>(buf);
+			eOperandType eNum;
 
+			eNum = Int8;
 
 			//TODO:add the data type flag to the factory class;
-			return (_factory(.createOperand(Int8, "42")));
+			
+			// Factory factory;
+
+			return (new eOperand<char> ("42"));
 		}
 		// IOperand const *operator-(IOperand const &rhs) const;
 		// IOperand const *operator*(IOperand const &rhs) const;
@@ -120,10 +119,9 @@ class eOperand : public IOperand
 			return ( _value );
 		}
 		
-	// private:
+	private:
 		std::string		_value;
 		T				_value_after_conversion;
-		Factory			_factory;
 };
 
 #endif
