@@ -5,8 +5,6 @@
 #include <fstream>
 #include <list>
 
-class Lexer;
-
 class	Parser
 {
 	friend	class Lexer;
