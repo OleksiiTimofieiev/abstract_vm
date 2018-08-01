@@ -15,7 +15,6 @@
 
 //TODO:make full documentation for the each class;
 
-
 class	CPU
 {
 	private:

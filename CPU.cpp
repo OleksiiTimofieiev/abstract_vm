@@ -46,6 +46,7 @@ void	CPU::_commands_execution_routine()
 
 	a = c;
 
+
 	output(a.toString());
 	output("");
 
@@ -58,4 +59,8 @@ void	CPU::_commands_execution_routine()
 	output(_stack[1]->toString());
 	output(_stack[2]->toString());
 	output(_stack[3]->toString());
+
+	IOperand  const * z1 = _stack.back();
+	std::string sample = z1->toString();
+	// IOperand const * z2 = &b;
 }
