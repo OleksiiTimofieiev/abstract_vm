@@ -6,6 +6,8 @@
 
 #include "Parser.hpp" // Parser emulation;
 #include "Lexer.hpp" // Lexer emulation;
+#include "eOperand.hpp"
+#include "Factory.hpp"
 #include <vector>
 
 class	CPU
@@ -13,8 +15,10 @@ class	CPU
 	private:
 		Parser 									_parser;
 		Lexer 									_lexer;
+		Factory									_factory;				
 
 		std::vector<std::vector<std::string> > 	_command_list;
+		std::vector<IOperand const *> 			_stack;
 
 		//TODO:create stack and start to work with it;
 
