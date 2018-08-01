@@ -20,9 +20,8 @@ class	CPU
 	private:
 		Parser 									_parser;
 		Lexer 									_lexer;
-		// eOperand<char> 							_eOperand; factory class will retun it;
+		// eOperand<char> 							_eOperand; factory class will retun it; delete it ?
 		Factory									_factory;			
-
 		std::vector<std::vector<std::string> > 	_command_list;
 		std::vector<IOperand const *> 			_stack;
 
