@@ -10,6 +10,8 @@
 #include "Factory.hpp"
 #include <vector>
 
+//TODO:make full documentation for the each class;
+
 class	CPU
 {
 	private:
@@ -20,7 +22,6 @@ class	CPU
 		std::vector<std::vector<std::string> > 	_command_list;
 		std::vector<IOperand const *> 			_stack;
 
-		//TODO:create stack and start to work with it;
 
 	public:
 		CPU										( void );
