@@ -31,7 +31,6 @@ class	Factory
 	{
 		*this = src;
 	}
-
   	private:
 		IOperand const *createInt8(std::string const &value) const
 		{
@@ -53,7 +52,6 @@ class	Factory
 		{
 			return (new eOperand<double>(value));
 		}
-
 		std::vector<IOperand const *(Factory::*)(std::string const &value) const> _vFunc;
 };
 

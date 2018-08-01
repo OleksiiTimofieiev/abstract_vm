@@ -99,7 +99,6 @@ class eOperand : public IOperand
 			// std::cout << var1 << std::endl;
 			// std::cout << var2 << std::endl;
 
-
 			long long int 		add = var1 + var2;
 
 			const std::string buf1 = std::to_string(add);
