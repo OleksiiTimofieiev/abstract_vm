@@ -2,6 +2,7 @@
 #define EOPERAND_HPP
 
 #include "IOperand.hpp"
+#include "Factory.hpp"
 
 //TODO:copl form
 //TODO:exceptions
@@ -105,7 +106,7 @@ class eOperand : public IOperand
 
 			//TODO:add the data type flag to the factory class;
 			
-			// Factory factory;
+			Factory factory;
 
 			return (new eOperand<char> ("42"));
 		}
