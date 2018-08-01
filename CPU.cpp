@@ -66,6 +66,4 @@ void	CPU::_commands_execution_routine()
 	_stack.pop_back();
 
 	output(_stack.back()->toString());
-
-	// IOperand const * z2 = &b;
 }
