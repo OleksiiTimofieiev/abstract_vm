@@ -11,15 +11,16 @@ Factory::Factory( void )
 
 Factory::~Factory(void) {}
 
-IOperand const *Factory::createOperand(eOperandType type, std::string const &value) const
-{
-	return ((*this.*_vFunc.at(type))(value));
-}
 Factory &Factory::operator=(Factory const &rhs)
 {
 	if (this != &rhs)
 		this->_vFunc = rhs._vFunc;
 	return *this;
+}
+
+IOperand const *Factory::createOperand(eOperandType type, std::string const &value) const
+{
+	return ((*this.*_vFunc.at(type))(value));
 }
 Factory::Factory(Factory const &src)
 {

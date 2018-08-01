@@ -10,6 +10,7 @@ class	Factory
 	public:
 		Factory( void );
 		~Factory( void);
+		
 		Factory &operator=(Factory const &rhs);
 		Factory(Factory const &src);
 
