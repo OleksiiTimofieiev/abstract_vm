@@ -41,7 +41,7 @@ class	Factory
 	  	IOperand const *createInt16(std::string const &value) const
 		{
 			return (new eOperand<short>(value));
-		};
+		}
 	  	IOperand const *createInt32(std::string const &value) const
 		{
 			return (new eOperand<int>(value));
@@ -49,11 +49,11 @@ class	Factory
 		IOperand const *createFloat(std::string const &value) const
 		{
 			return (new eOperand<float>(value));
-		};
+		}
 		IOperand const *createDouble(std::string const &value) const
 		{
 			return (new eOperand<double>(value));
-		};
+		}
 
 		std::vector<IOperand const *(Factory::*)(std::string const &value) const> _vFunc;
 };
