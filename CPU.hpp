@@ -29,6 +29,14 @@ class	CPU
 
 		// magic ;)
 		void execute_inner_logic				( const int quantity_of_arguments, char * argument );
+		void test								(void)
+		{
+			_stack.push_back(_factory.createOperand(Int8, "42"));
+			_stack.push_back(_factory.createOperand(Int8, "21"));
+
+			output(_stack[0]->toString());
+			output(_stack[1]->toString());
+		}
 };
 
 #endif
