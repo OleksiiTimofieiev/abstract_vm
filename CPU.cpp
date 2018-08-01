@@ -12,7 +12,7 @@ void	CPU::execute_inner_logic(const int quantity_of_arguments, char *argument)
 	_parser.read				( quantity_of_arguments, argument );
 	_lexer.lexical_analysis		( _parser, _command_list );
 	_commands_execution_routine	();
-
+	//FIXME:delete in the end of the project;
 	_parser.detect_leaks(); // detect leaks;
 }
 
