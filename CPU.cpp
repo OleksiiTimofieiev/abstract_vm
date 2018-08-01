@@ -31,18 +31,19 @@ void	CPU::execute_inner_logic(const int quantity_of_arguments, char *argument)
 	//FIXME:: delete in the end;
 
 	_commands_execution_routine();
-		_parser.detect_leaks(); // detect leaks;
+	
+	_parser.detect_leaks(); // detect leaks;
 }
 
 void	CPU::_commands_execution_routine()
 {
 
 
-	eOperand<char> a("42");
-	eOperand<char> b("42");
+	eOperand<int8_t> a("42");
+	eOperand<int8_t> b("42");
 
-	_stack.push_back(_factory.createOperand(Int8, "42"));
-	_stack.push_back(_factory.createOperand(Int8, "21"));
+	_stack.push_back(_factory.createOperand(Int8, "0"));
+	_stack.push_back(_factory.createOperand(Int8, "1"));
 	_stack.push_back(a + b);
 
 	output(_stack[0]->toString());

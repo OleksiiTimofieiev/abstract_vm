@@ -8,11 +8,13 @@
 #include <iostream>
 #include <typeinfo>
 
+
 #include "Lexer.hpp"
 #include "eOperand.hpp"
 #include "Factory.hpp"
 
 //TODO:make full documentation for the each class;
+
 
 class	CPU
 {

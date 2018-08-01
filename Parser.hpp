@@ -9,7 +9,7 @@ class Lexer;
 
 class	Parser
 {
-	friend	Lexer;
+	friend	class Lexer;
 
 	private:
 		std::list<std::string>		_filtered_input;

@@ -29,15 +29,15 @@ Factory::Factory(Factory const &src)
 
 IOperand const *Factory::createInt8(std::string const &value) const
 {
-	return (new eOperand<char>(value));
+	return (new eOperand<int8_t>(value));
 }
 IOperand const *Factory::createInt16(std::string const &value) const
 {
-	return (new eOperand<short>(value));
+	return (new eOperand<int16_t>(value));
 }
 IOperand const *Factory::createInt32(std::string const &value) const
 {
-	return (new eOperand<int>(value));
+	return (new eOperand<int32_t>(value));
 };
 IOperand const *Factory::createFloat(std::string const &value) const
 {

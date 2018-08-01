@@ -1,6 +1,6 @@
 NAME 			= avm
 
-SRCS 			= CPU.cpp Parser.cpp Lexer.cpp Exception.cpp Factory.cpp main.cpp
+SRCS 			= CPU.cpp Parser.cpp Lexer.cpp Exception.cpp Factory.cpp eOperand.cpp main.cpp
 
 CFLAGS 			= -std=c++11 -Wall -Werror -Wextra
 
@@ -23,7 +23,7 @@ LOG_WHITE		= \033[1;37m
 	
 all: $(NAME)
 
-%.o: %.cpp
+%.o: %.cpp %.hpp
 	@$(COMPILER) -c $(CFLAGS) $< -o $@
 
 $(NAME): $(OBJECTS)

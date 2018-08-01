@@ -1,7 +1,9 @@
 #ifndef FACTORY_HPP
 #define	FACTORY_HPP
 
+// #ifndef EOPERAND_HPP
 #include "eOperand.hpp"
+// #endif
 #include <vector>
 
 class	Factory
