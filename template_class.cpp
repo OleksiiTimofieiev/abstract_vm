@@ -27,9 +27,9 @@ int main(void)
 
 	// add some vector stuff;
 
-	std::vector<std::shared_ptr<IOperand const*> > vars;
+	std::vector<IOperand const*> vars;
 
-	vars.push_back(std::make_shared(new eOperand ()));
+	vars.push_back(a + b);
 
 	std::cout << vars[0]->toString() << std::endl;
 
