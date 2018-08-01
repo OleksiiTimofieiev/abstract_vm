@@ -29,12 +29,12 @@ void	CPU::_commands_execution_routine()
 	// a = c;
 
 
-	output(a.toString());
+	// output(a.toString());
 	output("");
 
 	_stack.push_back(_factory.createOperand(Int8, "0"));
 	_stack.push_back(_factory.createOperand(Int8, "1"));
-	_stack.push_back(_factory.createOperand(Int8, "2"));
+	_stack.push_back(_factory.createOperand(Int32, "2"));
 	_stack.push_back(c + b);
 
 	output(_stack[0]->toString());
@@ -42,10 +42,13 @@ void	CPU::_commands_execution_routine()
 	output(_stack[2]->toString());
 	output(_stack[3]->toString());
 
-	IOperand  const * z1 = _stack.back();
-	std::string sample = z1->toString();
+	output("");
+
+	// IOperand  const * z1 = _stack.back();
+	// std::string sample = z1->toString();
 	_stack.pop_back();
 	_stack.pop_back();
 
 	output(_stack.back()->toString());
+	output(_stack.back()->getType());
 }
