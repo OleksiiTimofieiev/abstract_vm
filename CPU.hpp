@@ -33,6 +33,7 @@
 // float
 // 1. static cast for the string value, 2. do smth - check Pasha method;
 // cast to the bigger value, even assert;
+// make cool makefile;
 
 class	CPU
 {
