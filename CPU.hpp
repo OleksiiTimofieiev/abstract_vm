@@ -19,8 +19,13 @@
 #include 				"Factory.hpp"
 
 
-//TODO: Your machine must be able to run programs from a file passed as a parameter and from the standard input. 
-//When reading from the standard input, the end of the program is indicated by the special symbol ";;" otherwise absent. // read mode variable;
+// • Overflow on a value
+// • Underflow on a value
+// • Instruction pop on an empty stack
+// • Division/modulo by 0
+// • The program doesn’t have an exit instruction
+// • An assert instruction is not true
+// • The stack is composed of strictly less that two values when an arithmetic instruction is executed.
 
 // -DBL/float_MAX
 // long double;

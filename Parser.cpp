@@ -44,7 +44,7 @@ void	Parser::read_from_the_standart_input( void )
 
 		if ( std::getline( std::cin, input ) )
 		{
-			if (input.at(0) != ';' && input.at(1) != ';')
+			if ( input.length() != 1 && input.at(0) != ';' && input.at(1) != ';' )
 			{
 				comment_find = input.find(";");
 
@@ -92,7 +92,7 @@ void	Parser::read_from_the_ifstream( char * argument )
 		{
 			getline( fin, input);
 
-			if (input.at(0) != ';' && input.at(1) != ';')
+			if ( input.length() != 1 && input.at(0) != ';' && input.at(1) != ';')
 			{
 				comment_find = input.find(";");
 
