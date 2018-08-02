@@ -46,6 +46,17 @@
 		"array": "cpp",
 		"bitset": "cpp",
 		"iterator": "cpp",
-		"regex": "cpp"
+		"regex": "cpp",
+		"__functional_base": "cpp",
+		"atomic": "cpp",
+		"chrono": "cpp",
+		"functional": "cpp",
+		"limits": "cpp",
+		"locale": "cpp",
+		"memory": "cpp",
+		"ratio": "cpp",
+		"system_error": "cpp",
+		"tuple": "cpp",
+		"type_traits": "cpp"
 	}
 }
