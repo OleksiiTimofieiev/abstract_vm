@@ -13,6 +13,7 @@
 #include 				<iostream>
 #include 				<typeinfo>
 #include 				<stdio.h>
+#include				<iterator>
 
 #include 				"Lexer.hpp"
 #include 				"eOperand.hpp"
@@ -50,6 +51,7 @@ class	CPU
 		~CPU									( void );
 		CPU &operator =							( CPU const &rhs );
 		CPU										( CPU const &src );
+		void _push								( std::string Type, std::string value);
 		void _execute_inner_logic				( const int quantity_of_arguments, char * argument );
 		bool _print								( void );
 		void _exit								( void );

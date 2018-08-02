@@ -44,16 +44,44 @@ void	CPU::_commands_execution_routine()
 	{
 		col_command_list = row_command_list->begin();
 
-		if (*col_command_list == "exit")
+		if (*col_command_list == "exit") // move forward iterator to have its value;
 		{
 			exit_command_is_pesent_in_command_list = true;
 			_exit( );
 		}
+		else if (*col_command_list == "push")
+		{
+			_push(*std::next(col_command_list, 1) , *std::next(col_command_list, 2));
+		}
 	}
-
 	if ( !exit_command_is_pesent_in_command_list )
 		OUTPUT_RED( "No exit command available." );
 }
+
+void	CPU::_push( std::string Type, std::string value )
+{
+	eOperandType selector;
+
+	if (Type == "int8") 
+	selector = Int8;
+	else if (Type == "int16")
+	 selector = Int16;
+	else if (Type == "int32") 
+	selector = Int32;
+	else if (Type == "float") 
+	selector = Float;
+	else if (Type == "double")
+	 selector = Double;
+	 else
+	selector = default_value;
+
+	_stack.push_back(_factory.createOperand(selector, value));
+
+	IOperand const* z = _stack.back();
+
+	std::cout << z->toString() << std::endl;
+}
+
 bool	CPU::_print( void )
 {
 
