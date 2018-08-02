@@ -1,29 +1,30 @@
-#ifndef	CPU_HPP
-#define CPU_HPP
-
-#include <vector>
-#include <functional>
-#include <iostream>
-#include <typeinfo>
-#include <stdio.h>
-
-#include "Lexer.hpp"
-#include "eOperand.hpp"
-#include "Factory.hpp"
+# ifndef CPU_HPP
+# define CPU_HPP
 
 # define RED   			"\033[1;31m"
 # define MAGENTA		"\x1B[35m"	
 # define COLOR_RESET 	"\x1B[0m"
 
-# define OUTPUT_RED(x) std::cout << RED << (x) << COLOR_RESET << std::endl;
-# define OUTPUT_MAGENTA(x) std::cout << MAGENTA << (x) << COLOR_RESET << std::endl;
-# define OUTPUT(x) std::cout << (x) << std::endl;
+# define OUTPUT_RED(x) 	std::cout << RED << (x) << COLOR_RESET << std::endl;
+# define OUTPUT(x) 		std::cout << (x) << std::endl;
+
+#include 				<vector>
+#include 				<functional>
+#include 				<iostream>
+#include 				<typeinfo>
+#include 				<stdio.h>
+
+#include 				"Lexer.hpp"
+#include 				"eOperand.hpp"
+#include 				"Factory.hpp"
+
 
 //TODO: Your machine must be able to run programs from a file passed as a parameter and from the standard input. When reading from the standard input, the end of the program is indicated by the special symbol ";;" otherwise absent.
 // -DBL/float_MAX
 // long double;
 // stdint
 // float
+// 1. static cast for the string value, 2. do smth - check Pasha method;
 
 class	CPU
 {
