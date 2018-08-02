@@ -1,10 +1,17 @@
 #include "CPU.hpp"
 
-int		main ( int argc, char ** argv )
+int		main2 ( int argc, char ** argv )
 {
 	CPU _cpu;
 
 	_cpu.execute_inner_logic( argc, argv[1] );
 
+	return (0);
+}
+
+int		main( int argc, char ** argv )
+{
+	main2(argc, argv);
+	system("leaks -q avm");
 	return (0);
 }

@@ -75,13 +75,12 @@ bool Lexer::regex_checks(std::string str, std::vector<std::vector<std::string> >
 
 void Lexer::lexical_analysis(Parser &parser, std::vector<std::vector<std::string> > &_command_list )
 {
-	output("");
 	int line = 0;
 	bool error = false;
 
 	if (parser._filtered_input.empty())
 	{
-		output("\033[1;31mNo instructions.\033[0m");
+		OUTPUT_RED("No instructions.");
 		exit(0);
 	}
 	else 
@@ -106,5 +105,5 @@ void Lexer::lexical_analysis(Parser &parser, std::vector<std::vector<std::string
 		}
 	}
 	if (!error)
-		output("\033[1;32mNo lexical errors have been detected => [ avm ] ✓\x1B[0m")
+		OUTPUT("\033[1;32mNo lexical errors have been detected => [ avm ] ✓\x1B[0m")
 }

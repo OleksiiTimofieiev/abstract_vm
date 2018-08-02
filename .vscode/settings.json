@@ -25,5 +25,12 @@
 		"**/*.hpp",
 		"**/*.h",
 		"**/*.c"
-	]
+	],
+	"files.associations": {
+		"__bit_reference": "cpp",
+		"__string": "cpp",
+		"algorithm": "cpp",
+		"string": "cpp",
+		"string_view": "cpp"
+	}
 }

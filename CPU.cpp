@@ -2,7 +2,13 @@
 #include "Factory.hpp"
 
 CPU::CPU () {}
-CPU::~CPU() {}
+CPU::~CPU() 
+{
+	for ( auto i = _stack.begin(); i != _stack.end(); ++i )
+	{
+		delete *i;
+	}
+}
 
 //TODO: add copliens form;
 //TODO: Your machine must be able to run programs from a file passed as a parameter and from the standard input. When reading from the standard input, the end of the program is indicated by the special symbol ";;" otherwise absent.
@@ -13,7 +19,7 @@ void	CPU::execute_inner_logic(const int quantity_of_arguments, char *argument)
 	_lexer.lexical_analysis		( _parser, _command_list );
 	_commands_execution_routine	();
 	//FIXME:delete in the end of the project;
-	_parser.detect_leaks(); // detect leaks;
+	// _parser.detect_leaks(); // detect leaks;
 }
 
 void	CPU::_commands_execution_routine()
@@ -23,7 +29,7 @@ void	CPU::_commands_execution_routine()
 
 	bool	exit_command_is_pesent_in_command_list = false;
 
-	for (row_command_list = _command_list.begin(); row_command_list != _command_list.end(); row_command_list++)
+	for ( row_command_list = _command_list.begin(); row_command_list != _command_list.end(); row_command_list++ )
 	{
 		col_command_list = row_command_list->begin();
 
@@ -34,11 +40,9 @@ void	CPU::_commands_execution_routine()
 		}
 	}
 
-	if (!exit_command_is_pesent_in_command_list)
+	if ( !exit_command_is_pesent_in_command_list )
 	{
-		output(RED);
-		output("No exit command available");
-		output(COLOR_RESET);
+		OUTPUT_RED( "No exit command available." );
 	}
 		
 
@@ -56,28 +60,28 @@ void	CPU::_commands_execution_routine()
 
 	// a = c;
 
-	// output(a.toString());
-	// output("");
+	// OUTPUT(a.toString());
+	// OUTPUT("");
 
-	// _stack.push_back(_factory.createOperand(Int8, "0"));
-	// _stack.push_back(_factory.createOperand(Int8, "1"));
-	// _stack.push_back(_factory.createOperand(Int32, "65"));
+	_stack.push_back(_factory.createOperand(Int8, "0"));
+	_stack.push_back(_factory.createOperand(Int8, "1"));
+	_stack.push_back(_factory.createOperand(Int32, "65"));
 	// _stack.push_back(c + b);
 
-	// output(_stack[0]->toString());
-	// output(_stack[1]->toString());
-	// output(_stack[2]->toString());
-	// output(_stack[3]->toString()); 
+	// OUTPUT(_stack[0]->toString());
+	// OUTPUT(_stack[1]->toString());
+	// OUTPUT(_stack[2]->toString());
+	// OUTPUT(_stack[3]->toString()); 
 
-	// output("");
+	// OUTPUT("");
 
 	// IOperand  const * z1 = _stack.back();
 	// std::string sample = z1->toString();
 	// _stack.pop_back();
 	// _stack.pop_back();
 
-	// output(_stack.back()->toString());
-	// output(_stack.back()->getType());
+	// OUTPUT(_stack.back()->toString());
+	// OUTPUT(_stack.back()->getType());
 
 }
 bool	CPU::print( void )
@@ -91,4 +95,3 @@ void	CPU::_exit( void )
 {
 	exit(0);
 }
-
