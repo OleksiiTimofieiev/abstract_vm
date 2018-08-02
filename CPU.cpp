@@ -50,8 +50,8 @@ void	CPU::_commands_execution_routine()
 			_pop();
 		else if (*col_command_list == "exit") // move forward iterator to have its value;
 		{
-					IOperand const* z = _stack.back();
-	std::cout << z->toString() << std::endl;
+			IOperand const* z = _stack.back();
+			std::cout << z->toString() << std::endl;
 
 			exit_command_is_pesent_in_command_list = true;
 			_exit();
@@ -90,6 +90,11 @@ void	CPU::_push( std::string Type, std::string value )
 void	CPU::_pop( )
 {
 	_stack.pop_back();
+}
+
+void	CPU::_dump()
+{
+	
 }
 
 bool	CPU::_print( void )
