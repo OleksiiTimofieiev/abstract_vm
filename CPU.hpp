@@ -1,6 +1,7 @@
 #ifndef	CPU_HPP
 #define CPU_HPP
 
+
 #define output(x) std::cout << (x) << std::endl;
 // output with color;
 
@@ -16,6 +17,7 @@
 
 # define RED   			"\x1B[31m"
 # define COLOR_RESET 	"\x1B[0m"
+//define regex ' ' \
 
 //TODO:make full documentation for the each class;
 //TODO:copl form for each class;
