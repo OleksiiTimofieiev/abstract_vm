@@ -44,16 +44,20 @@ void	CPU::_commands_execution_routine()
 	{
 		col_command_list = row_command_list->begin();
 
-		if (*col_command_list == "exit") // move forward iterator to have its value;
-		{
-			exit_command_is_pesent_in_command_list = true;
-			_exit( );
-		}
-		else if (*col_command_list == "push")
-		{
+		if (*col_command_list == "push")
 			_push(*std::next(col_command_list, 1) , *std::next(col_command_list, 2));
+		else if (*col_command_list == "pop")
+			_pop();
+		else if (*col_command_list == "exit") // move forward iterator to have its value;
+		{
+					IOperand const* z = _stack.back();
+	std::cout << z->toString() << std::endl;
+
+			exit_command_is_pesent_in_command_list = true;
+			_exit();
 		}
 	}
+
 	if ( !exit_command_is_pesent_in_command_list )
 		OUTPUT_RED( "No exit command available." );
 }
@@ -63,25 +67,29 @@ void	CPU::_push( std::string Type, std::string value )
 	eOperandType selector;
 
 	if (Type == "int8") 
-	selector = Int8;
+		selector = Int8;
 	else if (Type == "int16")
-	 selector = Int16;
+		selector = Int16;
 	else if (Type == "int32") 
-	selector = Int32;
+		selector = Int32;
 	else if (Type == "float") 
-	selector = Float;
+		selector = Float;
 	else if (Type == "double")
-	 selector = Double;
-	 else
-	selector = default_value;
+		selector = Double;
+	else
+		selector = default_value;
 
 	_stack.push_back(_factory.createOperand(selector, value));
 
-	IOperand const* z = _stack.back();
+	//FIXME:: in the end of the project ot do this stuff; vlbla bla 
+	// IOperand const* z = _stack.back();
+	// std::cout << z->toString() << std::endl;
+	// fprintf(stdout, "[%d]: %c;\n", stoi(_stack.back()->toString()), stoi(_stack.back()->toString()));
+}
 
-	std::cout << z->toString() << std::endl;
-
-	fprintf(stdout, "[%d]: %c;\n", stoi(_stack.back()->toString()), stoi(_stack.back()->toString()));
+void	CPU::_pop( )
+{
+	_stack.pop_back();
 }
 
 bool	CPU::_print( void )

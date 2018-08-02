@@ -52,6 +52,7 @@ class	CPU
 		CPU &operator =							( CPU const &rhs );
 		CPU										( CPU const &src );
 		void _push								( std::string Type, std::string value);
+		void _pop								( void );
 		void _execute_inner_logic				( const int quantity_of_arguments, char * argument );
 		bool _print								( void );
 		void _exit								( void );
