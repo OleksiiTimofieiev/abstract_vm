@@ -80,10 +80,10 @@ template <class T> IOperand const *eOperand<T>::operator+(IOperand const &rhs) c
 
 	return (Factory().createOperand(eNum, new_line));
 }
-// IOperand const *operator-(IOperand const &rhs) const;
-// IOperand const *operator*(IOperand const &rhs) const;
-// IOperand const *operator/(IOperand const &rhs) const;
-// IOperand const *operator%(IOperand const &rhs) const;
+// template <class T> IOperand const *eOperand<T>::operator-(IOperand const &rhs) const
+// template <class T> IOperand const *eOperand<T>::operator*(IOperand const &rhs) const
+// template <class T> IOperand const *eOperand<T>::operator/(IOperand const &rhs) const
+// template <class T> IOperand const *eOperand<T>::operator%(IOperand const &rhs) const
 
 template <class T>std::string const &eOperand<T>::toString(void) const
 {
