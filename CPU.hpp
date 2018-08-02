@@ -18,6 +18,7 @@
 #include 				"Lexer.hpp"
 #include 				"eOperand.hpp"
 #include 				"Factory.hpp"
+#include				"Exception.hpp"
 
 
 // • Overflow on a value
@@ -55,7 +56,7 @@ class	CPU
 		void _pop								( void );
 		void _dump								( void );
 		void _execute_inner_logic				( const int quantity_of_arguments, char * argument );
-		void _print								( void );
+		void _print								( int line );
 		void _exit								( void );
 };
 

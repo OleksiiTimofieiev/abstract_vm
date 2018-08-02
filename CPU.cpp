@@ -39,10 +39,13 @@ void	CPU::_commands_execution_routine()
 	std::vector<std::string>::iterator col_command_list;
 
 	bool exit_command_is_pesent_in_command_list = false;
+	int	line = 0;;
 
 	for ( row_command_list = _command_list.begin(); row_command_list != _command_list.end(); row_command_list++ )
 	{
 		col_command_list = row_command_list->begin();
+
+		++line;
 
 		if (*col_command_list == "push")
 			_push(*std::next(col_command_list, 1) , *std::next(col_command_list, 2));
@@ -51,7 +54,7 @@ void	CPU::_commands_execution_routine()
 		else if (*col_command_list == "dump")
 			_dump();
 		else if (*col_command_list == "print")
-			_print();
+			_print(line);
 		else if (*col_command_list == "exit") // move forward iterator to have its value;
 		{
 			exit_command_is_pesent_in_command_list = true;
@@ -103,9 +106,22 @@ void	CPU::_dump()
 	}
 }
 
-void	CPU::_print( void )
+void	CPU::_print( int line )
 {
-	fprintf(stdout, "[%d]: %c;\n", stoi(_stack.back()->toString()), stoi(_stack.back()->toString()));
+	auto i = _stack.back()->getType();
+
+	try
+	{
+		if (!i)
+			fprintf(stdout, "[%d]: %c;\n", stoi(_stack.back()->toString()), stoi(_stack.back()->toString()));
+		else
+			throw_line("\033[1;31mPrint error on line # -> \033[0m", line);
+
+	}
+	catch (const std::runtime_error &ex)
+	{
+		std::cout << ex.what() << std::endl;
+	}
 }
 
 void	CPU::_exit( void )
