@@ -48,11 +48,10 @@ void	CPU::_commands_execution_routine()
 			_push(*std::next(col_command_list, 1) , *std::next(col_command_list, 2));
 		else if (*col_command_list == "pop")
 			_pop();
+		else if (*col_command_list == "dump")
+			_dump();
 		else if (*col_command_list == "exit") // move forward iterator to have its value;
 		{
-			IOperand const* z = _stack.back();
-			std::cout << z->toString() << std::endl;
-
 			exit_command_is_pesent_in_command_list = true;
 			_exit();
 		}
@@ -94,7 +93,12 @@ void	CPU::_pop( )
 
 void	CPU::_dump()
 {
-	
+	for (auto i = _stack.end();i != _stack.begin(); ) 
+	{
+  		--i;
+  		IOperand const* z = *i;
+		OUTPUT(z->toString());
+	}
 }
 
 bool	CPU::_print( void )

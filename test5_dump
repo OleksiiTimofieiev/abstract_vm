@@ -1,0 +1,7 @@
+push int8(1)
+push int8(2)
+push float(3.0)
+push double(4.0)
+dump
+exit
+;;
