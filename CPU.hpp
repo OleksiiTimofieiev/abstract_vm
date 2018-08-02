@@ -19,7 +19,9 @@
 #include 				"Factory.hpp"
 
 
-//TODO: Your machine must be able to run programs from a file passed as a parameter and from the standard input. When reading from the standard input, the end of the program is indicated by the special symbol ";;" otherwise absent.
+//TODO: Your machine must be able to run programs from a file passed as a parameter and from the standard input. 
+//When reading from the standard input, the end of the program is indicated by the special symbol ";;" otherwise absent.
+
 // -DBL/float_MAX
 // long double;
 // stdint

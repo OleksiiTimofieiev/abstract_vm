@@ -35,6 +35,8 @@ void	CPU::_execute_inner_logic(const int quantity_of_arguments, char *argument)
 
 void	CPU::_commands_execution_routine()
 {
+	// _parser.print_list();
+
 	std::vector<std::vector<std::string> >::iterator row_command_list;
 	std::vector<std::string>::iterator col_command_list;
 
