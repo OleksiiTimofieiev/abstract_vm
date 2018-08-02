@@ -10,7 +10,7 @@ template <class T> eOperand<T>::eOperand(const std::string &str) : _value(str)
 	type = typeid(T).name();
 
 	//TODO::check input value;
-
+	// if (typeid(T) == typeid(int8_t))//
 	if (type == "a")
 		_value_after_conversion = stoi(str);
 	else if (type == "s")
@@ -77,7 +77,7 @@ template <class T> eOperandType eOperand<T>::getType(void) const
 
 template <class T> IOperand const *eOperand<T>::operator+(IOperand const &rhs) const
 {
-	long long int var1 = std::stoll(this->toString());
+	long long int var1 = std::stoll(this->toString()); // value;
 	long long int var2 = std::stoll(rhs.toString());
 
 	// std::cout << var1 << std::endl;

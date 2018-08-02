@@ -18,6 +18,33 @@ void	CPU::execute_inner_logic(const int quantity_of_arguments, char *argument)
 
 void	CPU::_commands_execution_routine()
 {
+	std::vector<std::vector<std::string> >::iterator row_command_list;
+	std::vector<std::string>::iterator col_command_list;
+
+	bool	exit_command_is_pesent_in_command_list = false;
+
+	for (row_command_list = _command_list.begin(); row_command_list != _command_list.end(); row_command_list++)
+	{
+		col_command_list = row_command_list->begin();
+
+		if (*col_command_list == "exit")
+		{
+			exit_command_is_pesent_in_command_list = true;
+			_exit( );
+		}
+	}
+
+	if (!exit_command_is_pesent_in_command_list)
+	{
+		output(RED);
+		output("No exit command available");
+		output(COLOR_RESET);
+	}
+		
+
+
+		
+
 	// function with default params for the array of the functions;
 	// enum for the functions
 
@@ -32,14 +59,14 @@ void	CPU::_commands_execution_routine()
 	// output(a.toString());
 	// output("");
 
-	_stack.push_back(_factory.createOperand(Int8, "0"));
-	_stack.push_back(_factory.createOperand(Int8, "1"));
-	_stack.push_back(_factory.createOperand(Int32, "65"));
+	// _stack.push_back(_factory.createOperand(Int8, "0"));
+	// _stack.push_back(_factory.createOperand(Int8, "1"));
+	// _stack.push_back(_factory.createOperand(Int32, "65"));
 	// _stack.push_back(c + b);
 
-	output(_stack[0]->toString());
-	output(_stack[1]->toString());
-	output(_stack[2]->toString());
+	// output(_stack[0]->toString());
+	// output(_stack[1]->toString());
+	// output(_stack[2]->toString());
 	// output(_stack[3]->toString()); 
 
 	// output("");
@@ -52,19 +79,16 @@ void	CPU::_commands_execution_routine()
 	// output(_stack.back()->toString());
 	// output(_stack.back()->getType());
 
-	std::vector<std::vector<std::string> >::iterator row;
-	std::vector<std::string>::iterator col;
-	for (row = _command_list.begin(); row != _command_list.end(); row++)
-	{
-		col = row->begin();
-
-		if (*col == "print")
-		{
-			print();
-		}
-	}
 }
-void	CPU::print( void )
+bool	CPU::print( void )
 {
+
 	fprintf(stdout, "[%d]: %c;\n", stoi(_stack.back()->toString()), stoi(_stack.back()->toString()));
+	return(true);
 }
+
+void	CPU::_exit( void )
+{
+	exit(0);
+}
+

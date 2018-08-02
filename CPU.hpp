@@ -2,6 +2,7 @@
 #define CPU_HPP
 
 #define output(x) std::cout << (x) << std::endl;
+// output with color;
 
 #include <vector>
 #include <functional>
@@ -12,6 +13,9 @@
 #include "Lexer.hpp"
 #include "eOperand.hpp"
 #include "Factory.hpp"
+
+# define RED   			"\x1B[31m"
+# define COLOR_RESET 	"\x1B[0m"
 
 //TODO:make full documentation for the each class;
 //TODO:copl form for each class;
@@ -24,7 +28,7 @@ class	CPU
 		Parser 									_parser;
 		Lexer 									_lexer;
 		// eOperand<char> 							_eOperand; factory class will retun it; delete it ?
-		Factory									_factory;			
+		// Factory									_factory;			
 		std::vector<std::vector<std::string> > 	_command_list;
 		std::vector<IOperand const *> 			_stack;
 
@@ -38,7 +42,8 @@ class	CPU
 
 		// magic ;)
 		void execute_inner_logic				( const int quantity_of_arguments, char * argument );
-		void print								( void );
+		bool print								( void );
+		void _exit								( void );
 
 };
 
