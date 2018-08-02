@@ -33,6 +33,8 @@
 		"string": "cpp",
 		"string_view": "cpp",
 		"typeinfo": "cpp",
-		"vector": "cpp"
+		"vector": "cpp",
+		"deque": "cpp",
+		"list": "cpp"
 	}
 }

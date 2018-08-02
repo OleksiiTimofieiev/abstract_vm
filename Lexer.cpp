@@ -17,7 +17,6 @@ bool Lexer::regex_checks(std::string str, std::vector<std::vector<std::string> >
 	const std::regex commands_with_arguments_int("^(push|assert) (int8|int16|int32)\\(([-]?[0-9]+)\\)$");
 	const std::regex commands_with_arguments_float_double("^(push|assert) (float|double)\\(([-]?[0-9]+\\.[0-9]+)\\)$");
 	
-
 	if (std::regex_match( str.c_str(), result, commands_without_arguments) )
 	{
 		//FIXME:comment in the end of the project
