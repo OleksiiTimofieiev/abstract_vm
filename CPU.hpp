@@ -19,13 +19,9 @@
 # define OUTPUT_MAGENTA(x) std::cout << MAGENTA << (x) << COLOR_RESET << std::endl;
 # define OUTPUT(x) std::cout << (x) << std::endl;
 
+//TODO: Your machine must be able to run programs from a file passed as a parameter and from the standard input. When reading from the standard input, the end of the program is indicated by the special symbol ";;" otherwise absent.
 // -DBL/float_MAX
 // long double;
-
-//TODO:make full documentation for the each class;
-//TODO:copl form for each class;
-
-//TODO:vector of objects: eNum command, eNum type, eNum value;
 // stdint
 // float
 
@@ -37,10 +33,13 @@ class	CPU
 		Factory									_factory;			
 		std::vector<std::vector<std::string> > 	_command_list;
 		std::vector<IOperand const *> 			_stack;
-		void _commands_execution_routine								( void );
+		void _commands_execution_routine		( void );
+
 	public:
 		CPU										( void );
 		~CPU									( void );
+		CPU &operator =							( CPU const &rhs );
+		CPU										( CPU const &src );
 		void _execute_inner_logic				( const int quantity_of_arguments, char * argument );
 		bool _print								( void );
 		void _exit								( void );

@@ -10,8 +10,22 @@ CPU::~CPU()
 	}
 }
 
-//TODO: add copliens form;
-//TODO: Your machine must be able to run programs from a file passed as a parameter and from the standard input. When reading from the standard input, the end of the program is indicated by the special symbol ";;" otherwise absent.
+CPU &CPU::operator=(CPU const &rhs)
+{
+	if (this != &rhs)
+		_parser = rhs._parser;
+		_lexer = rhs._lexer;
+		_factory = rhs._factory;
+		_command_list = rhs._command_list;
+		_stack = rhs._stack;
+		
+	return *this;
+}
+
+CPU::CPU(CPU const &src)
+{
+	*this = src;
+}
 
 void	CPU::_execute_inner_logic(const int quantity_of_arguments, char *argument)
 {
