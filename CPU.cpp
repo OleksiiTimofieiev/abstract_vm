@@ -30,6 +30,7 @@ void	CPU::_execute_inner_logic(const int quantity_of_arguments, char *argument)
 {
 	_parser.read				( quantity_of_arguments, argument );
 	_lexer.lexical_analysis		( _parser, _command_list );
+	OUTPUT_CYAN("And here we go ... ;)");
 	_commands_execution_routine	();
 }
 

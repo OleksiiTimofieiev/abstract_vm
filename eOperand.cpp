@@ -1,8 +1,7 @@
 #include "eOperand.hpp"
 
-//TODO:// 	// int0, float7 ,double14; str::strstream -> set precision st to string;
 //TODO:: not a value;
-	//TODO::check input value;
+//TODO::check input value;
 
 template <class T> eOperand<T>::eOperand(const std::string &str) : _value(str)
 {

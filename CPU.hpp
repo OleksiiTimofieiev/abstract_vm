@@ -3,10 +3,13 @@
 
 # define RED   			"\033[1;31m"
 # define MAGENTA		"\x1B[35m"	
+# define CYAN   		"\x1B[36m"
 # define COLOR_RESET 	"\x1B[0m"
 
-# define OUTPUT_RED(x) 	std::cout << RED << (x) << COLOR_RESET << std::endl;
 # define OUTPUT(x) 		std::cout << (x) << std::endl;
+# define OUTPUT_RED(x) 	std::cout << RED << (x) << COLOR_RESET << std::endl;
+# define OUTPUT_CYAN(x) std::cout << CYAN << (x) << COLOR_RESET << std::endl;
+
 
 #include 				<vector>
 #include 				<functional>
