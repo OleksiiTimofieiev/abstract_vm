@@ -42,7 +42,7 @@ void	Parser::read_from_the_standart_input( void )
 
 		comment_find = 0;
 
-		if (std::getline(std::cin, input))
+		if ( std::getline( std::cin, input ) )
 		{
 			//FIXME:delete in the end
 			// if (!input.empty() && input.at(0) != ';')
@@ -62,6 +62,9 @@ void	Parser::read_from_the_standart_input( void )
 			// }
 			// else if (!input.empty() && input.length() != 1 && input.at(0) == ';' && input.at(1) == ';')
 				_filtered_input.push_back(input);
+			if (input == ";;")
+				reading = false;;
+				
 		}
 		else
 			reading = false;
@@ -111,6 +114,8 @@ void	Parser::read_from_the_ifstream( char * argument )
 			// }
 			// else if (!input.empty() && input.length() != 1 && input.at(0) == ';' && input.at(1) == ';')
 				_filtered_input.push_back(input);
+			if (input == "exit")
+				break;
 		}
 	}
 	fin.close();
