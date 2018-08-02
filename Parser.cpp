@@ -1,4 +1,5 @@
 #include "Parser.hpp"
+#include <exception>
 
 /* class creation routines ************************************************************************************************************************** */
 
@@ -35,7 +36,6 @@ void	Parser::read_from_the_standart_input( void )
 	size_t 			found;
 		
 	std::string whitespaces(" \t\f\v\n\r");
-
 	while( reading )
 	{
 		printf( "%ld. ", line_number++ );
@@ -79,7 +79,9 @@ void	Parser::read_from_the_ifstream( char * argument )
 
 	std::string whitespaces(" \t\f\v\n\r");
 
-	fin.open(path);
+	
+		fin.open(path);
+
 
 	if ( !fin.is_open() )
 	{
@@ -91,9 +93,10 @@ void	Parser::read_from_the_ifstream( char * argument )
 		while( !( fin.eof() ) )
 		{
 			getline( fin, input);
-
-			if ( input.length() != 1 && input.at(0) != ';' && input.at(1) != ';')
+			
+			if ( input.length() != 1 && input.length() != 0 && input.at(0) != ';' && input.at(1) != ';')
 			{
+			std::cout << "here" << std::endl;
 				comment_find = input.find(";");
 
 				if (comment_find != std::string::npos)

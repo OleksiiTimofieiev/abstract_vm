@@ -2,9 +2,16 @@
 
 int		main2 ( int argc, char ** argv )
 {
-	CPU _cpu;
+	// try
+	// {
+		CPU _cpu;
 
-	_cpu._execute_inner_logic( argc, argv[1] );
+		_cpu._execute_inner_logic( argc, argv[1] );
+	// }
+	// catch(const std::exception & e)
+	// {
+	// 	std::cout << e.what() << std::endl;
+	// }
 
 	return (0);
 }
