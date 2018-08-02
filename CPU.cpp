@@ -50,6 +50,8 @@ void	CPU::_commands_execution_routine()
 			_pop();
 		else if (*col_command_list == "dump")
 			_dump();
+		else if (*col_command_list == "print")
+			_print();
 		else if (*col_command_list == "exit") // move forward iterator to have its value;
 		{
 			exit_command_is_pesent_in_command_list = true;
@@ -101,11 +103,9 @@ void	CPU::_dump()
 	}
 }
 
-bool	CPU::_print( void )
+void	CPU::_print( void )
 {
-
 	fprintf(stdout, "[%d]: %c;\n", stoi(_stack.back()->toString()), stoi(_stack.back()->toString()));
-	return(true);
 }
 
 void	CPU::_exit( void )
