@@ -20,13 +20,14 @@
 
 
 //TODO: Your machine must be able to run programs from a file passed as a parameter and from the standard input. 
-//When reading from the standard input, the end of the program is indicated by the special symbol ";;" otherwise absent.
+//When reading from the standard input, the end of the program is indicated by the special symbol ";;" otherwise absent. // read mode variable;
 
 // -DBL/float_MAX
 // long double;
 // stdint
 // float
 // 1. static cast for the string value, 2. do smth - check Pasha method;
+// cast to the bigger value, even assert;
 
 class	CPU
 {
