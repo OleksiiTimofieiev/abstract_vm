@@ -44,8 +44,9 @@ void	Parser::read_from_the_standart_input( void )
 
 		if (std::getline(std::cin, input))
 		{
-			if (!input.empty() && input.at(0) != ';')
-			{
+			//FIXME:delete in the end
+			// if (!input.empty() && input.at(0) != ';')
+			// {
 				comment_find = input.find(";");
 
 				if (comment_find != std::string::npos)
@@ -57,10 +58,9 @@ void	Parser::read_from_the_standart_input( void )
 					if (found != std::string::npos)
 						input.erase(found + 1);
 				}
-
-				_filtered_input.push_back(input);
-			}
-			else if (!input.empty() && input.length() != 1 && input.at(0) == ';' && input.at(1) == ';')
+			// 	_filtered_input.push_back(input);
+			// }
+			// else if (!input.empty() && input.length() != 1 && input.at(0) == ';' && input.at(1) == ';')
 				_filtered_input.push_back(input);
 		}
 		else
@@ -93,8 +93,9 @@ void	Parser::read_from_the_ifstream( char * argument )
 		{
 			getline( fin, input);
 
-			if ( !input.empty() && input.at( 0 ) != ';' )
-			{
+			//FIXME:delete in the end
+			// if (!input.empty() && input.at(0) != ';')
+			// {
 				comment_find = input.find(";");
 
 				if (comment_find != std::string::npos)
@@ -106,9 +107,9 @@ void	Parser::read_from_the_ifstream( char * argument )
 					if (found != std::string::npos)
 						input.erase(found + 1);
 				}
-				_filtered_input.push_back(input);
-			}
-			else if (!input.empty() && input.length() != 1 && input.at(0) == ';' && input.at(1) == ';')
+			// 	_filtered_input.push_back(input);
+			// }
+			// else if (!input.empty() && input.length() != 1 && input.at(0) == ';' && input.at(1) == ';')
 				_filtered_input.push_back(input);
 		}
 	}

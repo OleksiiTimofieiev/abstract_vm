@@ -35,6 +35,13 @@
 		"typeinfo": "cpp",
 		"vector": "cpp",
 		"deque": "cpp",
-		"list": "cpp"
+		"list": "cpp",
+		"exception": "cpp",
+		"__config": "cpp",
+		"__nullptr": "cpp",
+		"initializer_list": "cpp",
+		"new": "cpp",
+		"stdexcept": "cpp",
+		"__split_buffer": "cpp"
 	}
 }
