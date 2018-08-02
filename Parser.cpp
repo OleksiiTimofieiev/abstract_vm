@@ -45,8 +45,8 @@ void	Parser::read_from_the_standart_input( void )
 		if ( std::getline( std::cin, input ) )
 		{
 			//FIXME:delete in the end
-			// if (!input.empty() && input.at(0) != ';')
-			// {
+			if (input.at(0) != ';' && input.at(1) != ';')
+			{
 				comment_find = input.find(";");
 
 				if (comment_find != std::string::npos)
@@ -59,17 +59,16 @@ void	Parser::read_from_the_standart_input( void )
 						input.erase(found + 1);
 				}
 			// 	_filtered_input.push_back(input);
-			// }
+			}
 			// else if (!input.empty() && input.length() != 1 && input.at(0) == ';' && input.at(1) == ';')
 				_filtered_input.push_back(input);
 			if (input == ";;")
-				reading = false;;
+				break;
 				
 		}
 		else
 			reading = false;
 	}
-	std::cout << std::endl;
 	std::cout << "\x1B[35mParsing has been finished => [ avm ] \033[1;32m✓\x1B[0m" << std::endl;
 }
 
@@ -97,8 +96,8 @@ void	Parser::read_from_the_ifstream( char * argument )
 			getline( fin, input);
 
 			//FIXME:delete in the end
-			// if (!input.empty() && input.at(0) != ';')
-			// {
+				if (input.at(0) != ';' && input.at(1) != ';')
+			{
 				comment_find = input.find(";");
 
 				if (comment_find != std::string::npos)
@@ -111,7 +110,7 @@ void	Parser::read_from_the_ifstream( char * argument )
 						input.erase(found + 1);
 				}
 			// 	_filtered_input.push_back(input);
-			// }
+			}
 			// else if (!input.empty() && input.length() != 1 && input.at(0) == ';' && input.at(1) == ';')
 				_filtered_input.push_back(input);
 			if (input == "exit")
@@ -119,7 +118,7 @@ void	Parser::read_from_the_ifstream( char * argument )
 		}
 	}
 	fin.close();
-	std::cout << std::endl;
+
 	std::cout << "\x1B[35mParsing has been finished => [ avm ] \033[1;32m✓\x1B[0m" << std::endl;
 }
 
