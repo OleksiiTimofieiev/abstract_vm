@@ -80,6 +80,8 @@ void	CPU::_push( std::string Type, std::string value )
 	IOperand const* z = _stack.back();
 
 	std::cout << z->toString() << std::endl;
+
+	fprintf(stdout, "[%d]: %c;\n", stoi(_stack.back()->toString()), stoi(_stack.back()->toString()));
 }
 
 bool	CPU::_print( void )
