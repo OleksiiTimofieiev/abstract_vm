@@ -32,33 +32,28 @@ void	CPU::_execute_inner_logic(const int quantity_of_arguments, char *argument)
 	_parser.read				( quantity_of_arguments, argument );
 	_lexer.lexical_analysis		( _parser, _command_list );
 	_commands_execution_routine	();
-	//FIXME:delete in the end of the project;
-	// _parser.detect_leaks(); // detect leaks;
 }
 
 void	CPU::_commands_execution_routine()
 {
-	_parser.print_list();
 	std::vector<std::vector<std::string> >::iterator row_command_list;
 	std::vector<std::string>::iterator col_command_list;
 
 	bool	exit_command_is_pesent_in_command_list = false;
 
-	for ( row_command_list = _command_list.begin(); row_command_list != _command_list.end(); row_command_list++ )
+	for 	( row_command_list = _command_list.begin(); row_command_list != _command_list.end(); row_command_list++ )
 	{
-		col_command_list = row_command_list->begin();
+			col_command_list = row_command_list->begin();
 
-		if (*col_command_list == "exit")
-		{
-			exit_command_is_pesent_in_command_list = true;
-			_exit( );
-		}
+			if (*col_command_list == "exit")
+			{
+				exit_command_is_pesent_in_command_list = true;
+				_exit( );
+			}
 	}
 
-	if ( !exit_command_is_pesent_in_command_list )
-	{
-		OUTPUT_RED( "No exit command available." );
-	}
+	if ( 	!exit_command_is_pesent_in_command_list )
+			OUTPUT_RED( "No exit command available." );
 		
 
 
