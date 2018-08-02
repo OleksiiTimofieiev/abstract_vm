@@ -27,7 +27,6 @@ class	Parser
 
 		// infrastructure;
 		void						print_list( void );
-		void						detect_leaks( void );
 };
 
 #endif

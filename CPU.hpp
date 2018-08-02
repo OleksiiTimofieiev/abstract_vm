@@ -19,35 +19,30 @@
 # define OUTPUT_MAGENTA(x) std::cout << MAGENTA << (x) << COLOR_RESET << std::endl;
 # define OUTPUT(x) std::cout << (x) << std::endl;
 
-//define regex ' ' \
-// -DBL_MAX
+// -DBL/float_MAX
+// long double;
 
 //TODO:make full documentation for the each class;
 //TODO:copl form for each class;
 
 //TODO:vector of objects: eNum command, eNum type, eNum value;
+// stdint
+// float
 
 class	CPU
 {
 	private:
 		Parser 									_parser;
 		Lexer 									_lexer;
-		// eOperand<char> 							_eOperand; factory class will retun it; delete it ?
 		Factory									_factory;			
 		std::vector<std::vector<std::string> > 	_command_list;
 		std::vector<IOperand const *> 			_stack;
-
 		void _commands_execution_routine								( void );
-
-
-
 	public:
 		CPU										( void );
 		~CPU									( void );
-
-		// magic ;)
-		void execute_inner_logic				( const int quantity_of_arguments, char * argument );
-		bool print								( void );
+		void _execute_inner_logic				( const int quantity_of_arguments, char * argument );
+		bool _print								( void );
 		void _exit								( void );
 
 };

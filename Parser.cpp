@@ -140,5 +140,3 @@ void	Parser::print_list( void )
 
 	std::cout << std::endl;
 }
-
-void	Parser::detect_leaks( void ) { system("leaks -q avm"); }
