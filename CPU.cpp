@@ -18,7 +18,7 @@
 // IOperand const* z = _stack.back();
 // std::cout << z->toString() << std::endl;
 // fprintf(stdout, "[%d]: %c;\n", stoi(_stack.back()->toString()), stoi(_stack.back()->toString()));
-//TODO:		check all command for the seg abort with empty stack; exception throw;
+//TODO:		check all command for the seg abort with empty stack; exception throw; empty() with vector;
 //TODO:		check copl form in the end of the project;
 //TODO:		test1 comments;
 
@@ -77,6 +77,8 @@ void	CPU::_commands_execution_routine()
 			_dump();
 		else if (*col_command_list == "print")
 			_print(line);
+		else if (*col_command_list == "add")
+			_add();
 		else if (*col_command_list == "exit") // move forward iterator to have its value;
 		{
 			exit_command_is_pesent_in_command_list = true;
@@ -121,6 +123,20 @@ void	CPU::_dump()
 		IOperand const* z = *i;
 		OUTPUT(z->toString());
 	}
+}
+
+void	CPU::_add()
+{
+	ssize_t	size = _stack.size();
+	ssize_t	last = size - 1;
+	ssize_t	prev_last = last - 1;
+
+	IOperand const * a = _stack.at(prev_last);
+	IOperand const * b = _stack.at(last);
+	
+
+	_stack.push_back(*a + *b);
+	
 }
 
 void	CPU::_print( int line )

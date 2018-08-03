@@ -81,19 +81,18 @@ template <class T> eOperandType eOperand<T>::getType(void) const
 
 template <class T> IOperand const *eOperand<T>::operator+(IOperand const &rhs) const
 {
-	long long int var1 = std::stoll(this->toString()); // value;
-	long long int var2 = std::stoll(rhs.toString());
+	eOperandType	eNum = default_value;
+	std::string		new_line;
 
-	// std::cout << var1 << std::endl;
-	// std::cout << var2 << std::endl;
+	if (this->getType() >= rhs.getType())
+		eNum = this->getType();
+	else
+		eNum = rhs.getType();
 
-	long long int add = var1 + var2;
-
-	const std::string new_line = std::to_string(add);
-
-	eOperandType eNum;
-
-	eNum = Int8;
+	if (eNum < Float)
+		new_line = std::to_string(static_cast<int64_t>(this->_value_after_conversion) + std::stoll(rhs.toString()));
+	else
+		new_line = std::to_string(static_cast<long double>(this->_value_after_conversion) + std::stold(rhs.toString()));
 
 	return (Factory().createOperand(eNum, new_line));
 }

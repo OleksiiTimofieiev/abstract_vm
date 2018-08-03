@@ -42,9 +42,10 @@ class	CPU
 		void _push								( std::string Type, std::string value);
 		void _pop								( void );
 		void _dump								( void );
-		void _execute_inner_logic				( const int quantity_of_arguments, char * argument );
+		void _add								( void );
 		void _print								( int line );
 		void _exit								( void );
+		void _execute_inner_logic				( const int quantity_of_arguments, char * argument );
 };
 
 #endif
