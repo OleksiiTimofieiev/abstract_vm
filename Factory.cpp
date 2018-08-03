@@ -32,11 +32,12 @@ IOperand const *Factory::createInt8(std::string const &value) const
 {
 	try
 	{
+		std::cout << "here" <<std::endl;
 		int64_t num = std::stoll(value);
 
-		if ( num > std::numeric_limits<char>::max())
+		if ( num > std::numeric_limits<int8_t>::max())
 			throw_line("Overflow happend, value to be factorized -> ", 0);
-		if ( num < std::numeric_limits<char>::min())
+		if ( num < std::numeric_limits<int8_t>::min())
 			throw_line("Underflow happend, value to be factorized -> ", 0);
 
 		return (new eOperand<int8_t>(static_cast<int8_t>(num)));
@@ -52,11 +53,12 @@ IOperand const *Factory::createInt16(std::string const &value) const
 {
 	try
 	{
+		std::cout << "here" <<std::endl;
 		int64_t num = std::stoll(value);
 
-		if ( num > std::numeric_limits<short>::max())
+		if ( num > std::numeric_limits<int16_t>::max())
 			throw_line("Overflow happend, value to be factorized -> ", 0);
-		if ( num < std::numeric_limits<short>::min())
+		if ( num < std::numeric_limits<int16_t>::min())
 			throw_line("Underflow happend, value to be factorized -> ", 0);
 
 		return (new eOperand<int16_t>(static_cast<int16_t>(num)));
@@ -72,12 +74,13 @@ IOperand const *Factory::createInt32(std::string const &value) const
 {
 	try
 	{
+		std::cout << "here" <<std::endl;
 		int64_t num = std::stoll(value);
 
-		if ( num > std::numeric_limits<int>::max())
-			throw_line("Overflow happend, value to be factorized -> ", 0);
-		if ( num < std::numeric_limits<int>::min())
+		if ( num < -INT32_MIN)
 			throw_line("Underflow happend, value to be factorized -> ", 0);
+		if ( num > INT32_MAX)
+			throw_line("Overflow happend, value to be factorized -> ", 0);
 
 		return (new eOperand<int32_t>(static_cast<int32_t>(num)));
 	}
