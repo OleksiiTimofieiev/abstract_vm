@@ -10,7 +10,6 @@
 # define OUTPUT_RED(x) 	std::cout << RED << (x) << COLOR_RESET << std::endl;
 # define OUTPUT_CYAN(x) std::cout << CYAN << (x) << COLOR_RESET << std::endl;
 
-
 #include 				<vector>
 #include 				<functional>
 #include 				<iostream>
@@ -32,7 +31,6 @@ class	CPU
 		std::vector<std::vector<std::string> > 	_command_list;
 		std::vector<IOperand const *> 			_stack;
 		void _commands_execution_routine		( void );
-
 	public:
 		CPU										( void );
 		~CPU									( void );

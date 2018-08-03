@@ -1,5 +1,6 @@
-pop
-div
+push int8(10)
+push int8(32)
+add
 dump
 print
 exit
