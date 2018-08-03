@@ -18,8 +18,9 @@
 // IOperand const* z = _stack.back();
 // std::cout << z->toString() << std::endl;
 // fprintf(stdout, "[%d]: %c;\n", stoi(_stack.back()->toString()), stoi(_stack.back()->toString()));
-//TODO:: check all command for the seg abort with empty stack; exception throw;
-//TODO:  check copl form in the end of the project;
+//TODO:		check all command for the seg abort with empty stack; exception throw;
+//TODO:		check copl form in the end of the project;
+//TODO:		test1 comments;
 
 CPU::CPU () {}
 
