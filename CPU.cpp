@@ -8,6 +8,16 @@
 // • An assert instruction is not true
 // • The stack is composed of strictly less that two values when an arithmetic instruction is executed.
 
+
+//bonus:
+// min
+// max
+// increment
+// decrement
+// sort
+// usage
+
+
 // -DBL/float_MAX
 // long double;
 // stdint
@@ -59,7 +69,6 @@ void	CPU::_commands_execution_routine()
 {
 	std::vector<std::vector<std::string> >::iterator row_command_list;
 	std::vector<std::string>::iterator col_command_list;
-
 	bool exit_command_is_pesent_in_command_list = false;
 	int	line = 0;;
 
@@ -69,7 +78,7 @@ void	CPU::_commands_execution_routine()
 
 		++line;
 
-		if (*col_command_list == "push")
+		if 		(*col_command_list == "push")
 			_push(*std::next(col_command_list, 1) , *std::next(col_command_list, 2));
 		else if (*col_command_list == "pop")
 			_pop(line);
@@ -87,7 +96,7 @@ void	CPU::_commands_execution_routine()
 			_div(line);
 		else if (*col_command_list == "mod")
 			_mod(line);
-		else if (*col_command_list == "exit") // move forward iterator to have its value;
+		else if (*col_command_list == "exit")
 		{
 			exit_command_is_pesent_in_command_list = true;
 			_exit();
