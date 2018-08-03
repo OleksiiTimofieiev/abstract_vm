@@ -1,20 +1,43 @@
 #include "eOperand.hpp"
 
+#include				<sstream>
+#include				<iomanip>
+#include				<string>
+
 //TODO:: not a value;
 //TODO::check input value;
 
-template <class T> eOperand<T>::eOperand(const std::string &str) : _value(str)
+template <class T> eOperand<T>::eOperand(const std::string &str) 
 {
 	if (typeid(T) == typeid(int8_t))
-		_value_after_conversion = stoi(str);
+	{
+		_value = str;
+		_value_after_conversion = static_cast<int8_t>(stoi(str));
+	}
 	else if (typeid(T) == typeid(int16_t))
-		_value_after_conversion = stoi(str);
+	{
+		_value = str;
+		_value_after_conversion = static_cast<int8_t>(stoi(str));
+	}
 	else if (typeid(T) == typeid(int32_t))
+	{
+		_value = str;
 		_value_after_conversion = stoi(str);
+	}
 	else if (typeid(T) == typeid(float))
-		_value_after_conversion = stof(str);
+	{
+		std::stringstream set(std::stringstream::out);
+		set << std::setprecision(7) << _value;
+		_value = set.str();
+		_value_after_conversion = stof(_value);
+	}
 	else if (typeid(T) == typeid(double))
+	{
+		std::stringstream set(std::stringstream::out);
+		set << std::setprecision(14) << _value;
+		_value = set.str();
 		_value_after_conversion = stod(str);
+	}
 }
 template <class T> eOperand<T>::eOperand(void) {}
 template <class T> eOperand<T>::~eOperand(void) {}
@@ -34,16 +57,12 @@ template <class T> eOperand<T>::eOperand(eOperand const &src)
 
 template <class T> int eOperand<T>::getPrecision(void) const
 {
-	if (typeid(T) == typeid(int8_t))
-		return(0);
-	else if (typeid(T) == typeid(int16_t))
-		return(0);
-	else if (typeid(T) == typeid(int32_t))
-		return(0);
-	else if (typeid(T) == typeid(float))
-		return(7);
-	else if (typeid(T) == typeid(double))
-		return(14);
+	if (typeid(T) == typeid(int8_t)) { return(0); }
+	else if (typeid(T) == typeid(int16_t)) { return(0); }
+	else if (typeid(T) == typeid(int32_t)) { return(0); }
+	else if (typeid(T) == typeid(float)) { return(7); }
+	else if (typeid(T) == typeid(double)) { return(14); }
+
 	return (0);
 }
 template <class T> eOperandType eOperand<T>::getType(void) const
