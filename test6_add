@@ -1,4 +1,4 @@
-push int8(2)
+push int8(3)
 push int16(2)
 div
 dump

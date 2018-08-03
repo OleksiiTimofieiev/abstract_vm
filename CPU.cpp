@@ -84,7 +84,7 @@ void	CPU::_commands_execution_routine()
 		else if (*col_command_list == "mul")
 			_mul();
 		else if (*col_command_list == "div")
-			_div();
+			_div(line);
 		else if (*col_command_list == "exit") // move forward iterator to have its value;
 		{
 			exit_command_is_pesent_in_command_list = true;
@@ -177,32 +177,40 @@ void	CPU::_mul()
 }
 
 // 0;
-void	CPU::_div()
+void	CPU::_div( int line )
 {
-	ssize_t	size = _stack.size();
-	ssize_t	last = size - 1;
-	ssize_t	prev_last = last - 1;
+	try
+	{
+		ssize_t	size = _stack.size();
+		ssize_t	last = size - 1;
+		ssize_t	prev_last = last - 1;
 
-	IOperand const * a = _stack.at(prev_last);
-	IOperand const * b = _stack.at(last);
+		IOperand const * a = _stack.at(prev_last);
+		IOperand const * b = _stack.at(last);
 	
-	_stack.push_back(*a / *b);
+		if (a->toString() == "0" || b->toString() == "0")
+			throw_line("\033[1;31mDiv command with 0 operator on line # -> \033[0m", line);
 
-	_stack.erase(_stack.begin() + (_stack.size() - 2));
-	_stack.erase(_stack.begin() + (_stack.size() - 2));
+		_stack.push_back(*a / *b);
+
+		_stack.erase(_stack.begin() + (_stack.size() - 2));
+		_stack.erase(_stack.begin() + (_stack.size() - 2));
+	}
+	catch (const std::runtime_error &ex)
+	{
+		std::cout << ex.what() << std::endl;
+	}
 }
 
 void	CPU::_print( int line )
 {
-	auto i = _stack.back()->getType();
-
 	try
 	{
+		auto i = _stack.back()->getType();
 		if (!i)
 			fprintf(stdout, "[%d]: %c;\n", stoi(_stack.back()->toString()), stoi(_stack.back()->toString()));
 		else
 			throw_line("\033[1;31mPrint error on line # -> \033[0m", line);
-
 	}
 	catch (const std::runtime_error &ex)
 	{
