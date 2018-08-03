@@ -3,6 +3,7 @@
 
 #include "eOperand.hpp"
 #include <vector>
+#include <limits>
 
 class	Factory
 {
