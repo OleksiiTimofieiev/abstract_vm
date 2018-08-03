@@ -29,31 +29,70 @@ Factory::Factory(Factory const &src)
 
 IOperand const *Factory::createInt8(std::string const &value) const
 {
-	int64_t num = std::stoll(value);
-
-	return (new eOperand<int8_t>(static_cast<int8_t>(num)));
+	try
+	{
+		int64_t num = std::stoll(value);
+		return (new eOperand<int8_t>(static_cast<int8_t>(num)));
+	}
+	catch (const std::exception & x)
+	{
+		std::cout << x.what() << std::endl;
+		return (0);
+	}
 }
+
 IOperand const *Factory::createInt16(std::string const &value) const
 {
-	int64_t num = std::stoll(value);
+	try
+	{
+		int64_t num = std::stoll(value);
+		return (new eOperand<int16_t>(static_cast<int16_t>(num)));
+	}
+	catch (const std::exception & x)
+	{
+		std::cout << x.what() << std::endl;
+		return (0);
+	}
 
-	return (new eOperand<int16_t>(static_cast<int16_t>(num)));
 }
 IOperand const *Factory::createInt32(std::string const &value) const
 {
-	int64_t num = std::stoll(value);
-	
-	return (new eOperand<int32_t>(static_cast<int32_t>(num)));
+	try
+	{
+		int64_t num = std::stoll(value);
+		return (new eOperand<int32_t>(static_cast<int32_t>(num)));
+	}
+	catch (const std::exception & x)
+	{
+		std::cout << x.what() << std::endl;
+		return (0);
+	}
 };
 IOperand const *Factory::createFloat(std::string const &value) const
 {
-	long double num = std::stold(value);
+	try
+	{
+		long double num = std::stold(value);
 
-	return (new eOperand<float>(static_cast<float>(num)));
+		return (new eOperand<float>(static_cast<float>(num)));
+	}
+	catch (const std::exception & x)
+	{
+		std::cout << x.what() << std::endl;
+		return (0);
+	}
 }
 IOperand const *Factory::createDouble(std::string const &value) const
 {
-	long double num = std::stold(value);
-	
-	return (new eOperand<double>(static_cast<double>(num)));
+	try
+	{
+		long double num = std::stold(value);
+
+		return (new eOperand<double>(static_cast<double>(num)));
+	}
+	catch (const std::exception & x)
+	{
+		std::cout << x.what() << std::endl;
+		return (0);
+	}
 }
