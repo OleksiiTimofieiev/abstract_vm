@@ -41,27 +41,21 @@ template <class T> eOperand<T>::eOperand(eOperand const &src)
 
 template <class T> int eOperand<T>::getPrecision(void) const
 {
-	if (typeid(T) == typeid(int8_t)) { return(0); }
-	else if (typeid(T) == typeid(int16_t)) { return(0); }
-	else if (typeid(T) == typeid(int32_t)) { return(0); }
-	else if (typeid(T) == typeid(float)) { return(7); }
-	else if (typeid(T) == typeid(double)) { return(14); }
+	if ( typeid(T) == typeid(int8_t) )       { return(0); }
+	else if ( typeid(T) == typeid(int16_t) ) { return(0); }
+	else if ( typeid(T) == typeid(int32_t) ) { return(0); }
+	else if ( typeid(T) == typeid(float) )   { return(7); }
+	else if ( typeid(T) == typeid(double) )  { return(14); }
 	else { return (0); }
 }
 template <class T> eOperandType eOperand<T>::getType(void) const
 {
-	if (typeid(T) == typeid(int8_t))
-		return(Int8);
-	else if (typeid(T) == typeid(int16_t))
-		return(Int16);
-	else if (typeid(T) == typeid(int32_t))
-		return(Int32);
-	else if (typeid(T) == typeid(float))
-		return(Float);
-	else if (typeid(T) == typeid(double))
-		return(Double);
-	else
-		return (default_value);
+	if ( typeid(T) == typeid(int8_t) ) 			{ return(Int8); }
+	else if ( typeid(T) == typeid(int16_t) ) 	{return(Int16); }
+	else if ( typeid(T) == typeid(int32_t) ) 	{ return(Int32); }
+	else if ( typeid(T) == typeid(float) ) 		{ return(Float); }
+	else if ( typeid(T) == typeid(double) ) 	{ return(Double); }
+	else {return (default_value);}
 }
 
 template <class T> IOperand const *eOperand<T>::operator+(IOperand const &rhs) const
