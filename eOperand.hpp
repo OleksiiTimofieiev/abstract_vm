@@ -13,8 +13,7 @@ template <typename T>
 class eOperand : public IOperand
 {
 	public:
-		eOperand(const std::string & str);
-
+		eOperand(T value);
 		eOperand( void );
 		~eOperand( void );
 		IOperand const &operator=(eOperand const &rhs);
@@ -22,13 +21,12 @@ class eOperand : public IOperand
 
 		int 			getPrecision( void ) const;
 		eOperandType 	getType( void ) const;
-
+		
 		IOperand const *operator+(IOperand const &rhs) const;
 		IOperand const *operator-(IOperand const &rhs) const;
 		IOperand const *operator*(IOperand const &rhs) const;
 		IOperand const *operator/(IOperand const &rhs) const;
 		IOperand const *operator%(IOperand const &rhs) const;
-		
 		std::string const &toString(void) const;
 		
 	private:

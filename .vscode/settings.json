@@ -60,6 +60,7 @@
 		"type_traits": "cpp",
 		"__locale": "cpp",
 		"ios": "cpp",
-		"utility": "cpp"
+		"utility": "cpp",
+		"sstream": "cpp"
 	}
 }

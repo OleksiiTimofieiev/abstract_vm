@@ -1,6 +1,5 @@
-push int8(10)
-push int8(32)
-add
+push double(44.55)
+push int32(1234567)
+div
 dump
-print
 exit

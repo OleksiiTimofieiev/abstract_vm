@@ -29,21 +29,31 @@ Factory::Factory(Factory const &src)
 
 IOperand const *Factory::createInt8(std::string const &value) const
 {
-	return (new eOperand<int8_t>(value));
+	int64_t num = std::stoll(value);
+
+	return (new eOperand<int8_t>(static_cast<int8_t>(num)));
 }
 IOperand const *Factory::createInt16(std::string const &value) const
 {
-	return (new eOperand<int16_t>(value));
+	int64_t num = std::stoll(value);
+
+	return (new eOperand<int16_t>(static_cast<int16_t>(num)));
 }
 IOperand const *Factory::createInt32(std::string const &value) const
 {
-	return (new eOperand<int32_t>(value));
+	int64_t num = std::stoll(value);
+	
+	return (new eOperand<int32_t>(static_cast<int32_t>(num)));
 };
 IOperand const *Factory::createFloat(std::string const &value) const
 {
-	return (new eOperand<float>(value));
+	long double num = std::stold(value);
+
+	return (new eOperand<float>(static_cast<float>(num)));
 }
 IOperand const *Factory::createDouble(std::string const &value) const
 {
-	return (new eOperand<double>(value));
+	long double num = std::stold(value);
+	
+	return (new eOperand<double>(static_cast<double>(num)));
 }
