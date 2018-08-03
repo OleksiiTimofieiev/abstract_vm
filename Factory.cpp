@@ -1,5 +1,6 @@
 #include "Factory.hpp"
 #include "Exception.hpp"
+#include <float.h>
 
 Factory::Factory( void )
 {
@@ -32,7 +33,6 @@ IOperand const *Factory::createInt8(std::string const &value) const
 {
 	try
 	{
-		std::cout << "here" <<std::endl;
 		int64_t num = std::stoll(value);
 
 		if ( num > std::numeric_limits<int8_t>::max())
@@ -53,7 +53,6 @@ IOperand const *Factory::createInt16(std::string const &value) const
 {
 	try
 	{
-		std::cout << "here" <<std::endl;
 		int64_t num = std::stoll(value);
 
 		if ( num > std::numeric_limits<int16_t>::max())
@@ -74,10 +73,9 @@ IOperand const *Factory::createInt32(std::string const &value) const
 {
 	try
 	{
-		std::cout << "here" <<std::endl;
 		int64_t num = std::stoll(value);
 
-		if ( num < -INT32_MIN)
+		if ( num < INT32_MIN)
 			throw_line("Underflow happend, value to be factorized -> ", 0);
 		if ( num > INT32_MAX)
 			throw_line("Overflow happend, value to be factorized -> ", 0);
@@ -95,6 +93,12 @@ IOperand const *Factory::createFloat(std::string const &value) const
 	try
 	{
 		long double num = std::stold(value);
+		std::cout << "here" <<std::endl;
+
+		if ( num < -FLT_MAX)
+			throw_line("Underflow happend, value to be factorized -> ", 0);
+		if ( num > FLT_MAX)
+			throw_line("Overflow happend, value to be factorized -> ", 0);
 
 		return (new eOperand<float>(static_cast<float>(num)));
 	}
@@ -109,6 +113,12 @@ IOperand const *Factory::createDouble(std::string const &value) const
 	try
 	{
 		long double num = std::stold(value);
+		std::cout << "here" <<std::endl;
+
+		if ( num < -DBL_MAX)
+			throw_line("Underflow happend, value to be factorized -> ", 0);
+		if ( num > DBL_MAX)
+			throw_line("Overflow happend, value to be factorized -> ", 0);
 
 		return (new eOperand<double>(static_cast<double>(num)));
 	}
