@@ -16,6 +16,7 @@
 // decrement
 // sort
 // usage
+// ncurses avm
 
 
 // -DBL/float_MAX
