@@ -9,7 +9,7 @@
 // • The stack is composed of strictly less that two values when an arithmetic instruction is executed.
 
 
-//bonus:
+// bonus:
 // min
 // max
 // increment
