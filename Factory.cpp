@@ -74,6 +74,11 @@ IOperand const *Factory::createInt32(std::string const &value) const
 	{
 		int64_t num = std::stoll(value);
 
+		if ( num > std::numeric_limits<int>::max())
+			throw_line("Overflow happend, value to be factorized -> ", 0);
+		if ( num < std::numeric_limits<int>::min())
+			throw_line("Underflow happend, value to be factorized -> ", 0);
+
 		return (new eOperand<int32_t>(static_cast<int32_t>(num)));
 	}
 	catch (const std::exception & x)
