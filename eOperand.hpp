@@ -22,7 +22,7 @@ class eOperand : public IOperand
 		eOperandType 	getType( void ) const;
 
 		IOperand const *operator+(IOperand const &rhs) const;
-		// IOperand const *operator-(IOperand const &rhs) const;
+		IOperand const *operator-(IOperand const &rhs) const;
 		// IOperand const *operator*(IOperand const &rhs) const;
 		// IOperand const *operator/(IOperand const &rhs) const;
 		// IOperand const *operator%(IOperand const &rhs) const;

@@ -96,7 +96,24 @@ template <class T> IOperand const *eOperand<T>::operator+(IOperand const &rhs) c
 
 	return (Factory().createOperand(eNum, new_line));
 }
-// template <class T> IOperand const *eOperand<T>::operator-(IOperand const &rhs) const
+
+template <class T> IOperand const *eOperand<T>::operator-(IOperand const &rhs) const
+{
+	eOperandType	eNum = default_value;
+	std::string		new_line;
+
+	if (this->getType() >= rhs.getType())
+		eNum = this->getType();
+	else
+		eNum = rhs.getType();
+
+	if (eNum < Float)
+		new_line = std::to_string(static_cast<int64_t>(this->_value_after_conversion) - std::stoll(rhs.toString()));
+	else
+		new_line = std::to_string(static_cast<long double>(this->_value_after_conversion) - std::stold(rhs.toString()));
+
+	return (Factory().createOperand(eNum, new_line));
+}
 // template <class T> IOperand const *eOperand<T>::operator*(IOperand const &rhs) const
 // template <class T> IOperand const *eOperand<T>::operator/(IOperand const &rhs) const
 // template <class T> IOperand const *eOperand<T>::operator%(IOperand const &rhs) const

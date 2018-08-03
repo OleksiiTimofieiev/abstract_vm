@@ -139,6 +139,19 @@ void	CPU::_add()
 	
 }
 
+void	CPU::_sub()
+{
+	ssize_t	size = _stack.size();
+	ssize_t	last = size - 1;
+	ssize_t	prev_last = last - 1;
+
+	IOperand const * a = _stack.at(prev_last);
+	IOperand const * b = _stack.at(last);
+	
+	_stack.push_back(*a - *b);
+	
+}
+
 void	CPU::_print( int line )
 {
 	auto i = _stack.back()->getType();
