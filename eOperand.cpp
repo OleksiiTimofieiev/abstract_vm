@@ -4,8 +4,7 @@
 #include				<iomanip>
 #include				<string>
 
-//TODO:: not a value;
-//TODO::check input value;
+//TODO:: check input value;
 
 template <class T> eOperand<T>::eOperand(const std::string &str) 
 {
