@@ -72,7 +72,7 @@ void	CPU::_commands_execution_routine()
 		if (*col_command_list == "push")
 			_push(*std::next(col_command_list, 1) , *std::next(col_command_list, 2));
 		else if (*col_command_list == "pop")
-			_pop();
+			_pop(line);
 		else if (*col_command_list == "dump")
 			_dump();
 		else if (*col_command_list == "print")
@@ -117,9 +117,18 @@ void	CPU::_push( std::string Type, std::string value )
 	_stack.push_back(_factory.createOperand(selector, value));
 }
 
-void	CPU::_pop( )  // not 2 on stack
+void	CPU::_pop( int line )  // not 2 on stack
 {
-	_stack.pop_back();
+	try
+	{
+		if (_stack.empty())
+			throw_line("\033[1;31mEmpty stack on line # -> \033[0m", line);
+		_stack.pop_back();
+	}
+	catch (const std::runtime_error &ex)
+	{
+		std::cout << ex.what() << std::endl;
+	}
 }
 
 void	CPU::_dump()  // not 2 on stack or empty stack

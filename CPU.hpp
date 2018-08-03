@@ -39,7 +39,7 @@ class	CPU
 		CPU &operator =							( CPU const &rhs );
 		CPU										( CPU const &src );
 		void _push								( std::string Type, std::string value);
-		void _pop								( void );
+		void _pop								( int line );
 		void _dump								( void );
 		void _add								( void );
 		void _sub								( void );
