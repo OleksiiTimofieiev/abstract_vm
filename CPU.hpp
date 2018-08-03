@@ -18,7 +18,6 @@
 #include 				<stdio.h>
 #include				<iterator>
 
-
 #include 				"Lexer.hpp"
 #include 				"eOperand.hpp"
 #include 				"Factory.hpp"
@@ -46,6 +45,7 @@ class	CPU
 		void _sub								( void );
 		void _mul								( void );
 		void _div								( int line );
+		void _mod								( int line );
 		void _print								( int line );
 		void _exit								( void );
 		void _execute_inner_logic				( const int quantity_of_arguments, char * argument );

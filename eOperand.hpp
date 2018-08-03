@@ -4,6 +4,10 @@
 #include "IOperand.hpp"
 #include "Factory.hpp"
 #include <iostream>
+#include <sstream>
+#include <iomanip>
+#include <string>
+#include <cmath> 
 
 //TODO:exceptions
 
@@ -20,12 +24,11 @@ class eOperand : public IOperand
 
 		int 			getPrecision( void ) const;
 		eOperandType 	getType( void ) const;
-
 		IOperand const *operator+(IOperand const &rhs) const;
 		IOperand const *operator-(IOperand const &rhs) const;
 		IOperand const *operator*(IOperand const &rhs) const;
 		IOperand const *operator/(IOperand const &rhs) const;
-		// IOperand const *operator%(IOperand const &rhs) const;
+		IOperand const *operator%(IOperand const &rhs) const;
 		std::string const &toString(void) const;
 		
 	private:

@@ -1,5 +1,6 @@
-push int8(3)
-push int16(2)
-div
+push int8(10)
+push int8(32)
+add
 dump
+print
 exit
