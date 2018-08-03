@@ -79,6 +79,12 @@ void	CPU::_commands_execution_routine()
 			_print(line);
 		else if (*col_command_list == "add")
 			_add();
+		else if (*col_command_list == "sub")
+			_sub();
+		else if (*col_command_list == "mul")
+			_mul();
+		else if (*col_command_list == "div")
+			_div();
 		else if (*col_command_list == "exit") // move forward iterator to have its value;
 		{
 			exit_command_is_pesent_in_command_list = true;
@@ -133,10 +139,11 @@ void	CPU::_add()
 
 	IOperand const * a = _stack.at(prev_last);
 	IOperand const * b = _stack.at(last);
-	
 
 	_stack.push_back(*a + *b);
-	
+
+	_stack.erase(_stack.begin() + (_stack.size() - 2));
+	_stack.erase(_stack.begin() + (_stack.size() - 2));
 }
 
 void	CPU::_sub()
@@ -149,7 +156,40 @@ void	CPU::_sub()
 	IOperand const * b = _stack.at(last);
 	
 	_stack.push_back(*a - *b);
+
+	_stack.erase(_stack.begin() + (_stack.size() - 2));
+	_stack.erase(_stack.begin() + (_stack.size() - 2));
+}
+
+void	CPU::_mul()
+{
+	ssize_t	size = _stack.size();
+	ssize_t	last = size - 1;
+	ssize_t	prev_last = last - 1;
+
+	IOperand const * a = _stack.at(prev_last);
+	IOperand const * b = _stack.at(last);
 	
+	_stack.push_back(*a * *b);
+
+	_stack.erase(_stack.begin() + (_stack.size() - 2));
+	_stack.erase(_stack.begin() + (_stack.size() - 2));
+}
+
+// 0;
+void	CPU::_div()
+{
+	ssize_t	size = _stack.size();
+	ssize_t	last = size - 1;
+	ssize_t	prev_last = last - 1;
+
+	IOperand const * a = _stack.at(prev_last);
+	IOperand const * b = _stack.at(last);
+	
+	_stack.push_back(*a / *b);
+
+	_stack.erase(_stack.begin() + (_stack.size() - 2));
+	_stack.erase(_stack.begin() + (_stack.size() - 2));
 }
 
 void	CPU::_print( int line )

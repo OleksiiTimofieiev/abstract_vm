@@ -23,8 +23,8 @@ class eOperand : public IOperand
 
 		IOperand const *operator+(IOperand const &rhs) const;
 		IOperand const *operator-(IOperand const &rhs) const;
-		// IOperand const *operator*(IOperand const &rhs) const;
-		// IOperand const *operator/(IOperand const &rhs) const;
+		IOperand const *operator*(IOperand const &rhs) const;
+		IOperand const *operator/(IOperand const &rhs) const;
 		// IOperand const *operator%(IOperand const &rhs) const;
 		std::string const &toString(void) const;
 		
