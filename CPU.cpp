@@ -1,6 +1,26 @@
 #include "CPU.hpp"
 #include "Factory.hpp"
 
+// • Overflow on a value
+// • Underflow on a value
+// • Instruction pop on an empty stack
+// • Division/modulo by 0
+// • An assert instruction is not true
+// • The stack is composed of strictly less that two values when an arithmetic instruction is executed.
+
+// -DBL/float_MAX
+// long double;
+// stdint
+// float
+// 1. static cast for the string value, 2. do smth - check Pasha method;
+// cast to the bigger value, even assert;
+// make cool makefile;
+// IOperand const* z = _stack.back();
+// std::cout << z->toString() << std::endl;
+// fprintf(stdout, "[%d]: %c;\n", stoi(_stack.back()->toString()), stoi(_stack.back()->toString()));
+//TODO:: check all command for the seg abort with empty stack; exception throw;
+//TODO:  check copl form in the end of the project;
+
 CPU::CPU () {}
 
 CPU::~CPU() 
@@ -85,11 +105,6 @@ void	CPU::_push( std::string Type, std::string value )
 		selector = default_value;
 
 	_stack.push_back(_factory.createOperand(selector, value));
-
-	//FIXME:: in the end of the project ot do this stuff; vlbla bla 
-	// IOperand const* z = _stack.back();
-	// std::cout << z->toString() << std::endl;
-	// fprintf(stdout, "[%d]: %c;\n", stoi(_stack.back()->toString()), stoi(_stack.back()->toString()));
 }
 
 void	CPU::_pop( )

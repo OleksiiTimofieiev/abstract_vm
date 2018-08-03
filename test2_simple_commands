@@ -1,4 +1,6 @@
+push float(42.0)
 pop
+push float(42.0)
 dump
 add
 sub

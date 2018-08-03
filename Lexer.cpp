@@ -20,26 +20,18 @@ bool Lexer::regex_checks(std::string str, std::vector<std::vector<std::string> >
 	
 	if (std::regex_match( str.c_str(), result, commands_without_arguments) || std::regex_match( str.c_str(), result, empty_line))
 	{
-		//FIXME:comment in the end of the project
-		// for (unsigned int i = 0; i < result.size(); i++) // for diagnostics
-		// 	std::cout << result[i] << std::endl;
+		std::vector<std::string> lstTableRow;
 
-			std::vector<std::string> lstTableRow;
+		lstTableRow.push_back(result[1]);
 
-			lstTableRow.push_back(result[1]);
+		for (int j = 1; j < nNumColumns; j++)
+			lstTableRow.push_back("No data");
+		_command_list.push_back(lstTableRow);
 
-			for (int j = 1; j < nNumColumns; j++)
-				lstTableRow.push_back("No data");
-			_command_list.push_back(lstTableRow);
-
-			flag = true;
+		flag = true;
 	}
 	else if ((std::regex_match(str.c_str(), result, commands_with_arguments_int)))
 	{
-		//FIXME:comment in the end of the project
-		// for (unsigned int i = 0; i < result.size(); i++) // for diagnostics
-		// 	std::cout << result[i] << std::endl;
-
 		std::vector<std::string> lstTableRow;
 
 		for (int j = 0; j < nNumColumns; j++)
@@ -50,10 +42,6 @@ bool Lexer::regex_checks(std::string str, std::vector<std::vector<std::string> >
 	}
 	else if ((std::regex_match( str.c_str(), result, commands_with_arguments_float_double)))
 	{
-		//FIXME:comment in the end of the project
-		// for (unsigned int i = 0; i < result.size(); i++) // for diagnostics
-		// 	std::cout << result[i] << std::endl;
-
 		std::vector<std::string> lstTableRow;
 
 		for (int j = 0; j < nNumColumns; j++)

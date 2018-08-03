@@ -24,23 +24,6 @@
 #include 				"Factory.hpp"
 #include				"Exception.hpp"
 
-
-// • Overflow on a value
-// • Underflow on a value
-// • Instruction pop on an empty stack
-// • Division/modulo by 0
-// • The program doesn’t have an exit instruction
-// • An assert instruction is not true
-// • The stack is composed of strictly less that two values when an arithmetic instruction is executed.
-
-// -DBL/float_MAX
-// long double;
-// stdint
-// float
-// 1. static cast for the string value, 2. do smth - check Pasha method;
-// cast to the bigger value, even assert;
-// make cool makefile;
-
 class	CPU
 {
 	private:
