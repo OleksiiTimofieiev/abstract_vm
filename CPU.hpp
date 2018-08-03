@@ -40,10 +40,10 @@ class	CPU
 		CPU										( CPU const &src );
 		void _push								( std::string Type, std::string value);
 		void _pop								( int line );
-		void _dump								( void );
-		void _add								( void );
-		void _sub								( void );
-		void _mul								( void );
+		void _dump								( int line  );
+		void _add								( int line );
+		void _sub								( int line );
+		void _mul								( int line );
 		void _div								( int line );
 		void _mod								( int line );
 		void _print								( int line );

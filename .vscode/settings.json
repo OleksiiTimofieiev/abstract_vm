@@ -59,6 +59,7 @@
 		"tuple": "cpp",
 		"type_traits": "cpp",
 		"__locale": "cpp",
-		"ios": "cpp"
+		"ios": "cpp",
+		"utility": "cpp"
 	}
 }

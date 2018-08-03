@@ -74,15 +74,15 @@ void	CPU::_commands_execution_routine()
 		else if (*col_command_list == "pop")
 			_pop(line);
 		else if (*col_command_list == "dump")
-			_dump();
+			_dump(line);
 		else if (*col_command_list == "print")
 			_print(line);
 		else if (*col_command_list == "add")
-			_add();
+			_add(line);
 		else if (*col_command_list == "sub")
-			_sub();
+			_sub(line);
 		else if (*col_command_list == "mul")
-			_mul();
+			_mul(line);
 		else if (*col_command_list == "div")
 			_div(line);
 		else if (*col_command_list == "mod")
@@ -117,12 +117,12 @@ void	CPU::_push( std::string Type, std::string value )
 	_stack.push_back(_factory.createOperand(selector, value));
 }
 
-void	CPU::_pop( int line )  // not 2 on stack
+void	CPU::_pop( int line )
 {
 	try
 	{
 		if (_stack.empty())
-			throw_line("\033[1;31mEmpty stack on line # -> \033[0m", line);
+			throw_line("\033[1;31mTry to pop empty stack on line # -> \033[0m", line);
 		_stack.pop_back();
 	}
 	catch (const std::runtime_error &ex)
@@ -131,65 +131,104 @@ void	CPU::_pop( int line )  // not 2 on stack
 	}
 }
 
-void	CPU::_dump()  // not 2 on stack or empty stack
-{
-	for (auto i = _stack.end();i != _stack.begin(); ) 
-	{
-  		--i;
-		IOperand const* z = *i;
-		OUTPUT(z->toString());
-	}
-}
-
-void	CPU::_add() // not 2 on stack
-{
-	ssize_t	size = _stack.size();
-	ssize_t	last = size - 1;
-	ssize_t	prev_last = last - 1;
-
-	IOperand const * a = _stack.at(prev_last);
-	IOperand const * b = _stack.at(last);
-
-	_stack.push_back(*a + *b);
-
-	_stack.erase(_stack.begin() + (_stack.size() - 2));
-	_stack.erase(_stack.begin() + (_stack.size() - 2));
-}
-
-void	CPU::_sub() // not 2 on stack
-{
-	ssize_t	size = _stack.size();
-	ssize_t	last = size - 1;
-	ssize_t	prev_last = last - 1;
-
-	IOperand const * a = _stack.at(prev_last);
-	IOperand const * b = _stack.at(last);
-	
-	_stack.push_back(*a - *b);
-
-	_stack.erase(_stack.begin() + (_stack.size() - 2));
-	_stack.erase(_stack.begin() + (_stack.size() - 2));
-}
-
-void	CPU::_mul() // not 2 on stack
-{
-	ssize_t	size = _stack.size();
-	ssize_t	last = size - 1;
-	ssize_t	prev_last = last - 1;
-
-	IOperand const * a = _stack.at(prev_last);
-	IOperand const * b = _stack.at(last);
-	
-	_stack.push_back(*a * *b);
-
-	_stack.erase(_stack.begin() + (_stack.size() - 2));
-	_stack.erase(_stack.begin() + (_stack.size() - 2));
-}
-
-void	CPU::_div( int line ) // not 2 on stack
+void	CPU::_dump( int line )
 {
 	try
 	{
+		if (_stack.empty())
+			throw_line("\033[1;31mTry to dump empty stack on line # -> \033[0m", line);
+
+			for ( auto i = _stack.end();i != _stack.begin(); ) 
+			{
+				--i;
+				IOperand const* z = *i;
+				OUTPUT(z->toString());
+			}
+	}
+	catch (const std::runtime_error &ex)
+	{
+		std::cout << ex.what() << std::endl;
+	}
+}
+
+void	CPU::_add( int line )
+{
+	try
+	{
+		if (_stack.size() < 2)
+			throw_line("\033[1;31mTry to add on stack < 2 elements on line # -> \033[0m", line);
+		ssize_t	size = _stack.size();
+		ssize_t	last = size - 1;
+		ssize_t	prev_last = last - 1;
+
+		IOperand const * a = _stack.at(prev_last);
+		IOperand const * b = _stack.at(last);
+
+		_stack.push_back(*a + *b);
+
+		_stack.erase(_stack.begin() + (_stack.size() - 2));
+		_stack.erase(_stack.begin() + (_stack.size() - 2));
+	}
+	catch (const std::runtime_error &ex)
+	{
+		std::cout << ex.what() << std::endl;
+	}
+}
+
+void	CPU::_sub( int line )
+{
+	try
+	{
+		if (_stack.size() < 2)
+			throw_line("\033[1;31mTry to sub on stack < 2 elements on line # -> \033[0m", line);
+		ssize_t	size = _stack.size();
+		ssize_t	last = size - 1;
+		ssize_t	prev_last = last - 1;
+
+		IOperand const * a = _stack.at(prev_last);
+		IOperand const * b = _stack.at(last);
+		
+		_stack.push_back(*a - *b);
+
+		_stack.erase(_stack.begin() + (_stack.size() - 2));
+		_stack.erase(_stack.begin() + (_stack.size() - 2));
+	}
+	catch (const std::runtime_error &ex)
+	{
+		std::cout << ex.what() << std::endl;
+	}
+}
+
+void	CPU::_mul( int line )
+{
+	try
+	{
+		if (_stack.size() < 2)
+			throw_line("\033[1;31mTry to mul on stack < 2 elements on line # -> \033[0m", line);
+		ssize_t	size = _stack.size();
+		ssize_t	last = size - 1;
+		ssize_t	prev_last = last - 1;
+
+		IOperand const * a = _stack.at(prev_last);
+		IOperand const * b = _stack.at(last);
+		
+		_stack.push_back(*a * *b);
+
+		_stack.erase(_stack.begin() + (_stack.size() - 2));
+		_stack.erase(_stack.begin() + (_stack.size() - 2));
+	}
+	catch (const std::runtime_error &ex)
+	{
+		std::cout << ex.what() << std::endl;
+	}
+}
+
+void	CPU::_div( int line )
+{
+	try
+	{
+		if (_stack.size() < 2)
+			throw_line("\033[1;31mTry to div on stack < 2 elements on line # -> \033[0m", line);
 		ssize_t	size = _stack.size();
 		ssize_t	last = size - 1;
 		ssize_t	prev_last = last - 1;
@@ -211,10 +250,12 @@ void	CPU::_div( int line ) // not 2 on stack
 	}
 }
 
-void	CPU::_mod(int line)
+void	CPU::_mod( int line )
 {
 	try
 	{
+		if (_stack.size() < 2)
+			throw_line("\033[1;31mTry to mod on stack < 2 elements on line # -> \033[0m", line);
 		ssize_t	size = _stack.size();
 		ssize_t	last = size - 1;
 		ssize_t	prev_last = last - 1;
@@ -240,6 +281,8 @@ void	CPU::_print( int line )
 {
 	try
 	{
+		if (_stack.empty())
+			throw_line("\033[1;31mTry to print on empty stack on line # -> \033[0m", line);
 		auto i = _stack.back()->getType();
 		if (!i)
 			fprintf(stdout, "[%d]: %c;\n", stoi(_stack.back()->toString()), stoi(_stack.back()->toString()));
