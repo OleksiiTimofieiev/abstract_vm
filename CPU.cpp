@@ -26,10 +26,7 @@
 // 1. static cast for the string value, 2. do smth - check Pasha method;
 // cast to the bigger value, even assert;
 // make cool makefile;
-// IOperand const* z = _stack.back();
-// std::cout << z->toString() << std::endl;
-// fprintf(stdout, "[%d]: %c;\n", stoi(_stack.back()->toString()), stoi(_stack.back()->toString()));
-//TODO:		check all command for the seg abort with empty stack; exception throw; empty() with vector;
+
 //TODO:		check copl form in the end of the project;
 //TODO:		test1 comments;
 
@@ -53,7 +50,7 @@ CPU &CPU::operator=(CPU const &rhs)
 	return *this;
 }
 
-CPU::CPU(CPU const &src)
+CPU::CPU( CPU const &src )
 {
 	*this = src;
 }
@@ -155,7 +152,7 @@ void	CPU::_dump( int line )
 				OUTPUT(z->toString());
 			}
 	}
-	catch (const std::runtime_error &ex)
+	catch ( const std::runtime_error &ex )
 	{
 		std::cout << ex.what() << std::endl;
 	}
@@ -165,7 +162,7 @@ void	CPU::_add( int line )
 {
 	try
 	{
-		if (_stack.size() < 2)
+		if ( _stack.size() < 2 )
 			throw_line("\033[1;31mTry to add on stack < 2 elements on line # -> \033[0m", line);
 		ssize_t	size = _stack.size();
 		ssize_t	last = size - 1;
@@ -189,7 +186,7 @@ void	CPU::_sub( int line )
 {
 	try
 	{
-		if (_stack.size() < 2)
+		if ( _stack.size() < 2 )
 			throw_line("\033[1;31mTry to sub on stack < 2 elements on line # -> \033[0m", line);
 		ssize_t	size = _stack.size();
 		ssize_t	last = size - 1;
@@ -213,7 +210,7 @@ void	CPU::_mul( int line )
 {
 	try
 	{
-		if (_stack.size() < 2)
+		if ( _stack.size() < 2 )
 			throw_line("\033[1;31mTry to mul on stack < 2 elements on line # -> \033[0m", line);
 		ssize_t	size = _stack.size();
 		ssize_t	last = size - 1;
@@ -237,7 +234,7 @@ void	CPU::_div( int line )
 {
 	try
 	{
-		if (_stack.size() < 2)
+		if ( _stack.size() < 2 )
 			throw_line("\033[1;31mTry to div on stack < 2 elements on line # -> \033[0m", line);
 		ssize_t	size = _stack.size();
 		ssize_t	last = size - 1;
@@ -246,7 +243,7 @@ void	CPU::_div( int line )
 		IOperand const * a = _stack.at(prev_last);
 		IOperand const * b = _stack.at(last);
 	
-		if (a->toString() == "0" || b->toString() == "0")
+		if ( a->toString() == "0" || b->toString() == "0" )
 			throw_line("\033[1;31mDiv command with 0 operator on line # -> \033[0m", line);
 
 		_stack.push_back(*a / *b);
@@ -264,7 +261,7 @@ void	CPU::_mod( int line )
 {
 	try
 	{
-		if (_stack.size() < 2)
+		if ( _stack.size() < 2 )
 			throw_line("\033[1;31mTry to mod on stack < 2 elements on line # -> \033[0m", line);
 		ssize_t	size = _stack.size();
 		ssize_t	last = size - 1;
@@ -273,7 +270,7 @@ void	CPU::_mod( int line )
 		IOperand const * a = _stack.at(prev_last);
 		IOperand const * b = _stack.at(last);
 	
-		if (a->toString() == "0" || b->toString() == "0")
+		if ( a->toString() == "0" || b->toString() == "0" )
 			throw_line("\033[1;31mDiv command with 0 operator on line # -> \033[0m", line);
 
 		_stack.push_back(*a % *b);
@@ -291,15 +288,17 @@ void	CPU::_print( int line )
 {
 	try
 	{
-		if (_stack.empty())
-			throw_line("\033[1;31mTry to print on empty stack on line # -> \033[0m", line);
 		auto i = _stack.back()->getType();
-		if (!i)
+		
+		if ( _stack.empty() )
+			throw_line("\033[1;31mTry to print on empty stack on line # -> \033[0m", line);
+
+		if ( !i )
 			fprintf(stdout, "[%d]: %c;\n", stoi(_stack.back()->toString()), stoi(_stack.back()->toString()));
 		else
 			throw_line("\033[1;31mPrint error on line # -> \033[0m", line);
 	}
-	catch (const std::runtime_error &ex)
+	catch ( const std::runtime_error &ex )
 	{
 		std::cout << ex.what() << std::endl;
 	}
