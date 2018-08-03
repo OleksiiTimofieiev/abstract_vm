@@ -1,7 +1,7 @@
 push int8(1)
 push int8(2)
-push float(3.0)
-push double(42.0)
+push int8(3)
+push float(4.0)
+push double(5.0)
 dump
-print
 exit

@@ -27,16 +27,16 @@ template <class T> eOperand<T>::eOperand(const std::string &str)
 	else if (typeid(T) == typeid(float))
 	{
 		std::stringstream set(std::stringstream::out);
-		set << std::setprecision(7) << _value;
+		set << std::setprecision(7) << str;
 		_value = set.str();
 		_value_after_conversion = stof(_value);
 	}
 	else if (typeid(T) == typeid(double))
 	{
 		std::stringstream set(std::stringstream::out);
-		set << std::setprecision(14) << _value;
+		set << std::setprecision(14) << str;
 		_value = set.str();
-		_value_after_conversion = stod(str);
+		_value_after_conversion = stod(_value);
 	}
 }
 template <class T> eOperand<T>::eOperand(void) {}

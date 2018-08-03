@@ -102,7 +102,7 @@ void	CPU::_dump()
 	for (auto i = _stack.end();i != _stack.begin(); ) 
 	{
   		--i;
-  		IOperand const* z = *i;
+		IOperand const* z = *i;
 		OUTPUT(z->toString());
 	}
 }
