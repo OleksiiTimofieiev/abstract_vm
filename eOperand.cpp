@@ -17,7 +17,7 @@ template <class T> eOperand<T>::eOperand(const std::string &str)
 	else if (typeid(T) == typeid(int16_t))
 	{
 		_value = str;
-		_value_after_conversion = static_cast<int8_t>(stoi(str));
+		_value_after_conversion = static_cast<int16_t>(stoi(str));
 	}
 	else if (typeid(T) == typeid(int32_t))
 	{
