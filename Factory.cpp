@@ -1,4 +1,5 @@
 #include "Factory.hpp"
+#include "Exception.hpp"
 
 Factory::Factory( void )
 {
@@ -32,11 +33,17 @@ IOperand const *Factory::createInt8(std::string const &value) const
 	try
 	{
 		int64_t num = std::stoll(value);
+
+		if ( num > std::numeric_limits<char>::max())
+			throw_line("Overflow happend, value to be factorized -> ", 0);
+		if ( num < std::numeric_limits<char>::min())
+			throw_line("Underflow happend, value to be factorized -> ", 0);
+
 		return (new eOperand<int8_t>(static_cast<int8_t>(num)));
 	}
 	catch (const std::exception & x)
 	{
-		std::cout << x.what() << std::endl;
+		std::cout << "\033[1;31m" << x.what() << "\x1B[0m" << std::endl;
 		return (0);
 	}
 }
@@ -46,11 +53,17 @@ IOperand const *Factory::createInt16(std::string const &value) const
 	try
 	{
 		int64_t num = std::stoll(value);
+
+		if ( num > std::numeric_limits<short>::max())
+			throw_line("Overflow happend, value to be factorized -> ", 0);
+		if ( num < std::numeric_limits<short>::min())
+			throw_line("Underflow happend, value to be factorized -> ", 0);
+
 		return (new eOperand<int16_t>(static_cast<int16_t>(num)));
 	}
 	catch (const std::exception & x)
 	{
-		std::cout << x.what() << std::endl;
+		std::cout << "\033[1;31m" << x.what() << "\x1B[0m" << std::endl;
 		return (0);
 	}
 
@@ -60,11 +73,12 @@ IOperand const *Factory::createInt32(std::string const &value) const
 	try
 	{
 		int64_t num = std::stoll(value);
+
 		return (new eOperand<int32_t>(static_cast<int32_t>(num)));
 	}
 	catch (const std::exception & x)
 	{
-		std::cout << x.what() << std::endl;
+		std::cout << "\033[1;31m" << x.what() << "\x1B[0m" << std::endl;
 		return (0);
 	}
 };
@@ -78,7 +92,7 @@ IOperand const *Factory::createFloat(std::string const &value) const
 	}
 	catch (const std::exception & x)
 	{
-		std::cout << x.what() << std::endl;
+		std::cout << "\033[1;31m" << x.what() << "\x1B[0m" << std::endl;
 		return (0);
 	}
 }
@@ -92,7 +106,7 @@ IOperand const *Factory::createDouble(std::string const &value) const
 	}
 	catch (const std::exception & x)
 	{
-		std::cout << x.what() << std::endl;
+		std::cout << "\033[1;31m" << x.what() << "\x1B[0m" << std::endl;
 		return (0);
 	}
 }
