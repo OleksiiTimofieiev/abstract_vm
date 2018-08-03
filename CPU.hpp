@@ -3,6 +3,8 @@
 
 #include "includes.hpp"
 
+/* ********************* core class ********************* */
+
 class	CPU
 {
 	private:
@@ -12,11 +14,16 @@ class	CPU
 		std::vector<std::vector<std::string> > 	_command_list;
 		std::vector<IOperand const *> 			_stack;
 		void _commands_execution_routine		( void );
+
 	public:
+		/* ********************* object construction ********************* */
+
 		CPU										( void );
 		~CPU									( void );
 		CPU &operator =							( CPU const &rhs );
 		CPU										( CPU const &src );
+		
+		/* ********************* funcs ********************* */
 
 		void _push								( std::string Type, std::string value);
 		void _pop								( int line );
