@@ -93,7 +93,6 @@ IOperand const *Factory::createFloat(std::string const &value) const
 	try
 	{
 		long double num = std::stold(value);
-		std::cout << "here" <<std::endl;
 
 		if ( num < -FLT_MAX)
 			throw_line("Underflow happend, value to be factorized -> ", 0);
@@ -113,7 +112,6 @@ IOperand const *Factory::createDouble(std::string const &value) const
 	try
 	{
 		long double num = std::stold(value);
-		std::cout << "here" <<std::endl;
 
 		if ( num < -DBL_MAX)
 			throw_line("Underflow happend, value to be factorized -> ", 0);
