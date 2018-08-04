@@ -1,13 +1,7 @@
 #include "CPU.hpp"
 #include "Factory.hpp"
 
-// • Overflow on a value
-// • Underflow on a value
-// • Instruction pop on an empty stack
-// • Division/modulo by 0
 // • An assert instruction is not true
-// • The stack is composed of strictly less that two values when an arithmetic instruction is executed.
-
 
 // bonus:
 // min
@@ -18,13 +12,6 @@
 // usage
 // ncurses avm
 
-
-// -DBL/float_MAX
-// long double;
-// stdint
-// float
-// 1. static cast for the string value, 2. do smth - check Pasha method;
-// cast to the bigger value, even assert;
 // make cool makefile;
 
 //TODO:		check copl form in the end of the project;
@@ -46,7 +33,6 @@ CPU &CPU::operator=(CPU const &rhs)
 		_factory = rhs._factory;
 		_command_list = rhs._command_list;
 		_stack = rhs._stack;
-		
 	return *this;
 }
 
@@ -78,6 +64,8 @@ void	CPU::_commands_execution_routine()
 
 		if 		(*col_command_list == "push")
 			_push(*std::next(col_command_list, 1) , *std::next(col_command_list, 2));
+		else if (*col_command_list == "assert")
+			_assert(*std::next(col_command_list, 1) , *std::next(col_command_list, 2));
 		else if (*col_command_list == "pop")
 			_pop(line);
 		else if (*col_command_list == "dump")
@@ -302,6 +290,33 @@ void	CPU::_print( int line )
 	{
 		std::cout << ex.what() << std::endl;
 	}
+}
+
+void	CPU::_assert( std::string Type, std::string value )
+{
+	
+	
+	eOperandType selector;
+
+	if (Type == "int8") {selector = Int8;}
+	else if (Type == "int16") {selector = Int16;}
+	else if (Type == "int32") {selector = Int32;}
+	else if (Type == "float") {selector = Float;}
+	else if (Type == "double") {selector = Double;}
+	else
+		selector = default_value;
+
+	IOperand const * a = _factory.createOperand(selector, value);
+	IOperand const * b = _stack.back();
+
+	if (*a == *b)
+	{
+		OUTPUT_MAGENTA("Equal values !!!");
+	}
+	else 
+		OUTPUT_RED("Nope. Not equal values. Too bad.");
+
+	delete	(a);
 }
 
 void	CPU::_exit( void )

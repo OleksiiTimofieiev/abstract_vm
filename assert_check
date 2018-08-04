@@ -1,0 +1,3 @@
+push int8(-125)
+assert int8(125)
+exit

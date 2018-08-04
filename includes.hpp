@@ -10,9 +10,11 @@
 
 /* ********************* output defines ********************* */
 
-# define OUTPUT(x) 		std::cout << (x) << std::endl;
-# define OUTPUT_RED(x) 	std::cout << RED << (x) << COLOR_RESET << std::endl;
-# define OUTPUT_CYAN(x) std::cout << CYAN << (x) << COLOR_RESET << std::endl;
+# define OUTPUT(x) 			std::cout << (x) << std::endl;
+# define OUTPUT_RED(x) 		std::cout << RED << (x) << COLOR_RESET << std::endl;
+# define OUTPUT_CYAN(x) 	std::cout << CYAN << (x) << COLOR_RESET << std::endl;
+# define OUTPUT_MAGENTA(x) 	std::cout << MAGENTA << (x) << COLOR_RESET << std::endl;
+
 
 /* ********************* libs ********************* */
 
