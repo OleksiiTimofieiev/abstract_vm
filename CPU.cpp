@@ -65,7 +65,7 @@ void	CPU::_commands_execution_routine()
 		if 		(*col_command_list == "push")
 			_push(*std::next(col_command_list, 1) , *std::next(col_command_list, 2));
 		else if (*col_command_list == "assert")
-			_assert(*std::next(col_command_list, 1) , *std::next(col_command_list, 2));
+			_assert(*std::next(col_command_list, 1) , *std::next(col_command_list, 2), line);
 		else if (*col_command_list == "pop")
 			_pop(line);
 		else if (*col_command_list == "dump")
@@ -292,7 +292,7 @@ void	CPU::_print( int line )
 	}
 }
 
-void	CPU::_assert( std::string Type, std::string value )
+void	CPU::_assert( std::string Type, std::string value, int line )
 {
 	
 	
@@ -305,17 +305,32 @@ void	CPU::_assert( std::string Type, std::string value )
 	else if (Type == "double") {selector = Double;}
 	else
 		selector = default_value;
-
-	IOperand const * a = _factory.createOperand(selector, value);
-	IOperand const * b = _stack.back();
-
-	if (*a == *b)
+	try
 	{
-		OUTPUT_MAGENTA("Equal values !!!");
+		if ( _stack.empty() )
+			throw_line("\033[1;31mTry to assert with empty stack on line # -> \033[0m", line);
+
+		IOperand const * b = _stack.back();
+
+		IOperand const * a = _factory.createOperand(selector, value);
+		
+		if (*a == *b)
+		{
+			OUTPUT_MAGENTA("Equal values !!!");
+		}
+		else 
+			OUTPUT_RED("Nope. Not equal values. Too bad.");
+		delete	(a);
 	}
-	else 
-		OUTPUT_RED("Nope. Not equal values. Too bad.");
-	delete	(a);
+	catch ( const std::runtime_error &x )
+	{
+		std::cout << x.what() << std::endl;
+	}
+
+
+
+
+
 }
 
 void	CPU::_exit( void )
