@@ -49,7 +49,7 @@ void	CPU::_commands_execution_routine()
 	std::vector<std::vector<std::string> >::iterator row_command_list;
 	std::vector<std::string>::iterator col_command_list;
 	bool exit_command_is_pesent_in_command_list = false;
-	int	line = 0;;
+	int	line = 0;
 
 	for ( row_command_list = _command_list.begin(); row_command_list != _command_list.end(); row_command_list++ )
 	{
@@ -81,6 +81,8 @@ void	CPU::_commands_execution_routine()
 			_div(line);
 		else if (*col_command_list == "mod")
 			_mod(line);
+		else if (*col_command_list == "max")
+			_max();
 		else if (*col_command_list == "exit")
 		{
 			exit_command_is_pesent_in_command_list = true;
@@ -409,6 +411,28 @@ void	CPU::_lesser( std::string Type, std::string value, int line )
 	{
 		std::cout << x.what() << std::endl;
 	}
+}
+
+void	CPU::_max()
+{
+	// std::vector<std::vector<std::string> >::iterator row_command_list;
+	// std::vector<std::string>::iterator col_command_list;
+
+	// bool exit_command_is_pesent_in_command_list = false;
+
+	IOperand const * buf = _stack.at(0);
+
+	size_t i = 1;
+
+
+	while (i < _stack.size())
+	{
+		if (_stack.at(i) > buf)
+			buf = _stack.at(i);
+			
+		i++;
+	}
+	std::cout << buf->toString() << std::endl;
 }
 
 void	CPU::_exit( void )

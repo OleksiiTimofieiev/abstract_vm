@@ -1,4 +1,6 @@
 push float(32.0)
+push float(31.0)
 more int8(123)
 lesser int8(12)
+max
 exit
