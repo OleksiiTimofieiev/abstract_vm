@@ -1,3 +1,9 @@
+pop
 push int8(-125)
+push int8(122)
+add
+print
+push int8(-125)
+assert int8(125)
 assert int8(125)
 exit

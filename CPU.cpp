@@ -315,7 +315,6 @@ void	CPU::_assert( std::string Type, std::string value )
 	}
 	else 
 		OUTPUT_RED("Nope. Not equal values. Too bad.");
-
 	delete	(a);
 }
 
