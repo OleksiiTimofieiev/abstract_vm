@@ -58,7 +58,7 @@ template <class T> eOperandType eOperand<T>::getType(void) const
 	else 										{ return (default_str); }
 }
 
-template <class T> IOperand const *eOperand<T>::operator+(IOperand const &rhs) const
+template <class T> IOperand const *eOperand<T>::operator + (IOperand const &rhs) const
 {
 	eOperandType	eNum = default_str;
 	std::string		new_line;
@@ -76,7 +76,7 @@ template <class T> IOperand const *eOperand<T>::operator+(IOperand const &rhs) c
 	return (Factory().createOperand(eNum, new_line));
 }
 
-template <class T> IOperand const *eOperand<T>::operator-(IOperand const &rhs) const
+template <class T> IOperand const *eOperand<T>::operator - (IOperand const &rhs) const
 {
 	eOperandType	eNum = default_str;
 	std::string		new_line;
@@ -94,7 +94,7 @@ template <class T> IOperand const *eOperand<T>::operator-(IOperand const &rhs) c
 	return (Factory().createOperand(eNum, new_line));
 }
 
-template <class T> IOperand const *eOperand<T>::operator*(IOperand const &rhs) const
+template <class T> IOperand const *eOperand<T>::operator * (IOperand const &rhs) const
 {
 	eOperandType	eNum = default_str;
 	std::string		new_line;
@@ -112,7 +112,7 @@ template <class T> IOperand const *eOperand<T>::operator*(IOperand const &rhs) c
 	return (Factory().createOperand(eNum, new_line));
 }
 
-template <class T> IOperand const *eOperand<T>::operator/(IOperand const &rhs) const
+template <class T> IOperand const *eOperand<T>::operator / (IOperand const &rhs) const
 {
 	eOperandType	eNum = default_str;
 	std::string		new_line;
@@ -130,7 +130,7 @@ template <class T> IOperand const *eOperand<T>::operator/(IOperand const &rhs) c
 	return (Factory().createOperand(eNum, new_line));
 }
 
-template <class T> IOperand const *eOperand<T>::operator%(IOperand const &rhs) const
+template <class T> IOperand const *eOperand<T>::operator % (IOperand const &rhs) const
 {
 	eOperandType	eNum = default_str;
 	std::string		new_line;
@@ -148,7 +148,7 @@ template <class T> IOperand const *eOperand<T>::operator%(IOperand const &rhs) c
 	return (Factory().createOperand(eNum, new_line));
 }
 
-template <class T> bool eOperand<T>::operator==(IOperand const &rhs) const
+template <class T> bool eOperand<T>::operator == (IOperand const &rhs) const
 {
 		eOperandType	eNum = default_str;
 
@@ -165,7 +165,7 @@ template <class T> bool eOperand<T>::operator==(IOperand const &rhs) const
 			return (static_cast<double>(_value) == std::stod(rhs.toString()));
 }
 
-template <class T> bool eOperand<T>::operator>(IOperand const &rhs) const
+template <class T> bool eOperand<T>::operator > (IOperand const &rhs) const
 {
 		eOperandType	eNum = default_str;
 
@@ -180,6 +180,23 @@ template <class T> bool eOperand<T>::operator>(IOperand const &rhs) const
 			return (static_cast<float>(_value) > std::stof(rhs.toString()));
 		else
 			return (static_cast<double>(_value) > std::stod(rhs.toString()));
+}
+
+template <class T> bool eOperand<T>::operator < (IOperand const &rhs) const
+{
+		eOperandType	eNum = default_str;
+
+		if (this->getType() >= rhs.getType())
+			eNum = this->getType();
+		else
+			eNum = rhs.getType();
+
+		if (eNum < Float)
+			return (static_cast<int32_t>(_value) < std::stoi(rhs.toString()));
+		else if (eNum == Float)
+			return (static_cast<float>(_value) < std::stof(rhs.toString()));
+		else
+			return (static_cast<double>(_value) < std::stod(rhs.toString()));
 }
 
 template <class T> std::string const &eOperand<T>::toString(void) const
