@@ -1,6 +1,9 @@
-push float(32.0)
-push float(31.0)
+push int8(65)
+push int8(66)
+push int8(67)
+push int8(68)
+push int8(69)
 more int8(123)
-lesser int8(12)
+lesser int8(2)
 max
 exit

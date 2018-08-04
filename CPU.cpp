@@ -422,17 +422,21 @@ void	CPU::_max()
 
 	IOperand const * buf = _stack.at(0);
 
+	std::cout << buf->toString() << std::endl;
+
 	size_t i = 1;
 
 
 	while (i < _stack.size())
 	{
-		if (_stack.at(i) < buf)
-			buf = _stack.at(i);
+			std::cout << _stack.at(i)->toString() << std::endl;
+		if ( _stack.at(i) > buf  )
+		{
+			delete buf;
 
+		}
 		i++;
 	}
-	std::cout << buf->toString() << std::endl;
 }
 
 void	CPU::_exit( void )
