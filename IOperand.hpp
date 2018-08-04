@@ -8,7 +8,7 @@ enum eOperandType
 	Int32,
 	Float,
 	Double,
-	default_value = 42
+	default_str = 42
 };
 
 #include <string>

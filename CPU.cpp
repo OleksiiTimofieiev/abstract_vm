@@ -107,7 +107,7 @@ void	CPU::_push( std::string Type, std::string value )
 	else if (Type == "double")
 		selector = Double;
 	else
-		selector = default_value;
+		selector = default_str;
 
 	_stack.push_back(_factory.createOperand(selector, value));
 }
@@ -304,7 +304,7 @@ void	CPU::_assert( std::string Type, std::string value, int line )
 	else if (Type == "float") {selector = Float;}
 	else if (Type == "double") {selector = Double;}
 	else
-		selector = default_value;
+		selector = default_str;
 	try
 	{
 		if ( _stack.empty() )
