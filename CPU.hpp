@@ -35,6 +35,7 @@ class	CPU
 		void _mod								( int line );
 		void _print								( int line );
 		void _assert							( std::string Type, std::string value, int line );
+		void _more								( std::string Type, std::string value, int line );
 		void _exit								( void );
 		void _execute_inner_logic				( const int quantity_of_arguments, char * argument );
 };

@@ -1,0 +1,4 @@
+push float(32.0)
+push float(32.0)
+more float(31.0)
+exit
