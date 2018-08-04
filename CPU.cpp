@@ -429,7 +429,7 @@ void	CPU::_max()
 	{
 		if (_stack.at(i) > buf)
 			buf = _stack.at(i);
-			
+
 		i++;
 	}
 	std::cout << buf->toString() << std::endl;
