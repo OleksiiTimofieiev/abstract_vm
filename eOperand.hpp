@@ -31,8 +31,8 @@ class eOperand : public IOperand
 		std::string const &toString(void) const;
 		
 	private:
-		std::string		_str;
 		T				_value;
+		std::string		_str;
 };
 
 #endif
