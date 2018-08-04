@@ -1,8 +1,8 @@
-push int8(1234123412)
-push int8(-5000)
+push int8(128)
+push int8(-129)
 
 push int16(32768)
-push int16(-3255555)
+push int16(-32769)
 
 push int32(2147483648)
 push int32(-2147483649)
