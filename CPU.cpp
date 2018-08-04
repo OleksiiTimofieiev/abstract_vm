@@ -313,6 +313,12 @@ void	CPU::_assert( std::string Type, std::string value, int line )
 		IOperand const * b = _stack.back();
 
 		IOperand const * a = _factory.createOperand(selector, value);
+
+		if ( a->toString() == "0" )
+		{
+			delete	(a);
+			throw_line("\033[1;31mTry to assert with zero value on line # -> \033[0m", line);
+		}
 		
 		if (*a == *b)
 		{
