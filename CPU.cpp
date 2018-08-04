@@ -427,7 +427,7 @@ void	CPU::_max()
 
 	while (i < _stack.size())
 	{
-		if (_stack.at(i) > buf)
+		if (_stack.at(i) < buf)
 			buf = _stack.at(i);
 
 		i++;
