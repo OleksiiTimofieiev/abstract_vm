@@ -81,8 +81,6 @@ void	CPU::_commands_execution_routine()
 			_div(line);
 		else if (*col_command_list == "mod")
 			_mod(line);
-		else if (*col_command_list == "max")
-			_max();
 		else if (*col_command_list == "exit")
 		{
 			exit_command_is_pesent_in_command_list = true;
@@ -410,32 +408,6 @@ void	CPU::_lesser( std::string Type, std::string value, int line )
 	catch ( const std::runtime_error &x )
 	{
 		std::cout << x.what() << std::endl;
-	}
-}
-
-void	CPU::_max()
-{
-	// std::vector<std::vector<std::string> >::iterator row_command_list;
-	// std::vector<std::string>::iterator col_command_list;
-
-	// bool exit_command_is_pesent_in_command_list = false;
-
-	IOperand const * buf = _stack.at(0);
-
-	std::cout << buf->toString() << std::endl;
-
-	size_t i = 1;
-
-
-	while (i < _stack.size())
-	{
-			std::cout << _stack.at(i)->toString() << std::endl;
-		if ( _stack.at(i) > buf  )
-		{
-			delete buf;
-
-		}
-		i++;
 	}
 }
 
