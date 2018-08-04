@@ -1,13 +1,8 @@
 #include "CPU.hpp"
 #include "Factory.hpp"
 
-// • An assert instruction is not true
-
-// bonus:
 // min
 // max
-// increment
-// decrement
 // sort
 // usage
 // ncurses avm
