@@ -100,7 +100,14 @@ void	CPU::_push( std::string Type, std::string value )
 	else
 		selector = default_str;
 
-	_stack.push_back(_factory.createOperand(selector, value));
+	IOperand const * result = _factory.createOperand(selector, value);
+
+		// std::cout << (result)->toString() << std::endl;
+
+	if (result == 0)
+		std::cout << "asdf" << std::endl;
+	else
+		_stack.push_back(result);
 }
 
 void	CPU::_pop( int line )
@@ -124,12 +131,12 @@ void	CPU::_dump( int line )
 		if (_stack.empty())
 			throw_line("\033[1;31mTry to dump empty stack on line # -> \033[0m", line);
 
-			for ( auto i = _stack.end();i != _stack.begin(); ) 
-			{
-				--i;
-				IOperand const* z = *i;
-				OUTPUT(z->toString());
-			}
+		for ( auto i = _stack.end(); i != _stack.begin(); ) 
+		{
+			--i;
+			std::string buf = (*i)->toString();
+			OUTPUT(buf);
+		}
 	}
 	catch ( const std::runtime_error &ex )
 	{
@@ -141,8 +148,12 @@ void	CPU::_add( int line )
 {
 	try
 	{
+		if ( _stack.empty() )
+			throw_line("\033[1;31mTry to add on stack < 2 elements on line # -> \033[0m", line);
+
 		if ( _stack.size() < 2 )
 			throw_line("\033[1;31mTry to add on stack < 2 elements on line # -> \033[0m", line);
+
 		ssize_t	size = _stack.size();
 		ssize_t	last = size - 1;
 		ssize_t	prev_last = last - 1;
@@ -150,7 +161,7 @@ void	CPU::_add( int line )
 		IOperand const * a = _stack.at(prev_last);
 		IOperand const * b = _stack.at(last);
 
-		_stack.push_back(*a + *b);
+		_stack.push_back( *a + *b );
 
 		_stack.erase(_stack.begin() + (_stack.size() - 2));
 		_stack.erase(_stack.begin() + (_stack.size() - 2));

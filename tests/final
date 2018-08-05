@@ -1,5 +1,9 @@
-push int8(12)
-push float(12.2)
-sub
+push int8(1)
+add
+push int16(3276723452345234523453245)
+add
+push int16(32767)
+
 dump
+
 exit
