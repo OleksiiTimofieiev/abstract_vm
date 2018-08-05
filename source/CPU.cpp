@@ -2,8 +2,9 @@
 #include "../includes/Factory.hpp"
 
 // TODO:	ncurses avm
-
 // TODO:	check copl form in the end of the project;
+// TODO:	delete leaks check func;
+
 
 CPU::CPU () {}
 
