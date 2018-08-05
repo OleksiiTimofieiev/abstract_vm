@@ -100,12 +100,7 @@ void	CPU::_push( std::string Type, std::string value )
 	else
 		selector = default_str;
 
-	IOperand const * result = _factory.createOperand(selector, value);
-
-	if (result != NULL)
-		_stack.push_back(result);
-	
-	// delete (result);
+	_stack.push_back(_factory.createOperand(selector, value));
 }
 
 void	CPU::_pop( int line )
@@ -126,7 +121,6 @@ void	CPU::_dump( int line )
 {
 	try
 	{
-		std::string buf;
 		if (_stack.empty())
 			throw_line("\033[1;31mTry to dump empty stack on line # -> \033[0m", line);
 
@@ -134,8 +128,7 @@ void	CPU::_dump( int line )
 		{
 			--i;
 			if (*i != NULL)
-				buf = (*i)->toString();
-			OUTPUT(buf);
+				OUTPUT((*i)->toString());
 		}
 	}
 	catch ( const std::runtime_error &ex )
@@ -167,6 +160,9 @@ void	CPU::_add( int line )
 
 			_stack.erase(_stack.begin() + (_stack.size() - 2));
 			_stack.erase(_stack.begin() + (_stack.size() - 2));
+
+			delete a;
+			delete b;
 		}
 	}
 	catch (const std::runtime_error &ex)

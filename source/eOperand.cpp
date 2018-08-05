@@ -58,10 +58,8 @@ template <class T> eOperandType eOperand<T>::getType(void) const
 
 template <class T> IOperand const *eOperand<T>::operator + (IOperand const &rhs) const
 {
-	std::cout << "--------- + ---------------" << std::endl;
 	eOperandType	eNum = default_str;
 	std::string		new_line;
-	
 
 	if (this->getType() >= rhs.getType())
 		eNum = this->getType();
@@ -72,7 +70,6 @@ template <class T> IOperand const *eOperand<T>::operator + (IOperand const &rhs)
 		new_line = std::to_string(static_cast<int64_t>(this->_value) + std::stoll(rhs.toString()));
 	else
 		new_line = std::to_string(static_cast<long double>(this->_value) + std::stold(rhs.toString()));
-
 
 	return (Factory().createOperand(eNum, new_line));
 }

@@ -1,15 +1,15 @@
-push int16(1)
-push int16(2)
+push int8(1)
+push int8(2)
 add
 dump
 
-push int16(32767)
+push int8(32767)
 dump
 
 add
-;overflow
 
-push int8(42);
-add
+
+push int16(42)
+dump
 
 exit
