@@ -6,8 +6,9 @@ DIR_INC		=	./includes/
 DIR_SRC		=	./source/
 DIR_OBJ		= 	./obj/
 
-#-------------------------- Header files ---------------------------------------
-HEAD_AVM	=	CPU.hpp\
+#-------------------------- Header files ------------------------------------------
+
+HPP	=			CPU.hpp\
 				eOperand.hpp\
 				Exception.hpp\
 				Factory.hpp\
@@ -16,8 +17,9 @@ HEAD_AVM	=	CPU.hpp\
 				Lexer.hpp\
 				Parser.hpp
 
-#-------------------------- Source files ---------------------------------------
-SRC_AVM		=	CPU.cpp\
+#-------------------------- Source files -------------------------------------------
+
+SRC		=		CPU.cpp\
 				eOperand.cpp\
 				Exception.cpp\
 				Factory.cpp\
@@ -25,9 +27,8 @@ SRC_AVM		=	CPU.cpp\
 				Parser.cpp\
 				main.cpp
 
-INC_PATH 	= 	$(addprefix $(DIR_INC), $(HEAD_AVM))
-
-OBJ 		= 	$(addprefix $(DIR_OBJ), $(SRC_AVM:.cpp=.o))
+INC_PATH 	= 	$(addprefix $(DIR_INC), $(HPP))
+OBJ 		= 	$(addprefix $(DIR_OBJ), $(SRC:.cpp=.o))
 INC 		= 	$(addprefix -I, $(DIR_INC))
 
 all: obj $(NAME)
@@ -35,12 +36,12 @@ all: obj $(NAME)
 obj:
 	@mkdir -p $(DIR_OBJ)
 
-#-------------------------- Compil Block ---------------------------------------
+#-------------------------- Compilation Block ---------------------------------------
 $(NAME): $(OBJ)
 	@$(COMPILER) -o $(NAME) $(OBJ)
 	@echo "Compiling" [ $(NAME) ]
 
-#-------------------------- Link Block -----------------------------------------
+#-------------------------- Linking Block -------------------------------------------
 #source
 $(DIR_OBJ)%.o: $(DIR_SRC)%.cpp $(INC_PATH)
 	@$(COMPILER) $(FLAGS) $(INC) -c -o $@ $<
