@@ -603,8 +603,6 @@ void	CPU::_less_or_equal( std::string Type, std::string value, int line )
 
 void	CPU::_exit( void )
 {
-
-	system("leaks -q avm");
 	exit(0);
 }
 
