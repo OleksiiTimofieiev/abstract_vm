@@ -45,7 +45,7 @@ IOperand const *Factory::createInt8(std::string const &value) const
 	catch (const std::exception & x)
 	{
 		std::cout << "\033[1;31m" << x.what() << "\x1B[0m" << std::endl;
-		return (0);
+		return (NULL);
 	}
 }
 
