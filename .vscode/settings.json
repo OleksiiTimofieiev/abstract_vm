@@ -10,7 +10,7 @@
 	"editor.detectIndentation": false,
 	"editor.tabSize": 4,
 	"editor.minimap.enabled": false,
-	"workbench.iconTheme": "vscode-icons",
+	"workbench.iconTheme": "vs-seti",
 	"todohighlight.include": 
 	[
 		"**/*.js",
