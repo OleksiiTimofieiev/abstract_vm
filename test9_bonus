@@ -1,12 +1,9 @@
-push int8(1)
-push int8(2)
+push float(1.0)
+push double(2.0)
 push int8(3)
 push int8(4)
-push int8(4)
-push int8(5)
-
+push float(5.0)
 more int8(123)
+less int8(2)
 dump
-lesser int8(2)
-max
 exit

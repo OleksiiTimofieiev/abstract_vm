@@ -63,7 +63,7 @@ void	CPU::_commands_execution_routine()
 			_assert(*std::next(col_command_list, 1) , *std::next(col_command_list, 2), line);
 		else if (*col_command_list == "more")
 			_more(*std::next(col_command_list, 1) , *std::next(col_command_list, 2), line);
-		else if (*col_command_list == "lesser")
+		else if (*col_command_list == "less")
 			_lesser(*std::next(col_command_list, 1) , *std::next(col_command_list, 2), line);
 		else if (*col_command_list == "pop")
 			_pop(line);
@@ -81,8 +81,6 @@ void	CPU::_commands_execution_routine()
 			_div(line);
 		else if (*col_command_list == "mod")
 			_mod(line);
-		else if (*col_command_list == "max")
-			_max();
 		else if (*col_command_list == "exit")
 		{
 			exit_command_is_pesent_in_command_list = true;
@@ -411,37 +409,6 @@ void	CPU::_lesser( std::string Type, std::string value, int line )
 	{
 		std::cout << x.what() << std::endl;
 	}
-}
-
-void	CPU::_max()
-{
-	// std::vector<std::vector<std::string> >::iterator row_command_list;
-	// std::vector<std::string>::iterator col_command_list;
-
-	// bool exit_command_is_pesent_in_command_list = false;
-
-	std::cout << _stack.size() << std::endl;
-
-	IOperand const * buf = _stack.at(0);
-
-	// std::cout << buf->toString() << std::endl;
-
-	size_t i = 1;
-
-
-	while (i < _stack.size())
-	{
-		// OUTPUT_MAGENTA(_stack.at(i)->toString());
-
-		if ( _stack.at(i) > buf )
-		{
-			// delete buf;
-			buf = _stack.at(i);
-			// OUTPUT(buf->toString());
-		}
-		i++;
-	}
-		OUTPUT(buf->toString());
 }
 
 void	CPU::_exit( void )
