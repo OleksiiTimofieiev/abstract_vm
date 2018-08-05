@@ -25,19 +25,24 @@ CPU::CPU ()
 	{
 		std::cout << std::endl;
 	}
-	std::vector<std::string> avm_logo; // TODO:	will need c_str for ncurses;
+	std::vector<std::string> avm_logo;
 
-	avm_logo.push_back("                                                       .         .           ");
-	avm_logo.push_back("         .8.          `8.`888b           ,8'          ,8.       ,8.          ");
-	avm_logo.push_back("        .888.          `8.`888b         ,8'          ,888.     ,888.         ");
-	avm_logo.push_back("       :88888.          `8.`888b       ,8'          .`8888.   .`8888.        ");
-	avm_logo.push_back("      . `88888.          `8.`888b     ,8'          ,8.`8888. ,8.`8888.       ");
-	avm_logo.push_back("     .8. `88888.          `8.`888b   ,8'          ,8'8.`8888,8^8.`8888.      ");
-	avm_logo.push_back("    .8`8. `88888.          `8.`888b ,8'          ,8' `8.`8888' `8.`8888.     ");
-	avm_logo.push_back("   .8' `8. `88888.          `8.`888b8'          ,8'   `8.`88'   `8.`8888.    ");
-	avm_logo.push_back("  .8'   `8. `88888.          `8.`888'          ,8'     `8.`'     `8.`8888.   ");
-	avm_logo.push_back(" .888888888. `88888.          `8.`8'          ,8'       `8        `8.`8888.  ");
-	avm_logo.push_back(".8'       `8. `88888.          `8.`          ,8'         `         `8.`8888. ");
+	avm_logo.push_back("***********************************************************************************");
+	avm_logo.push_back("*                                                                                 *");
+	avm_logo.push_back("*                                                                                 *");
+	avm_logo.push_back("*           .8.          `8.`888b           ,8'          ,8.       ,8.            *");
+	avm_logo.push_back("*          .888.          `8.`888b         ,8'          ,888.     ,888.           *");
+	avm_logo.push_back("*         :88888.          `8.`888b       ,8'          .`8888.   .`8888.          *");
+	avm_logo.push_back("*        . `88888.          `8.`888b     ,8'          ,8.`8888. ,8.`8888.         *");
+	avm_logo.push_back("*       .8. `88888.          `8.`888b   ,8'          ,8'8.`8888,8^8.`8888.        *");
+	avm_logo.push_back("*      .8`8. `88888.          `8.`888b ,8'          ,8' `8.`8888' `8.`8888.       *");
+	avm_logo.push_back("*     .8' `8. `88888.          `8.`888b8'          ,8'   `8.`88'   `8.`8888.      *");
+	avm_logo.push_back("*    .8'   `8. `88888.          `8.`888'          ,8'     `8.`'     `8.`8888.     *");
+	avm_logo.push_back("*   .888888888. `88888.          `8.`8'          ,8'       `8        `8.`8888.    *");
+	avm_logo.push_back("*  .8'       `8. `88888.          `8.`          ,8'         `         `8.`8888.   *");
+	avm_logo.push_back("*                                                                                 *");
+	avm_logo.push_back("*                                                                                 *");
+	avm_logo.push_back("**********************************************************************************");
 
 	for (auto i = avm_logo.begin(); i != avm_logo.end(); ++i)
 	{
