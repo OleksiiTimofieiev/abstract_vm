@@ -102,11 +102,7 @@ void	CPU::_push( std::string Type, std::string value )
 
 	IOperand const * result = _factory.createOperand(selector, value);
 
-		// std::cout << (result)->toString() << std::endl;
-
-	if (result == 0)
-		std::cout << "asdf" << std::endl;
-	else
+	if (result != NULL)
 		_stack.push_back(result);
 }
 

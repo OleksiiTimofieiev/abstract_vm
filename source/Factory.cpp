@@ -51,34 +51,23 @@ IOperand const *Factory::createInt8(std::string const &value) const
 
 IOperand const *Factory::createInt16(std::string const &value) const
 {
-	int64_t num;
-
 	try
 	{
-		num = std::stoll(value);
+		int64_t num = std::stoll(value);
+
+		if ( num > std::numeric_limits<int16_t>::max())
+			throw_line("Overflow happend, value to be factorized -> ", 0);
+		if ( num < std::numeric_limits<int16_t>::min())
+			throw_line("Underflow happend, value to be factorized -> ", 0);
+
+		return (new eOperand<int16_t>(static_cast<int16_t>(num)));
 	}
 	catch (const std::exception & x)
 	{
 		std::cout << "\033[1;31m" << x.what() << "\x1B[0m" << std::endl;
-		return (NULL);
+		return (0);
 	}
 
-	try
-	{
-	if ( num > std::numeric_limits<int16_t>::max())
-
-		throw_line("\033[1;31mOverflow happend, value to be factorized -> \x1B[0m", 0);
-
-	if ( num < std::numeric_limits<int16_t>::min())
-		throw_line("\033[1;31mUnderflow happend, value to be factorized -> \x1B[0m", 0);
-	}
-	catch (const std::exception & x)
-	{
-		std::cout << "\033[1;31m" << x.what() << "\x1B[0m" << std::endl;
-		return (NULL);
-	}
-
-	return (new eOperand<int16_t>(static_cast<int16_t>(num)));
 }
 IOperand const *Factory::createInt32(std::string const &value) const
 {
