@@ -3,8 +3,8 @@
 
 // TODO:	ncurses avm
 // TODO:	check copl form in the end of the project;
-// TODO:	delete leaks check func;
-
+// TODO:	delete leaks check func
+// TODO:	check form one more time;
 
 CPU::CPU () {}
 
