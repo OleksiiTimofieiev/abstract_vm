@@ -1,3 +1,5 @@
-push int32(42)
-assert int32(0)
+push int8(12)
+push float(12.2)
+sub
+dump
 exit
