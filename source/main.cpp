@@ -1,4 +1,4 @@
-#include "CPU.hpp"
+#include "../includes/CPU.hpp"
 
 int		main2 ( int argc, char ** argv )
 {

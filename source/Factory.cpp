@@ -1,5 +1,5 @@
-#include "Factory.hpp"
-#include "Exception.hpp"
+#include "../includes/Factory.hpp"
+#include "../includes/Exception.hpp"
 #include <float.h>
 
 Factory::Factory( void )

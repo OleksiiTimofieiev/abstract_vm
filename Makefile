@@ -1,45 +1,59 @@
-NAME 			= avm
+NAME		=	avm
+FLAGS		= 	-Wall -Werror -Wextra
+COMPILER	=	clang++ -std=c++11
 
-SRCS 			= CPU.cpp Parser.cpp Lexer.cpp Exception.cpp Factory.cpp eOperand.cpp main.cpp
+DIR_INC		=	./includes/
+DIR_SRC		=	./source/
+DIR_OBJ		= 	./obj/
 
-CFLAGS 			= -std=c++11 -Wall -Werror -Wextra
+#-------------------------- Header files ---------------------------------------
+HEAD_AVM	=	CPU.hpp\
+				eOperand.hpp\
+				Exception.hpp\
+				Factory.hpp\
+				includes.hpp\
+				IOperand.hpp\
+				Lexer.hpp\
+				Parser.hpp
 
-OBJECTS 		= $(SRCS:.cpp=.o)
+#-------------------------- Source files ---------------------------------------
+SRC_AVM		=	CPU.cpp\
+				eOperand.cpp\
+				Exception.cpp\
+				Factory.cpp\
+				Lexer.cpp\
+				Parser.cpp\
+				main.cpp
 
-COMPILER 		= clang++
+INC_PATH 	= 	$(addprefix $(DIR_INC), $(HEAD_AVM))
 
-# COLOR MASCSS
-LOG_CLEAR		= \033[2K
-LOG_UP 			= \033[A
-LOG_NOCOLOR		= \033[0m
-LOG_BLACK		= \033[1;30m
-LOG_RED			= \033[1;31m
-LOG_GREEN		= \033[1;32m
-LOG_YELLOW		= \033[1;33m
-LOG_BLUE		= \033[1;34m
-LOG_VIOLET		= \033[1;35m
-LOG_CYAN		= \033[1;36m
-LOG_WHITE		= \033[1;37m
-	
-all: $(NAME)
+OBJ 		= 	$(addprefix $(DIR_OBJ), $(SRC_AVM:.cpp=.o))
+INC 		= 	$(addprefix -I, $(DIR_INC))
 
-%.o: %.cpp %.hpp
-	@$(COMPILER) -c $(CFLAGS) $< -o $@
+all: obj $(NAME)
 
-$(NAME): $(OBJECTS)
-	@echo "$(LOG_CYAN)Compilation started => [ $(NAME) ]$(LOG_NOCOLOR)$(LOG_GREEN) ✓$(LOG_NOCOLOR)"
-	@$(COMPILER) $(CFLAGS) $(SRCS) -o $(NAME)
-	@echo "$(LOG_YELLOW)Compilation finished => [ $(NAME) ]$(LOG_NOCOLOR)$(LOG_GREEN) ✓$(LOG_NOCOLOR)"
+obj:
+	@mkdir -p $(DIR_OBJ)
+
+#-------------------------- Compil Block ---------------------------------------
+$(NAME): $(OBJ)
+	@$(COMPILER) -o $(NAME) $(OBJ)
+	@echo "Compiling" [ $(NAME) ]
+
+#-------------------------- Link Block -----------------------------------------
+#source
+$(DIR_OBJ)%.o: $(DIR_SRC)%.cpp $(INC_PATH)
+	@$(COMPILER) $(FLAGS) $(INC) -c -o $@ $<
+	@echo "Linking" [ $< ]
 
 clean:
-	@/bin/rm -f $(OBJECTS)
-	@echo "$(LOG_RED)Deleted => [ $(NAME) ]$(LOG_NOCOLOR)$(LOG_GREEN) ✓$(LOG_NOCOLOR)"
+	@rm -rf $(DIR_OBJ)
+	@echo "Clean [ obj files avm ]"
 
-fclean: clean
-	@/bin/rm -f $(NAME) $(LIB)
-	@echo "$(LOG_RED)Fully deleted => [ $(NAME) ]$(LOG_NOCOLOR)$(LOG_GREEN) ✓$(LOG_NOCOLOR)"
+fclean:
+	@rm -rf $(DIR_OBJ)
+	@echo "Clean [ obj files avm ]"
+	@rm -f $(NAME)
+	@echo "Clean" [ $(NAME) ]
 
 re: fclean all
-	@echo "$(LOG_VIOLET)Redone => [ $(NAME) ]$(LOG_NOCOLOR)$(LOG_GREEN) ✓$(LOG_NOCOLOR)"
-
-.PHONY: all clean fclean re

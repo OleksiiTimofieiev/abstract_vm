@@ -1,4 +1,4 @@
-#include "eOperand.hpp"
+#include "../includes/eOperand.hpp"
 
 template <class T> eOperand<T>::eOperand(T value): _value(value) 
 {

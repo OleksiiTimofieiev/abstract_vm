@@ -1,3 +1,0 @@
-main class:			"central processing unit";
-nested class 1:		"memory" <-> vector ADT;
-nested class 2:		"factory" <-> to create the objects;

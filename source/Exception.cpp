@@ -1,4 +1,4 @@
-#include "Exception.hpp"
+#include "../includes/Exception.hpp"
 
 Exception::Exception() : std::runtime_error("no error") {}
 Exception::~Exception() throw() {}

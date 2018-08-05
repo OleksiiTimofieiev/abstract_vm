@@ -1,5 +1,5 @@
-#include "CPU.hpp"
-#include "Factory.hpp"
+#include "../includes/CPU.hpp"
+#include "../includes/Factory.hpp"
 
 // ncurses avm
 

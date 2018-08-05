@@ -1,5 +1,5 @@
-#include "Lexer.hpp"
-#include "CPU.hpp"
+#include "../includes/Lexer.hpp"
+#include "../includes/CPU.hpp"
 #include <regex>
 #include <string>
 #include <iostream>
