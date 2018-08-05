@@ -37,12 +37,13 @@ obj:
 	@mkdir -p $(DIR_OBJ)
 
 #-------------------------- Compilation Block ---------------------------------------
+
 $(NAME): $(OBJ)
 	@$(COMPILER) -o $(NAME) $(OBJ)
 	@echo "Compiling" [ $(NAME) ]
 
 #-------------------------- Linking Block -------------------------------------------
-#source
+
 $(DIR_OBJ)%.o: $(DIR_SRC)%.cpp $(INC_PATH)
 	@$(COMPILER) $(FLAGS) $(INC) -c -o $@ $<
 	@echo "Linking" [ $< ]
