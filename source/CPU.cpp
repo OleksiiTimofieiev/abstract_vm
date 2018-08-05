@@ -109,7 +109,6 @@ void	CPU::_pop( int line )
 	{
 		if (_stack.empty())
 			throw_line("\033[1;31mTry to pop empty stack on line # -> \033[0m", line);
-		_stack.pop_back();
 	}
 	catch (const std::runtime_error &ex)
 	{
@@ -183,11 +182,17 @@ void	CPU::_sub( int line )
 
 		IOperand const * a = _stack.at(prev_last);
 		IOperand const * b = _stack.at(last);
-		
-		_stack.push_back(*a - *b);
 
-		_stack.erase(_stack.begin() + (_stack.size() - 2));
-		_stack.erase(_stack.begin() + (_stack.size() - 2));
+		if (a != NULL && b != NULL)
+		{
+			_stack.push_back(*a - *b);
+
+			_stack.erase(_stack.begin() + (_stack.size() - 2));
+			_stack.erase(_stack.begin() + (_stack.size() - 2));
+
+			delete a;
+			delete b;
+		}
 	}
 	catch (const std::runtime_error &ex)
 	{
@@ -208,10 +213,16 @@ void	CPU::_mul( int line )
 		IOperand const * a = _stack.at(prev_last);
 		IOperand const * b = _stack.at(last);
 		
-		_stack.push_back(*a * *b);
+		if (a != NULL && b != NULL)
+		{
+			_stack.push_back(*a * *b);
 
-		_stack.erase(_stack.begin() + (_stack.size() - 2));
-		_stack.erase(_stack.begin() + (_stack.size() - 2));
+			_stack.erase(_stack.begin() + (_stack.size() - 2));
+			_stack.erase(_stack.begin() + (_stack.size() - 2));
+
+			delete a;
+			delete b;
+		}
 	}
 	catch (const std::runtime_error &ex)
 	{
@@ -235,10 +246,16 @@ void	CPU::_div( int line )
 		if ( a->toString() == "0" || b->toString() == "0" )
 			throw_line("\033[1;31mDiv command with 0 operator on line # -> \033[0m", line);
 
-		_stack.push_back(*a / *b);
+		if (a != NULL && b != NULL)
+		{
+			_stack.push_back(*a / *b);
 
-		_stack.erase(_stack.begin() + (_stack.size() - 2));
-		_stack.erase(_stack.begin() + (_stack.size() - 2));
+			_stack.erase(_stack.begin() + (_stack.size() - 2));
+			_stack.erase(_stack.begin() + (_stack.size() - 2));
+
+			delete a;
+			delete b;
+		}
 	}
 	catch (const std::runtime_error &ex)
 	{
@@ -262,10 +279,16 @@ void	CPU::_mod( int line )
 		if ( a->toString() == "0" || b->toString() == "0" )
 			throw_line("\033[1;31mDiv command with 0 operator on line # -> \033[0m", line);
 
-		_stack.push_back(*a % *b);
+		if (a != NULL && b != NULL)
+		{
+			_stack.push_back(*a % *b);
 
-		_stack.erase(_stack.begin() + (_stack.size() - 2));
-		_stack.erase(_stack.begin() + (_stack.size() - 2));
+			_stack.erase(_stack.begin() + (_stack.size() - 2));
+			_stack.erase(_stack.begin() + (_stack.size() - 2));
+
+			delete a;
+			delete b;
+		}
 	}
 	catch (const std::runtime_error &ex)
 	{
@@ -414,5 +437,6 @@ void	CPU::_lesser( std::string Type, std::string value, int line )
 
 void	CPU::_exit( void )
 {
+	system("leaks -q avm");
 	exit(0);
 }
