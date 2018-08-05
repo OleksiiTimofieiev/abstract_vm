@@ -40,7 +40,6 @@ obj:
 
 $(NAME): $(OBJ)
 	@$(COMPILER) -o $(NAME) $(OBJ)
-	@echo "Compiling" [ $(NAME) ]
 
 #-------------------------- Linking Block -------------------------------------------
 
