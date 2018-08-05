@@ -46,14 +46,17 @@ $(NAME): $(OBJ)
 #-------------------------- Linking  -------------------------------------------
 
 $(DIR_OBJ)%.o: $(DIR_SRC)%.cpp $(INC_PATH)
-	@echo "\033[0;32m[OK] \033[0m       \033[0;33m Compiling:\033[0m" $<
+	@echo "\033[0;33mCompiling: \033[0;32m[OK] \033[0m       \033[0m" $<
 	@$(COMPILER) $(FLAGS) $(INC) -c -o $@ $<
 
 clean:
 	@rm -rf $(DIR_OBJ)
+	@echo "\033[0;31mDeleted => [ $(NAME) ]\033[0m"
 
 fclean:
 	@rm -rf $(DIR_OBJ)
 	@rm -f $(NAME)
+	@echo "\033[0;31mFully Deleted => [ $(NAME) ]\033[0m"
 
 re: fclean all
+	@echo "\033[94mRedone => [ $(NAME) ]\033[0m"
