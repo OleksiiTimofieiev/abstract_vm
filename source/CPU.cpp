@@ -3,18 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   CPU.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: otimofie <otimofie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: timofieiev <timofieiev@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/05 21:56:31 by otimofie          #+#    #+#             */
-/*   Updated: 2018/08/05 22:01:24 by otimofie         ###   ########.fr       */
+/*   Updated: 2018/08/06 02:50:35 by timofieiev       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/CPU.hpp"
 #include "../includes/Factory.hpp"
 
-// TODO:	ncurses avm
-// TODO:	delete leaks check func
 // TODO:	check tests from the checking form one more time;
 
 CPU::CPU ()
@@ -50,7 +48,7 @@ CPU::CPU ()
 		usleep(200000);
 	}
 
-	for (int i = 0; i != 5; i++)
+	for (int i = 0; i != 3; i++)
 	{
 		std::cout << std::endl;
 	}
