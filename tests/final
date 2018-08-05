@@ -2,7 +2,6 @@ push int8(1)
 push int8(2)
 push int16(32767)
 add
-push int16(3276)
-
+push int16(98798798797987987)
 dump
 exit
