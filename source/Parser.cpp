@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Parser.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: otimofie <otimofie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: timofieiev <timofieiev@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/05 21:57:35 by otimofie          #+#    #+#             */
-/*   Updated: 2018/08/05 21:57:36 by otimofie         ###   ########.fr       */
+/*   Updated: 2018/08/06 02:56:11 by timofieiev       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+// TODO:	list of the available commands, usage
 
 #include "../includes/Parser.hpp"
 #include <exception>
