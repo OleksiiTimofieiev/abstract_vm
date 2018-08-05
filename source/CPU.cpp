@@ -14,7 +14,6 @@
 #include "../includes/Factory.hpp"
 
 // TODO:	ncurses avm
-// TODO:	check copl form in the end of the project;
 // TODO:	delete leaks check func
 // TODO:	check tests from the checking form one more time;
 
@@ -70,6 +69,10 @@ void	CPU::_commands_execution_routine()
 			_more(*std::next(col_command_list, 1) , *std::next(col_command_list, 2), line);
 		else if (*col_command_list == "less")
 			_lesser(*std::next(col_command_list, 1) , *std::next(col_command_list, 2), line);
+		else if (*col_command_list == "not equal")
+			_not_equal(*std::next(col_command_list, 1) , *std::next(col_command_list, 2), line);
+		else if (*col_command_list == "more or equal")
+			_more_or_equal(*std::next(col_command_list, 1) , *std::next(col_command_list, 2), line);
 		else if (*col_command_list == "pop")
 			_pop(line);
 		else if (*col_command_list == "dump")
@@ -440,6 +443,86 @@ void	CPU::_lesser( std::string Type, std::string value, int line )
 		}
 		else 
 			OUTPUT_RED("Nope. Value is equal or bigger. Too bad.");
+		delete	(a);
+	}
+	catch ( const std::runtime_error &x )
+	{
+		std::cout << x.what() << std::endl;
+	}
+}
+
+void	CPU::_not_equal( std::string Type, std::string value, int line )
+{
+	eOperandType selector;
+
+	if (Type == "int8") {selector = Int8;}
+	else if (Type == "int16") {selector = Int16;}
+	else if (Type == "int32") {selector = Int32;}
+	else if (Type == "float") {selector = Float;}
+	else if (Type == "double") {selector = Double;}
+	else
+		selector = default_str;
+	try
+	{
+		if ( _stack.empty() )
+			throw_line("\033[1;31mTry to use more command with empty stack on line # -> \033[0m", line);
+
+		IOperand const * b = _stack.back();
+
+		IOperand const * a = _factory.createOperand(selector, value);
+
+		if ( a->toString() == "0" )
+		{
+			delete	(a);
+			throw_line("\033[1;31mTry to use more command with zero value on line # -> \033[0m", line);
+		}
+		
+		if (*a != *b)
+		{
+			OUTPUT_MAGENTA("Values are not equal !!!");
+		}
+		else
+			OUTPUT_RED("Nope the comparison hasn`t shown that the values are not equal. Too bad.");
+		delete	(a);
+	}
+	catch ( const std::runtime_error &x )
+	{
+		std::cout << x.what() << std::endl;
+	}
+}
+
+void	CPU::_more_or_equal( std::string Type, std::string value, int line )
+{
+	eOperandType selector;
+
+	if (Type == "int8") {selector = Int8;}
+	else if (Type == "int16") {selector = Int16;}
+	else if (Type == "int32") {selector = Int32;}
+	else if (Type == "float") {selector = Float;}
+	else if (Type == "double") {selector = Double;}
+	else
+		selector = default_str;
+	try
+	{
+		if ( _stack.empty() )
+			throw_line("\033[1;31mTry to use more command with empty stack on line # -> \033[0m", line);
+
+		IOperand const * b = _stack.back();
+
+		IOperand const * a = _factory.createOperand(selector, value);
+
+		if ( a->toString() == "0" )
+		{
+			delete	(a);
+			throw_line("\033[1;31mTry to use more command with zero value on line # -> \033[0m", line);
+		}
+		
+		if (*a >= *b)
+		{
+			OUTPUT_MAGENTA("Value is more or equal !!!");
+		}
+		else
+			OUTPUT_RED("Nope the comparison hasn`t shown that the value is more or equal. Too bad.");
 		delete	(a);
 	}
 	catch ( const std::runtime_error &x )

@@ -16,6 +16,8 @@
 #include "Parser.hpp"
 #include "Exception.hpp"
 
+// TODO:	copl form;
+
 class Lexer
 {
 	public:

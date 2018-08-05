@@ -209,6 +209,57 @@ template <class T> bool eOperand<T>::operator < (IOperand const &rhs) const
 			return (static_cast<double>(_value) < std::stod(rhs.toString()));
 }
 
+template <class T> bool eOperand<T>::operator >= (IOperand const &rhs) const
+{
+		eOperandType	eNum = default_str;
+
+		if (this->getType() >= rhs.getType())
+			eNum = this->getType();
+		else
+			eNum = rhs.getType();
+
+		if (eNum < Float)
+			return (static_cast<int32_t>(_value) >= std::stoi(rhs.toString()));
+		else if (eNum == Float)
+			return (static_cast<float>(_value) >= std::stof(rhs.toString()));
+		else
+			return (static_cast<double>(_value) >= std::stod(rhs.toString()));
+}
+
+template <class T> bool eOperand<T>::operator <= (IOperand const &rhs) const
+{
+		eOperandType	eNum = default_str;
+
+		if (this->getType() >= rhs.getType())
+			eNum = this->getType();
+		else
+			eNum = rhs.getType();
+
+		if (eNum < Float)
+			return (static_cast<int32_t>(_value) <= std::stoi(rhs.toString()));
+		else if (eNum == Float)
+			return (static_cast<float>(_value) <= std::stof(rhs.toString()));
+		else
+			return (static_cast<double>(_value) <= std::stod(rhs.toString()));
+}
+
+template <class T> bool eOperand<T>::operator != (IOperand const &rhs) const
+{
+		eOperandType	eNum = default_str;
+
+		if (this->getType() >= rhs.getType())
+			eNum = this->getType();
+		else
+			eNum = rhs.getType();
+
+		if (eNum < Float)
+			return (static_cast<int32_t>(_value) != std::stoi(rhs.toString()));
+		else if (eNum == Float)
+			return (static_cast<float>(_value) != std::stof(rhs.toString()));
+		else
+			return (static_cast<double>(_value) != std::stod(rhs.toString()));
+}
+
 template <class T> std::string const &eOperand<T>::toString(void) const
 {
 	return (_str);

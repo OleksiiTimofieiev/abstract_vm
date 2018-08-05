@@ -5,6 +5,8 @@ push int8(4)
 push int8(5)
 more int8(123)
 less int8(2)
+not equal int8(6)
+more or equal int8(6)
 print
 dump
 exit

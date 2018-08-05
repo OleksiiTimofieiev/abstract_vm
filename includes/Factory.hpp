@@ -22,10 +22,8 @@ class	Factory
 	public:
 		Factory( void );
 		~Factory( void );
-		
 		Factory &operator=(Factory const &rhs);
 		Factory(Factory const &src);
-
 		IOperand const *createOperand(eOperandType type, std::string const &value) const;
   	private:
 		IOperand const *createInt8(std::string const &value) const;
