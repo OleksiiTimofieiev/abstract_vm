@@ -1,7 +1,5 @@
 #include "eOperand.hpp"
 
-//TODO:: check input value;
-
 template <class T> eOperand<T>::eOperand(T value): _value(value) 
 {
 	if (typeid(T) == typeid(int8_t))
