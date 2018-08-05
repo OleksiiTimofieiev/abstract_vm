@@ -105,7 +105,7 @@ void	CPU::_push( std::string Type, std::string value )
 	if (result != NULL)
 		_stack.push_back(result);
 	
-	delete (result);
+	// delete (result);
 }
 
 void	CPU::_pop( int line )
