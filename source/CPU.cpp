@@ -6,7 +6,7 @@
 /*   By: otimofie <otimofie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/05 21:56:31 by otimofie          #+#    #+#             */
-/*   Updated: 2018/08/05 21:56:32 by otimofie         ###   ########.fr       */
+/*   Updated: 2018/08/05 22:01:24 by otimofie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 // TODO:	ncurses avm
 // TODO:	check copl form in the end of the project;
 // TODO:	delete leaks check func
-// TODO:	check form one more time;
+// TODO:	check tests from the checking form one more time;
 
 CPU::CPU () {}
 
