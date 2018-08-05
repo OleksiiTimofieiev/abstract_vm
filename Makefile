@@ -6,6 +6,8 @@ DIR_INC		=	./includes/
 DIR_SRC		=	./source/
 DIR_OBJ		= 	./obj/
 
+BUILD_PRINT = \e[1;34mBuilding $<\e[0m
+
 #-------------------------- Header  ------------------------------------------
 
 HPP	=			CPU.hpp\
@@ -44,7 +46,7 @@ $(NAME): $(OBJ)
 #-------------------------- Linking  -------------------------------------------
 
 $(DIR_OBJ)%.o: $(DIR_SRC)%.cpp $(INC_PATH)
-	@echo "\033[0;32m [OK] \033[0m       \033[0;33m Compiling:\033[0m" $<
+	@echo "\033[0;32m[OK] \033[0m       \033[0;33m Compiling:\033[0m" $<
 	@$(COMPILER) $(FLAGS) $(INC) -c -o $@ $<
 
 clean:
