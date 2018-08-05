@@ -1,16 +1,9 @@
 #include "CPU.hpp"
 #include "Factory.hpp"
 
-// min
-// max
-// sort
-// usage
 // ncurses avm
 
-// make cool makefile;
-
 //TODO:		check copl form in the end of the project;
-//TODO:		test1 comments;
 
 CPU::CPU () {}
 
@@ -39,8 +32,9 @@ CPU::CPU( CPU const &src )
 void	CPU::_execute_inner_logic(const int quantity_of_arguments, char *argument)
 {
 	_parser.read				( quantity_of_arguments, argument );
+	_parser.print_list();
 	_lexer.lexical_analysis		( _parser, _command_list );
-	OUTPUT_CYAN("And here we go ... ;)");
+	// OUTPUT_CYAN("And here we go ... ;)");
 	_commands_execution_routine	();
 }
 
