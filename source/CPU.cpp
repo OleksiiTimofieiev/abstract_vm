@@ -6,7 +6,7 @@
 /*   By: timofieiev <timofieiev@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/05 21:56:31 by otimofie          #+#    #+#             */
-/*   Updated: 2018/08/06 02:50:35 by timofieiev       ###   ########.fr       */
+/*   Updated: 2018/08/06 02:51:23 by timofieiev       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,7 @@ CPU::CPU ()
 	}
 
 	for (int i = 0; i != 3; i++)
-	{
 		std::cout << std::endl;
-	}
 }
 
 CPU::~CPU() 
