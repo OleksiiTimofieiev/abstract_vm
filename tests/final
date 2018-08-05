@@ -2,14 +2,9 @@ push int8(1)
 push int8(2)
 add
 dump
-
 push int8(32767)
 dump
-
 add
-
-
 push int16(42)
 dump
-
 exit
