@@ -29,8 +29,8 @@ template <class T> IOperand const& eOperand<T>::operator = (eOperand const &rhs)
 {
 	if (this != &rhs)
 	{
-		this->_value = rhs._value;
 		this->_str = rhs._str;
+		this->_value = rhs._value;
 	}
 	return *this;
 }

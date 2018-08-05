@@ -1,5 +1,12 @@
-push int8(68)
-push int8(78)
+push int8(1)
+push int8(2)
+push int8(3)
+push int8(4)
+push int8(4)
+push int8(5)
+
 more int8(123)
+dump
 lesser int8(2)
+max
 exit
