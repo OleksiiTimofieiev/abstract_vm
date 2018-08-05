@@ -163,11 +163,11 @@ void	CPU::_add( int line )
 
 		if (a != NULL && b != NULL)
 		{
-		_stack.push_back( *a + *b );
+			_stack.push_back( *a + *b );
 
-		_stack.erase(_stack.begin() + (_stack.size() - 2));
-		_stack.erase(_stack.begin() + (_stack.size() - 2));
-	}
+			_stack.erase(_stack.begin() + (_stack.size() - 2));
+			_stack.erase(_stack.begin() + (_stack.size() - 2));
+		}
 	}
 	catch (const std::runtime_error &ex)
 	{
