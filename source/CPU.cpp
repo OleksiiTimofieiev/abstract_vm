@@ -578,7 +578,7 @@ void	CPU::_exit( void )
 
 	std::vector<std::string> avm_logo;
 	avm_logo.push_back("                                                         .         .           ");
-	avm_logo.push_back("           .8.          `8.`888b           ,8'          ,8.       ,8.   ");
+	avm_logo.push_back("           .8.          `8.`888b           ,8'          ,8.       ,8.          ");
 	avm_logo.push_back("          .888.          `8.`888b         ,8'          ,888.     ,888.         ");
 	avm_logo.push_back("         :88888.          `8.`888b       ,8'          .`8888.   .`8888.        ");
 	avm_logo.push_back("        . `88888.          `8.`888b     ,8'          ,8.`8888. ,8.`8888.       ");
