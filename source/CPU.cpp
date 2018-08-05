@@ -102,8 +102,10 @@ void	CPU::_push( std::string Type, std::string value )
 
 	IOperand const * result = _factory.createOperand(selector, value);
 
-	if (result != NULL)
+	// if (result != NULL)
 		_stack.push_back(result);
+	
+	delete (result);
 }
 
 void	CPU::_pop( int line )
@@ -124,13 +126,15 @@ void	CPU::_dump( int line )
 {
 	try
 	{
+		std::string buf;
 		if (_stack.empty())
 			throw_line("\033[1;31mTry to dump empty stack on line # -> \033[0m", line);
 
 		for ( auto i = _stack.end(); i != _stack.begin(); ) 
 		{
 			--i;
-			std::string buf = (*i)->toString();
+			if (*i != NULL)
+				buf = (*i)->toString();
 			OUTPUT(buf);
 		}
 	}

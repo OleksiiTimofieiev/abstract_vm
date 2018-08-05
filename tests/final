@@ -1,8 +1,8 @@
 push int8(1)
-push int16(3276)
-add
+push int8(2)
 push int16(32767)
-ad
-dump
+add
+push int16(3276)
 
+dump
 exit
