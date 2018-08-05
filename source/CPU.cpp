@@ -587,7 +587,7 @@ void	CPU::_exit( void )
 	avm_logo.push_back("     .8' `8. `88888.          `8.`888b8'          ,8'   `8.`88'   `8.`8888.    ");
 	avm_logo.push_back("    .8'   `8. `88888.          `8.`888'          ,8'     `8.`'     `8.`8888.   ");
 	avm_logo.push_back("   .888888888. `88888.          `8.`8'          ,8'       `8        `8.`8888.  ");
-	avm_logo.push_back("   .8'       `8. `88888.          `8.`          ,8'         `         `8.`8888. ");
+	avm_logo.push_back("  .8'       `8. `88888.          `8.`          ,8'         `         `8.`8888. ");
 
 	system("leaks -q avm");
 	exit(0);
