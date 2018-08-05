@@ -269,16 +269,14 @@ void	CPU::_print( int line )
 {
 	try
 	{
-
 		if ( _stack.empty() )
 			throw_line("\033[1;31mTry to print on empty stack on line # -> \033[0m", line);
-			
-		auto i = _stack.back()->getType();
-		
-		if ( i )
-			fprintf(stdout, "[%d]: %c;\n", stoi(_stack.back()->toString()), stoi(_stack.back()->toString()));
-		else
-			throw_line("\033[1;31mPrint error on line # -> \033[0m", line);
+		eOperandType type =  _stack.back()->getType();
+
+		if ( type != Int8)
+			throw_line("\033[1;31mTry to print on empty stack (not a 8-bit integer) on line # -> \033[0m", line);
+
+		fprintf(stdout, "[%d]: %c;\n", stoi(_stack.back()->toString()), stoi(_stack.back()->toString()));
 	}
 	catch ( const std::runtime_error &ex )
 	{

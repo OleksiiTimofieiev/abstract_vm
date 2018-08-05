@@ -58,6 +58,20 @@ void	Parser::read_from_the_standart_input( void )
 						input.erase(found + 1);
 				}
 			}
+			else if ( input.length() >= 2 && input.at(0) != ';' && input.at(1) != ';' )
+			{
+				comment_find = input.find(";");
+
+				if (comment_find != std::string::npos)
+				{
+					input.erase(comment_find, input.length());
+
+					found = input.find_last_not_of(whitespaces);
+
+					if (found != std::string::npos)
+						input.erase(found + 1);
+				}
+			}
 			_filtered_input.push_back(input);
 
 			if (input == ";;")
@@ -94,7 +108,21 @@ void	Parser::read_from_the_ifstream( char * argument )
 		{
 			getline( fin, input);
 			
-			if ( input.length() >= 2 && input.at(1) != ';')
+			if ( input.length() >= 1 && input.at(0) == ';')
+			{
+				comment_find = input.find(";");
+
+				if (comment_find != std::string::npos)
+				{
+					input.erase(comment_find, input.length());
+
+					found = input.find_last_not_of(whitespaces);
+
+					if (found != std::string::npos)
+						input.erase(found + 1);
+				}
+			}
+			else if ( input.length() >= 2 && input.at(0) != ';' && input.at(1) != ';' )
 			{
 				comment_find = input.find(";");
 
