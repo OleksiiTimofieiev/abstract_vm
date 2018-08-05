@@ -6,8 +6,6 @@ DIR_INC		=	./includes/
 DIR_SRC		=	./source/
 DIR_OBJ		= 	./obj/
 
-BUILD_PRINT = \e[1;34mBuilding $<\e[0m
-
 #-------------------------- Header  ------------------------------------------
 
 HPP	=			CPU.hpp\

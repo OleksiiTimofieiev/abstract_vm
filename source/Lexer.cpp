@@ -12,11 +12,11 @@ bool Lexer::regex_checks(std::string str, std::vector<std::vector<std::string> >
 	bool flag = false;
 	int nNumColumns = 3;
 
-	std::smatch		result;
 	const 			std::regex	commands_without_arguments("^(pop|dump|add|sub|mul|div|mod|print|exit|;;|;)$");
 	const 			std::regex	commands_with_arguments_int("^(push|assert|more|less) (int8|int16|int32)\\(([\\-]?[0-9]+)\\)$");
 	const 			std::regex	commands_with_arguments_float_double("^(push|assert|more|less) (float|double)\\(([\\-]?[0-9]+\\.[0-9]+)\\)$");
 	const			std::regex	empty_line("^\\s*$");
+	std::smatch		result;
 
 	if (std::regex_match( str, result, commands_without_arguments) || std::regex_match( str, result, empty_line))
 	{
