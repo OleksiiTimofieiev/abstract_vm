@@ -46,16 +46,12 @@ $(NAME): $(OBJ)
 
 $(DIR_OBJ)%.o: $(DIR_SRC)%.cpp $(INC_PATH)
 	@$(COMPILER) $(FLAGS) $(INC) -c -o $@ $<
-	@echo "Linking" [ $< ]
 
 clean:
 	@rm -rf $(DIR_OBJ)
-	@echo "Clean [ obj files avm ]"
 
 fclean:
 	@rm -rf $(DIR_OBJ)
-	@echo "Clean [ obj files avm ]"
 	@rm -f $(NAME)
-	@echo "Clean" [ $(NAME) ]
 
 re: fclean all
