@@ -43,5 +43,6 @@
 #include 				"eOperand.hpp"
 #include 				"Factory.hpp"
 #include				"Exception.hpp"
+#include <unistd.h>
 
 #endif
