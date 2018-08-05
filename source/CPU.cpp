@@ -182,7 +182,7 @@ void	CPU::_sub( int line )
 
 		IOperand const * a = _stack.at(prev_last);
 		IOperand const * b = _stack.at(last);
-
+		
 		if (a != NULL && b != NULL)
 		{
 			_stack.push_back(*a - *b);
