@@ -102,7 +102,7 @@ void	CPU::_push( std::string Type, std::string value )
 
 	IOperand const * result = _factory.createOperand(selector, value);
 
-	// if (result != NULL)
+	if (result != NULL)
 		_stack.push_back(result);
 	
 	delete (result);
