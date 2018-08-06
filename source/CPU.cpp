@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   CPU.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: timofieiev <timofieiev@student.42.fr>      +#+  +:+       +#+        */
+/*   By: otimofie <otimofie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/05 21:56:31 by otimofie          #+#    #+#             */
-/*   Updated: 2018/08/06 03:44:43 by timofieiev       ###   ########.fr       */
+/*   Updated: 2018/08/06 12:09:13 by otimofie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -158,6 +158,7 @@ void	CPU::_pop( int line )
 	{
 		if (_stack.empty())
 			throw_line("\033[1;31mTry to pop empty stack on line # -> \033[0m", line);
+		_stack.pop_back();
 	}
 	catch (const std::runtime_error &ex)
 	{
