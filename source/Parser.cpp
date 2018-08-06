@@ -6,11 +6,9 @@
 /*   By: timofieiev <timofieiev@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/05 21:57:35 by otimofie          #+#    #+#             */
-/*   Updated: 2018/08/06 03:38:22 by timofieiev       ###   ########.fr       */
+/*   Updated: 2018/08/06 03:41:08 by timofieiev       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-// TODO:	list of the available commands, usage;
 
 #include "../includes/Parser.hpp"
 #include <exception>

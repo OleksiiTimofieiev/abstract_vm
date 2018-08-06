@@ -6,7 +6,7 @@
 /*   By: timofieiev <timofieiev@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/05 21:56:31 by otimofie          #+#    #+#             */
-/*   Updated: 2018/08/06 03:32:00 by timofieiev       ###   ########.fr       */
+/*   Updated: 2018/08/06 03:44:43 by timofieiev       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -354,7 +354,7 @@ void	CPU::_print( int line )
 		eOperandType type =  _stack.back()->getType();
 
 		if ( type != Int8)
-			throw_line("\033[1;31mTry to print on empty stack (not a 8-bit integer) on line # -> \033[0m", line);
+			throw_line("\033[1;31mTry to print, value is not a 8-bit integer on line # -> \033[0m", line);
 
 		fprintf(stdout, "[%d]: %c;\n", stoi(_stack.back()->toString()), stoi(_stack.back()->toString()));
 	}
