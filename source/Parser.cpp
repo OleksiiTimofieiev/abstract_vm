@@ -6,7 +6,7 @@
 /*   By: timofieiev <timofieiev@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/05 21:57:35 by otimofie          #+#    #+#             */
-/*   Updated: 2018/08/06 02:57:59 by timofieiev       ###   ########.fr       */
+/*   Updated: 2018/08/06 03:38:22 by timofieiev       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,9 @@ Parser::Parser(Parser const &src)
 
 bool	Parser::detect_input_stream( const int quantity_of_arguments ) const
 {
+	if ( quantity_of_arguments > 2 )
+		std::cout << "Too many arguments.\nProgram will read from the stdin." << std::endl << std::endl;
+
 	if ( quantity_of_arguments == 2)
 		return ( true );
 	return ( false );
