@@ -6,7 +6,7 @@
 /*   By: timofieiev <timofieiev@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/05 21:56:31 by otimofie          #+#    #+#             */
-/*   Updated: 2018/08/06 03:00:53 by timofieiev       ###   ########.fr       */
+/*   Updated: 2018/08/06 03:32:00 by timofieiev       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,13 @@
 #include "../includes/Factory.hpp"
 
 // TODO:	check tests from the checking form one more time;
-
 CPU::CPU ()
 {
 	system("clear");
 
 	for (int i = 0; i != 1; i++)
-	{
 		std::cout << std::endl;
-	}
+
 	std::vector<std::string> avm_logo;
 
 	avm_logo.push_back("***********************************************************************************");
@@ -45,7 +43,7 @@ CPU::CPU ()
 	for (auto i = avm_logo.begin(); i != avm_logo.end(); ++i)
 	{
 		std::cout << *i << std::endl;
-		usleep(200000);
+		usleep(75000);
 	}
 
 	for (int i = 0; i != 3; i++)
