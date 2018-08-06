@@ -1,11 +1,11 @@
-push int32(42)
-push int32(33)
-add ;poney
-push float(44.55)
-mul
+push int32(42) ;;123
+push int32(33)   ;123123
+add ;
+push float(44.55);asd
+mul;asd
 push double(42.42) ;commentaire de ouf
 push int32(42)
-dump
-pop
+dump;asd
+pop;asd
 assert double(42.42) ; 123
 exit
